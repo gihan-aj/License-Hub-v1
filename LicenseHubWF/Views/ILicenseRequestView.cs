@@ -18,6 +18,7 @@ namespace LicenseHubWF.Views
 
         // Events
         event EventHandler RequestLicenseEvent;
+        event EventHandler ResponseLicenseViewLoadEvent;
 
         // Methods
         void SetClientList(IEnumerable<ClientModel> clientList);

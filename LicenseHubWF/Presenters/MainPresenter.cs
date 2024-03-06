@@ -6,18 +6,31 @@ using System.Threading.Tasks;
 using LicenseHubWF.Models;
 using LicenseHubWF.Views;
 using LicenseHubWF._Repositories;
+using LoggerLib;
 
 namespace LicenseHubWF.Presenters
 {
     public class MainPresenter
     {
         private IMainView mainView;
-        private Form activeForm;
+        private Form? activeForm;
+        private string? baseUrl;
+        private IFileLogger logger;
 
         public MainPresenter(IMainView mainView)
         {
             this.mainView = mainView;
+
+            // Events
             this.mainView.ShowRequestLicenseView += ShowRequestLicenseView;
+
+            logger = new FileLogger();
+            baseUrl = ApiRepository.GetAPIBaseUrl(logger);
+            if(baseUrl != null)
+            {
+                ApiRepository.InitializeClient(baseUrl);
+            }
+
         }
 
         private void ShowRequestLicenseView(object? sender, EventArgs e)
@@ -30,8 +43,8 @@ namespace LicenseHubWF.Presenters
             activeForm = (Form)view;
 
 
-            ILicenseRequestRepository repository = new LicenseRequestRepository("1234");
-            new LicenseRequestPresenter(view, repository);
+            ILicenseRequestRepository repository = new LicenseRequestRepository("1234", logger);
+            new LicenseRequestPresenter(view, repository, logger);
 
             mainView.OpenChildForm((Form)view);
 

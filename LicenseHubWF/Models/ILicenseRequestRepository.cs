@@ -9,7 +9,7 @@ namespace LicenseHubWF.Models
     public interface ILicenseRequestRepository
     {
         void Request(LicenseRequestModel licenseRequest);
-        IEnumerable<ClientModel> GetClients();
+        Task<IEnumerable<ClientModel>> GetClients();
         IEnumerable<PackageModel> GetPackages();
         string GetPCName();
         string GetRequestKey();

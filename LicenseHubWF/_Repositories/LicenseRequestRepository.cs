@@ -1,4 +1,5 @@
 ﻿using LicenseHubWF.Models;
+using LoggerLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,25 +10,35 @@ namespace LicenseHubWF._Repositories
 {
     public class LicenseRequestRepository : BaseRepository, ILicenseRequestRepository
     {
+        // Fields
+        private IFileLogger _logger;
+
         // Constructor
-        public LicenseRequestRepository(string sessionToken) 
+        public LicenseRequestRepository(string sessionToken, IFileLogger logger) 
         {
             this.sessionToken = sessionToken;
+            _logger = logger;
         }
 
         // Methods
-        public IEnumerable<ClientModel> GetClients()
+        public async Task<IEnumerable<ClientModel>> GetClients()
         {
-            var clientList = new List<ClientModel>();
+            
+            using (HttpResponseMessage response =  await ApiRepository.ApiClient.GetAsync("clients"))
+            {
+                _logger.LogInfo($"GetClients -> {response.RequestMessage}");
 
-            var client01 = new ClientModel() { ClientCode = "C1", ClientName = "Client 01" };
-            var client02 = new ClientModel() { ClientCode = "C2", ClientName = "Client 02" };
-            var client03 = new ClientModel() { ClientCode = "C3", ClientName = "Client 03" };
-            clientList.Add(client01);
-            clientList.Add(client02);
-            clientList.Add(client03);
+                if (response.IsSuccessStatusCode)
+                {
+                    List<ClientModel> clientList = await response.Content.ReadAsAsync<List<ClientModel>>();
 
-            return clientList;
+                    return clientList;
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
 
         }
 

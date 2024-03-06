@@ -9,5 +9,6 @@ namespace LicenseHubWF._Repositories
     public abstract class BaseRepository
     {
         protected string sessionToken;
+        
     }
 }

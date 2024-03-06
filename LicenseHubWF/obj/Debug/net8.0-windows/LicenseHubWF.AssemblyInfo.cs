@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LicenseHubWF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f596ac23a57b4c78b2bc9a5a8000ab7968ab8fdc")]
 [assembly: System.Reflection.AssemblyProductAttribute("LicenseHubWF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LicenseHubWF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

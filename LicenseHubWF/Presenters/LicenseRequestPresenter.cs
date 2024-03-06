@@ -16,24 +16,24 @@ namespace LicenseHubWF.Presenters
         private ILicenseRequestRepository repository;
         private IEnumerable<ClientModel> clientList;
         private IEnumerable<PackageModel> packageList;
-        private IFileLogger logger;
+        private IFileLogger _logger;
 
-        public LicenseRequestPresenter(ILicenseRequestView view, ILicenseRequestRepository repository)
+        public LicenseRequestPresenter(ILicenseRequestView view, ILicenseRequestRepository repository, IFileLogger logger)
         {
             this.view = view;
             this.repository = repository;
 
             // text logger
-            this.logger = new FileLogger();
+            _logger = logger;
 
             // Subscribe event handler methods to view events
-            this.view.RequestLicenseEvent += RequestLicense; 
+            this.view.RequestLicenseEvent += RequestLicense;
+            this.view.ResponseLicenseViewLoadEvent += LoadClients;
 
             // Set binding sources
             // ...
 
             // Load data to view
-            LoadClients();
             LoadRequestKey();
             LoadPCName();
             LoadPackages();
@@ -43,20 +43,20 @@ namespace LicenseHubWF.Presenters
         }
 
         // Methods
-        private void LoadClients()
+        private async void LoadClients(object? sender, EventArgs e)
         {
             try
             {
-                clientList = repository.GetClients();
+                clientList = await repository.GetClients();
                 view.SetClientList(clientList);
 
-                logger.LogInfo($"LoadClients -> Client list loaded.");
+                _logger.LogInfo($"LoadClients -> Client list loaded.");
             }
             catch (Exception ex)
             {
-                logger.LogError($"LoadClients -> {ex.Message}");
+                _logger.LogError($"LoadClients -> {ex.Message}");
             }
-       
+
         }
 
         private void LoadPackages()
@@ -66,11 +66,11 @@ namespace LicenseHubWF.Presenters
                 packageList = repository.GetPackages();
                 view.SetPackageList(packageList);
 
-                logger.LogInfo($"LoadPackages -> Package list loaded.");
+                _logger.LogInfo($"LoadPackages -> Package list loaded.");
             }
             catch (Exception ex)
             {
-                logger.LogError($"LoadPackages -> {ex.Message}");
+                _logger.LogError($"LoadPackages -> {ex.Message}");
             }
 
         }
@@ -81,11 +81,11 @@ namespace LicenseHubWF.Presenters
             {
                 view.PCName = repository.GetPCName();
 
-                logger.LogInfo($"LoadPCName -> PC name loaded.");
+                _logger.LogInfo($"LoadPCName -> PC name loaded.");
             }
             catch (Exception ex)
             {
-                logger.LogError($"LoadPCName -> {ex.Message}");
+                _logger.LogError($"LoadPCName -> {ex.Message}");
             }
         }
 
@@ -95,11 +95,11 @@ namespace LicenseHubWF.Presenters
             {
                 view.RequestKey = repository.GetRequestKey();
 
-                logger.LogInfo($"LoadRequestKey -> Request key loaded.");
+                _logger.LogInfo($"LoadRequestKey -> Request key loaded.");
             }
             catch (Exception ex)
             {
-                logger.LogError($"LoadRequestKey -> {ex.Message}");
+                _logger.LogError($"LoadRequestKey -> {ex.Message}");
             }
 
         }
@@ -108,11 +108,11 @@ namespace LicenseHubWF.Presenters
         {
             try
             {
-                logger.LogInfo($"RequestLicense -> License requested.");
+                _logger.LogInfo($"RequestLicense -> License requested.");
             }
             catch (Exception ex)
             {
-                logger.LogError($"RequestLicense -> {ex.Message}");
+                _logger.LogError($"RequestLicense -> {ex.Message}");
             }
             
 
