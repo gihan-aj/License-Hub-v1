@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "eLn5WuSHcejNEbC6Lx0E+F65KVfnQOQnNVVJmmtLsQecr8Bql67hhydra5d0McGozlLhzd6gd2xfkwsECE2WWg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Gihan\\source\\repos\\LicenseHubWF\\LicenseHubWF\\LicenseHubWF.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Gihan\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512",
+    "C:\\Users\\Gihan\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
