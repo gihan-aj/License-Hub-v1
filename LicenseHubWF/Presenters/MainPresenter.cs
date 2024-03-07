@@ -23,6 +23,7 @@ namespace LicenseHubWF.Presenters
 
             // Events
             this.mainView.ShowRequestLicenseView += ShowRequestLicenseView;
+            this.mainView.ShowLoginView += ShowLoginView;
 
             logger = new FileLogger();
             baseUrl = ApiRepository.GetAPIBaseUrl(logger);
@@ -31,6 +32,13 @@ namespace LicenseHubWF.Presenters
                 ApiRepository.InitializeClient(baseUrl);
             }
 
+        }
+
+        private void ShowLoginView(object? sender, EventArgs e)
+        {
+            ILoginView loginView = new LoginView();
+            ILoginRepository loginRepository = new LoginRepository(logger);
+            new LoginPresenter(loginView, loginRepository, logger);
         }
 
         private void ShowRequestLicenseView(object? sender, EventArgs e)

@@ -10,7 +10,7 @@ namespace LicenseHubWF.Models
     {
         void Request(LicenseRequestModel licenseRequest);
         Task<IEnumerable<ClientModel>> GetClients();
-        IEnumerable<PackageModel> GetPackages();
+        Task<IEnumerable<PackageModel>> GetPackages();
         string GetPCName();
         string GetRequestKey();
     }

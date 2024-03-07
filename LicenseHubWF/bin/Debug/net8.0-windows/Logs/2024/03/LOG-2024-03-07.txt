@@ -1,0 +1,144 @@
+2024-03-07 13:56:51 -> [INFO]  : GetAPIBaseUrl -> https://9je93.wiremockapi.cloud/api/
+2024-03-07 13:56:54 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-03-07 13:56:54 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-03-07 13:56:55 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-07 13:56:55 -> [ERROR] : LoadPackages -> Too Many Requests
+2024-03-07 13:56:55 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer 1234
+  Accept: application/json
+}
+2024-03-07 13:56:55 -> [INFO]  : LoadClients -> Client list loaded.
+2024-03-07 13:57:50 -> [INFO]  : GetAPIBaseUrl -> https://9je93.wiremockapi.cloud/api/
+2024-03-07 13:57:54 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-03-07 13:57:54 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-03-07 13:57:55 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-07 13:57:55 -> [INFO]  : LoadPackages -> Package list loaded.
+2024-03-07 13:57:55 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer 1234
+  Accept: application/json
+}
+2024-03-07 13:57:55 -> [ERROR] : LoadClients -> Too Many Requests
+2024-03-07 13:58:09 -> [INFO]  : GetAPIBaseUrl -> https://9je93.wiremockapi.cloud/api/
+2024-03-07 13:58:11 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-03-07 13:58:11 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-03-07 13:58:12 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-07 13:58:12 -> [INFO]  : LoadPackages -> Package list loaded.
+2024-03-07 13:58:12 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer 1234
+  Accept: application/json
+}
+2024-03-07 13:58:12 -> [INFO]  : LoadClients -> Client list loaded.
+2024-03-07 13:59:03 -> [INFO]  : GetAPIBaseUrl -> https://9je93.wiremockapi.cloud/api/
+2024-03-07 13:59:04 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-03-07 13:59:04 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-03-07 13:59:05 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-07 13:59:05 -> [INFO]  : LoadPackages -> Package list loaded.
+2024-03-07 13:59:05 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer 1234
+  Accept: application/json
+}
+2024-03-07 13:59:05 -> [INFO]  : LoadClients -> Client list loaded.
+2024-03-07 14:00:44 -> [INFO]  : GetAPIBaseUrl -> https://9je93.wiremockapi.cloud/api/
+2024-03-07 14:00:45 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-03-07 14:00:45 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-03-07 14:00:46 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: SessionToken 1234
+  Accept: application/json
+}
+2024-03-07 14:00:46 -> [INFO]  : LoadClients -> Client list loaded.
+2024-03-07 14:00:46 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-07 14:00:46 -> [INFO]  : LoadPackages -> Package list loaded.
+2024-03-07 14:00:51 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-03-07 14:00:51 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-03-07 14:00:51 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-07 14:00:51 -> [INFO]  : LoadPackages -> Package list loaded.
+2024-03-07 14:00:51 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: SessionToken 1234
+  Accept: application/json
+}
+2024-03-07 14:00:51 -> [INFO]  : LoadClients -> Client list loaded.
+2024-03-07 22:23:17 -> [INFO]  : GetAPIBaseUrl -> https://9je93.wiremockapi.cloud/api/
+2024-03-07 22:23:46 -> [INFO]  : Login -> Method: POST, RequestUri: 'https://9je93.wiremockapi.cloud/api/remote-user/login', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
+{
+  Accept: application/json
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 44
+}
+2024-03-07 22:23:46 -> [INFO]  : Login -> System.Net.Http.HttpConnectionResponseContent
+2024-03-07 22:23:46 -> [INFO]  : LoginAndGetSessionToken -> .
+2024-03-07 22:28:19 -> [INFO]  : GetAPIBaseUrl -> https://9je93.wiremockapi.cloud/api/
+2024-03-07 22:28:43 -> [INFO]  : Login -> Method: POST, RequestUri: 'https://9je93.wiremockapi.cloud/api/remote-user/login', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
+{
+  Accept: application/json
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 44
+}
+2024-03-07 22:28:43 -> [INFO]  : Login -> System.Net.Http.HttpConnectionResponseContent
+2024-03-07 22:28:43 -> [INFO]  : LoginAndGetSessionToken -> .
+2024-03-07 22:28:43 -> [INFO]  : LoginAndGetSessionToken -> user01 logged in with user@email.com.
+2024-03-07 22:28:43 -> [INFO]  : LoginAndGetSessionToken -> Session Token 1234567890.
+2024-03-07 22:30:02 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-03-07 22:30:02 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-03-07 22:30:03 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer 1234
+  Accept: application/json
+}
+2024-03-07 22:30:03 -> [INFO]  : LoadClients -> Client list loaded.
+2024-03-07 22:30:03 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-07 22:30:03 -> [INFO]  : LoadPackages -> Package list loaded.
+2024-03-07 22:31:00 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-03-07 22:31:00 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-03-07 22:31:01 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer 1234
+  Accept: application/json
+}
+2024-03-07 22:31:01 -> [INFO]  : LoadClients -> Client list loaded.
+2024-03-07 22:31:01 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-07 22:31:01 -> [INFO]  : LoadPackages -> Package list loaded.
+2024-03-07 22:34:17 -> [INFO]  : GetAPIBaseUrl -> https://9je93.wiremockapi.cloud/api/
+2024-03-07 22:34:33 -> [INFO]  : Login -> Method: POST, RequestUri: 'https://9je93.wiremockapi.cloud/api/remote-user/login', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
+{
+  Accept: application/json
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 44
+}
+2024-03-07 22:34:33 -> [INFO]  : Login -> System.Net.Http.HttpConnectionResponseContent
+2024-03-07 22:34:33 -> [INFO]  : LoginAndGetSessionToken -> login successful
+2024-03-07 22:34:33 -> [INFO]  : LoginAndGetSessionToken -> user01 logged in with user@email.com.
+2024-03-07 22:34:33 -> [INFO]  : LoginAndGetSessionToken -> Session Token 1234567890.
+2024-03-07 22:56:51 -> [INFO]  : GetAPIBaseUrl -> https://9je93.wiremockapi.cloud/api/
+2024-03-07 22:57:16 -> [INFO]  : GetAPIBaseUrl -> https://9je93.wiremockapi.cloud/api/
+2024-03-07 22:58:26 -> [INFO]  : GetAPIBaseUrl -> https://9je93.wiremockapi.cloud/api/
+2024-03-07 23:10:57 -> [INFO]  : GetAPIBaseUrl -> https://9je93.wiremockapi.cloud/api/

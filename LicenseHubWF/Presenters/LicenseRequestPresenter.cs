@@ -28,7 +28,6 @@ namespace LicenseHubWF.Presenters
 
             // Subscribe event handler methods to view events
             this.view.RequestLicenseEvent += RequestLicense;
-            this.view.ResponseLicenseViewLoadEvent += LoadClients;
 
             // Set binding sources
             // ...
@@ -36,6 +35,7 @@ namespace LicenseHubWF.Presenters
             // Load data to view
             LoadRequestKey();
             LoadPCName();
+            LoadClients();
             LoadPackages();
 
             // Show view
@@ -43,7 +43,7 @@ namespace LicenseHubWF.Presenters
         }
 
         // Methods
-        private async void LoadClients(object? sender, EventArgs e)
+        private async void LoadClients()
         {
             try
             {
@@ -59,11 +59,11 @@ namespace LicenseHubWF.Presenters
 
         }
 
-        private void LoadPackages()
+        private async void LoadPackages()
         {
             try
             {
-                packageList = repository.GetPackages();
+                packageList = await repository.GetPackages();
                 view.SetPackageList(packageList);
 
                 _logger.LogInfo($"LoadPackages -> Package list loaded.");

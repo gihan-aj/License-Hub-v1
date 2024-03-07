@@ -25,3 +25,4 @@ C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\bin\Debug\net8.0-windows\S
 C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
 C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\bin\Debug\net8.0-windows\Newtonsoft.Json.Bson.dll
 C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\obj\Debug\net8.0-windows\LicenseHubWF.sourcelink.json
+C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\obj\Debug\net8.0-windows\LicenseHubWF.Views.LoginView.resources

@@ -31,7 +31,7 @@ namespace LicenseHubWF.Views
 
         private void AssociateAndRaiseViewEvents()
         {
-            this.Load += delegate { ResponseLicenseViewLoadEvent?.Invoke(this, EventArgs.Empty); };
+            //this.Load += delegate { LoadClientsEvent?.Invoke(this, EventArgs.Empty);  LoadPackagesEvent?.Invoke(this, EventArgs.Empty);};
             btnRequest.Click += delegate { RequestLicenseEvent?.Invoke(this, EventArgs.Empty);  };
         }
 
@@ -87,7 +87,6 @@ namespace LicenseHubWF.Views
         // Events
 
         public event EventHandler RequestLicenseEvent;
-        public event EventHandler ResponseLicenseViewLoadEvent;
 
         // Methods
 

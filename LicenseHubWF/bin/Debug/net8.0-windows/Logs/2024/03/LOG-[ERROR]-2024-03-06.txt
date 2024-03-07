@@ -16,3 +16,15 @@ Via: 1.1 vegur
 2024-03-06 12:04:51 -> [ERROR] : LoadClients -> Not Found
 2024-03-06 12:06:39 -> [ERROR] : System.Net.Http.HttpConnectionResponseContent -> Not Found
 2024-03-06 12:06:39 -> [ERROR] : LoadClients -> Not Found
+2024-03-06 18:22:35 -> [ERROR] : LoadClients -> No MediaTypeFormatter is available to read an object of type 'List`1' from content with media type 'application/octet-stream'.
+2024-03-06 18:23:15 -> [ERROR] : LoadClients -> No MediaTypeFormatter is available to read an object of type 'List`1' from content with media type 'application/octet-stream'.
+2024-03-06 18:29:20 -> [ERROR] : LoadClients -> No MediaTypeFormatter is available to read an object of type 'List`1' from content with media type 'application/octet-stream'.
+2024-03-06 18:29:36 -> [ERROR] : LoadClients -> No MediaTypeFormatter is available to read an object of type 'List`1' from content with media type 'application/octet-stream'.
+2024-03-06 18:30:23 -> [ERROR] : LoadClients -> No MediaTypeFormatter is available to read an object of type 'List`1' from content with media type 'application/octet-stream'.
+2024-03-06 18:34:21 -> [ERROR] : LoadClients -> No MediaTypeFormatter is available to read an object of type 'List`1' from content with media type 'application/octet-stream'.
+2024-03-06 18:45:19 -> [ERROR] : LoadClients -> Too Many Requests
+2024-03-06 19:08:35 -> [ERROR] : LoadPackages -> Too Many Requests
+2024-03-06 19:19:22 -> [ERROR] : LoadClients -> Too Many Requests
+2024-03-06 19:23:38 -> [ERROR] : LoadPackages -> Too Many Requests
+2024-03-06 20:01:29 -> [ERROR] : LoadClients -> Too Many Requests
+2024-03-06 20:02:37 -> [ERROR] : LoadClients -> Too Many Requests

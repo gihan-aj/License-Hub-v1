@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LicenseHubWF._Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,10 +19,17 @@ namespace LicenseHubWF.Views
 
             // Generate events
             btnRequestLicense.Click += delegate { ShowRequestLicenseView?.Invoke(this, EventArgs.Empty); };
+            btnLogin.Click += delegate { ShowLoginView?.Invoke(this, EventArgs.Empty); };
 
-            btnClose.Click += delegate { this.Close(); };
+            btnClose.Click += delegate { this.Dispose(); };
             btnMinimize.Click += delegate { this.WindowState = FormWindowState.Minimized; };
             
+        }
+
+        public string UserName 
+        {
+            get => lblUsername.Text;
+            set { lblUsername.Text = value; }
         }
 
         public event EventHandler ShowLicenseView;

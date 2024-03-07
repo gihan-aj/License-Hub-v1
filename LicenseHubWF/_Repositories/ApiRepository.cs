@@ -1,4 +1,6 @@
-﻿using LoggerLib;
+﻿using LicenseHubWF.Models;
+using LoggerLib;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -11,8 +13,14 @@ namespace LicenseHubWF._Repositories
 {
     public static class ApiRepository
     {
+        // Events
+        private static event EventHandler UserChanged;
+
         // Properties
         public static HttpClient? ApiClient { get; set; }
+        public static string? SessionToken { get; set; }
+        public static UserModel? User { get; set; }
+        public static bool Connectivity {  get; set; } = false;
 
         // Methods
         public static void InitializeClient(string baseUrl)
