@@ -8,7 +8,6 @@ namespace LicenseHubWF.Views
 {
     public interface IMainView
     {
-        public string UserName { get; set; }
 
         event EventHandler ShowLicenseView;
         event EventHandler ShowRequestLicenseView;
@@ -16,6 +15,7 @@ namespace LicenseHubWF.Views
         event EventHandler ShowRequestKeyView;
         event EventHandler ShowConfigurationView;
         event EventHandler ShowLoginView;
+        event EventHandler LogoutEvent;
 
         void OpenChildForm(Form childForm);
     }

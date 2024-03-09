@@ -20,16 +20,47 @@ namespace LicenseHubWF.Views
             // Generate events
             btnRequestLicense.Click += delegate { ShowRequestLicenseView?.Invoke(this, EventArgs.Empty); };
             btnLogin.Click += delegate { ShowLoginView?.Invoke(this, EventArgs.Empty); };
+            btnLogout.Click += delegate { LogoutEvent?.Invoke(this, EventArgs.Empty); };
+
+            ApiRepository.UserChanged += OnUserChanged;
+            ApiRepository.ConnectivityChanged += OnConnectivityChanged;
 
             btnClose.Click += delegate { this.Dispose(); };
             btnMinimize.Click += delegate { this.WindowState = FormWindowState.Minimized; };
-            
+
+            btnLogin.Visible = true;
+            btnLogout.Visible = false;
+     
         }
 
-        public string UserName 
+        private void OnConnectivityChanged(object? sender, EventArgs e)
         {
-            get => lblUsername.Text;
-            set { lblUsername.Text = value; }
+            if (ApiRepository.Connectivity)
+            {
+                iconConnectivity.Visible = true;
+                iconNoConnectivity.Visible = false;
+            }
+            else
+            {
+                iconConnectivity.Visible = false;
+                iconNoConnectivity.Visible = true;
+            }
+        }
+
+        private void OnUserChanged(object? sender, EventArgs e)
+        {
+            if(ApiRepository.User != null)
+            {
+                lblUsername.Text = ApiRepository.User.Name;
+                btnLogin.Visible = false;
+                btnLogout.Visible = true;
+            }
+            else
+            {
+                lblUsername.Text = "Guest";
+                btnLogin.Visible = true;
+                btnLogout.Visible = false;
+            }
         }
 
         public event EventHandler ShowLicenseView;
@@ -38,6 +69,7 @@ namespace LicenseHubWF.Views
         public event EventHandler ShowRequestKeyView;
         public event EventHandler ShowConfigurationView;
         public event EventHandler ShowLoginView;
+        public event EventHandler LogoutEvent;
 
         public void OpenChildForm(Form childForm)
         {

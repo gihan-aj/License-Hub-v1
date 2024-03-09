@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace LicenseHubWF.Views
 {
-    public interface ILoginView
+    public interface IConfirmationView
     {
-        public string Email { get; set; }
-        public string Password { get; set; }
+        string? WarningMessage { set; }
+        bool IsAccepted { get; set; }
 
-        event EventHandler LoginEvent;
+        event EventHandler AcceptOrCancelEvent;
 
         void Show();
         void Close();
-        void Dispose();
     }
 }

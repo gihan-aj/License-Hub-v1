@@ -113,7 +113,7 @@ namespace LicenseHubWF.Views
         private static LicenseRequestView instance;
         public static LicenseRequestView GetInstance()
         {
-            //if( instance == null || instance.IsDisposed)
+            //if (instance == null || instance.IsDisposed)
             //{
             //    instance = new LicenseRequestView();
             //    instance.MdiParent = parentContainer;

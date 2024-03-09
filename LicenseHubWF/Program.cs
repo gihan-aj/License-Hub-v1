@@ -18,8 +18,13 @@ namespace LicenseHubWF
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
+            IFileLogger logger = new FileLogger();
+            ApiRepository.LoadAppSettings(logger);
+
             IMainView view = new MainView();
-            new MainPresenter(view);
+            IMainRepository repository = new MainRepository(logger);
+            new MainPresenter(view, repository, logger);
+
             Application.Run((Form)view);
         }
     }

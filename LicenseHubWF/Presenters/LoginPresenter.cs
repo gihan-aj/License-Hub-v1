@@ -59,7 +59,8 @@ namespace LicenseHubWF.Presenters
             }
             catch (Exception ex)
             {
-                _logger.LogError($"LoadPackages -> {ex.Message}");
+                await ApiRepository.IsConnected(_logger);
+                _logger.LogError($"LoginAndGetSessionToken -> {ex.Message}");
             }
 
 

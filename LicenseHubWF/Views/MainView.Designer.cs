@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panelSideBar = new Panel();
+            btnLogout = new FontAwesome.Sharp.IconButton();
             btnLogin = new FontAwesome.Sharp.IconButton();
             btnRequestLicense = new FontAwesome.Sharp.IconButton();
             btnViewLicense = new FontAwesome.Sharp.IconButton();
@@ -51,6 +52,7 @@
             // panelSideBar
             // 
             panelSideBar.BackColor = Color.FromArgb(88, 40, 65);
+            panelSideBar.Controls.Add(btnLogout);
             panelSideBar.Controls.Add(btnLogin);
             panelSideBar.Controls.Add(btnRequestLicense);
             panelSideBar.Controls.Add(btnViewLicense);
@@ -61,6 +63,26 @@
             panelSideBar.Name = "panelSideBar";
             panelSideBar.Size = new Size(220, 600);
             panelSideBar.TabIndex = 0;
+            // 
+            // btnLogout
+            // 
+            btnLogout.FlatAppearance.BorderSize = 0;
+            btnLogout.FlatStyle = FlatStyle.Flat;
+            btnLogout.Font = new Font("Segoe UI", 12F);
+            btnLogout.IconChar = FontAwesome.Sharp.IconChar.SignOut;
+            btnLogout.IconColor = Color.FromArgb(249, 158, 76);
+            btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnLogout.IconSize = 30;
+            btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLogout.Location = new Point(0, 540);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Padding = new Padding(10, 0, 0, 0);
+            btnLogout.Size = new Size(220, 60);
+            btnLogout.TabIndex = 4;
+            btnLogout.Text = "Log out";
+            btnLogout.TextAlign = ContentAlignment.MiddleLeft;
+            btnLogout.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnLogout.UseVisualStyleBackColor = true;
             // 
             // btnLogin
             // 
@@ -197,14 +219,15 @@
             // 
             // lblUsername
             // 
-            lblUsername.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            lblUsername.AutoSize = true;
+            lblUsername.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblUsername.FlatStyle = FlatStyle.Flat;
             lblUsername.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblUsername.Location = new Point(507, 81);
+            lblUsername.Location = new Point(389, 78);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(82, 17);
+            lblUsername.RightToLeft = RightToLeft.No;
+            lblUsername.Size = new Size(200, 17);
             lblUsername.TabIndex = 2;
-            lblUsername.Text = "Guest Mode";
+            lblUsername.Text = "Guest";
             lblUsername.TextAlign = ContentAlignment.MiddleRight;
             // 
             // btnMinimize
@@ -264,7 +287,6 @@
             Text = "MainView";
             panelSideBar.ResumeLayout(false);
             panelTopBar.ResumeLayout(false);
-            panelTopBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconNoConnectivity).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconConnectivity).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
@@ -286,5 +308,6 @@
         private Label lblUsername;
         private FontAwesome.Sharp.IconPictureBox iconConnectivity;
         private FontAwesome.Sharp.IconPictureBox iconNoConnectivity;
+        private FontAwesome.Sharp.IconButton btnLogout;
     }
 }
