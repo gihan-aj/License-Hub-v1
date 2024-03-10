@@ -15,18 +15,13 @@ namespace LicenseHubWF.Views
 {
     public partial class LicenseRequestView : Form , ILicenseRequestView
     {
-        enum Version
-        {
-            Trial,
-            Full
-        }
-
         public LicenseRequestView()
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
 
             checkedListBoxPackages.CheckOnClick = true;
+            this.TopLevel = false;
         }
 
         private void AssociateAndRaiseViewEvents()
@@ -129,14 +124,19 @@ namespace LicenseHubWF.Views
             //    instance.BringToFront();
             //}
 
-            if (instance != null)
+            //if (instance != null)
+            //{
+            //    instance.Dispose();
+            //}
+
+            //instance = new LicenseRequestView();
+            //instance.TopLevel = false;
+
+            //return instance;
+            if( instance == null)
             {
-                instance.Dispose();
+                instance = new LicenseRequestView();
             }
-
-            instance = new LicenseRequestView();
-            instance.TopLevel = false;
-
             return instance;
         }
 

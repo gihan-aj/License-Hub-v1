@@ -2,11 +2,15 @@
 using LoggerLib;
 using Microsoft.Win32;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Configuration;
 using System.Linq;
 using System.Net.Http.Headers;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,13 +21,16 @@ namespace LicenseHubWF._Repositories
         // Fields
         private static UserModel? _user;
         private static bool _connectivity = false;
-        private static Dictionary<string, string> _appSettings;
+        private static Dictionary<string, string> _appSettings = new Dictionary<string, string>();
+        private static AppSettingsModel _settings = new AppSettingsModel();
+        private static string _appSetttingsPath = string.Empty;
 
         // Events
         public static event EventHandler UserChanged;
         public static event EventHandler ConnectivityChanged; 
 
         // Properties
+
         public static HttpClient? ApiClient { get; set; }
         public static string? SessionToken { get; set; }
         public static UserModel? User 
@@ -47,6 +54,95 @@ namespace LicenseHubWF._Repositories
         }
 
         // Methods
+        public static void LoadAppSettingsFile(IFileLogger logger)
+        {
+            try
+            {
+                //string path = @".\AppSettings.json";
+                _appSetttingsPath = Path.Combine(Directory.GetCurrentDirectory(), "AppSettings.json");
+                if (!File.Exists(_appSetttingsPath))
+                {
+                    var initialSettings = new AppSettingsModel();
+
+                    SaveAppSettings(initialSettings);
+
+                    logger.LogInfo($"CreateAndReadAppSettingsFile -> App settings created.");
+                }
+                else
+                {
+                    string jsonContent = File.ReadAllText(_appSetttingsPath);
+                    _settings = JsonConvert.DeserializeObject<AppSettingsModel>(jsonContent);
+                    logger.LogInfo($"CreateAndReadAppSettingsFile -> App settings loaded.");
+                }
+            }
+            catch (JsonException ex)
+            {
+                logger.LogError($"CreateAndReadAppSettingsFile -> {ex.Message}");
+            }
+
+        }
+
+        public static void UpdateAppSettings(string property, string value, IFileLogger logger)
+        {
+            try
+            {
+                PropertyInfo propertyInfo = _settings.GetType().GetProperty(property);
+                if (propertyInfo != null && propertyInfo.CanWrite)
+                {
+                    propertyInfo.SetValue(_settings, value);
+                }
+                else
+                {
+                    logger.LogError($"UpdateAppSettings -> Property ({property}) not found or is read-only");
+                }
+
+                SaveAppSettings(_settings);
+
+                
+            }
+            catch(Exception ex)
+            {
+                logger.LogError($"UpdateAppSettings -> Property ({property}) : {ex.Message}");
+            }
+        }
+
+        public static T GetSetting<T>(string property)
+        {
+            try
+            {
+                PropertyInfo propertyInfo = _settings.GetType().GetProperty(property);
+                if (propertyInfo != null && propertyInfo.CanRead)
+                {
+                    return (T)propertyInfo.GetValue(_settings);
+                }
+                else
+                {
+                    return default(T);
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        private static void SaveAppSettings(AppSettingsModel settings)
+        {
+            DefaultContractResolver contractResolver = new DefaultContractResolver
+            {
+                NamingStrategy = new CamelCaseNamingStrategy()
+            };
+
+            string jsonString = JsonConvert.SerializeObject(settings, new JsonSerializerSettings
+            {
+                ContractResolver = contractResolver,
+                Formatting = Formatting.Indented,
+            });
+
+            File.WriteAllText(_appSetttingsPath, jsonString);
+        }
+
+        // Initiate HttpClient at the start
         public static void InitializeClient(string baseUrl)
         {
             ApiClient = new HttpClient();
@@ -54,6 +150,12 @@ namespace LicenseHubWF._Repositories
             ApiClient.DefaultRequestHeaders.Accept.Clear();
             ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
+
+
+
+
+
+
 
         public static async Task IsConnected(IFileLogger logger)
         {
@@ -77,42 +179,42 @@ namespace LicenseHubWF._Repositories
             }
         }
 
-        public static string? GetAppSetting(string key)
-        {
-            return _appSettings.ContainsKey(key) ? _appSettings[key] : null; 
-        }
+        //public static string? GetAppSetting(string key)
+        //{
+        //    return _appSettings.ContainsKey(key) ? _appSettings[key] : null; 
+        //}
 
-        public static void LoadAppSettings(IFileLogger logger)
-        {
-            var appSettings = new Dictionary<string, string>();
+        //public static void LoadAppSettings(IFileLogger logger)
+        //{
 
-            foreach (string key in ConfigurationManager.AppSettings)
-            {
-                var value = ConfigurationManager.AppSettings[key];
-                appSettings[key] = value;
-                logger.LogInfo($"LoadAppSettings -> {key} : {value}");
-            }
+        //    foreach (string key in ConfigurationManager.AppSettings)
+        //    {
+        //        var value = ConfigurationManager.AppSettings[key];
+        //        _appSettings[key] = value;
+        //        logger.LogInfo($"LoadAppSettings -> {key} : {value}");
+        //    }
 
-            _appSettings = appSettings;
-        }
+        //}        
 
-        public static string? GetAPIBaseUrl(IFileLogger logger)
-        {
-            string? apiBaseUrl; 
 
-            if (ConfigurationManager.AppSettings.AllKeys.Contains("ApiBaseUrl"))
-            {
-                apiBaseUrl = ConfigurationManager.AppSettings["ApiBaseUrl"];
-                logger.LogInfo($"GetAPIBaseUrl -> {apiBaseUrl}");
-            }
-            else
-            {
-                apiBaseUrl = null;
-                logger.LogError($"GetAPIBaseUrl -> Server Address is missing in the configuration.");
-            }
+        //public static void UpdateSetting(string key, string value)
+        //{
+        //    var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
-            return apiBaseUrl;
-        }
+        //    if (config.AppSettings.Settings[key] != null)
+        //    {
+        //        config.AppSettings.Settings[key].Value = value;
+        //    }
+        //    else
+        //    {
+        //        config.AppSettings.Settings.Add(key, value);
+        //    }
+
+        //    config.Save(ConfigurationSaveMode.Modified);
+
+        //    ConfigurationManager.RefreshSection("appSetting");
+
+        //} 
 
     }
 }

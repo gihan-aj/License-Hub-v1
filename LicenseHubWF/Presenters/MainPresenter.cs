@@ -26,19 +26,59 @@ namespace LicenseHubWF.Presenters
             this.mainRepository = mainRepository;
             this.logger = logger;
 
+            
+
             // Events
+            this.mainView.ShowLicenseView += ShowLicense;
             this.mainView.ShowRequestLicenseView += ShowRequestLicenseView;
             this.mainView.ShowLoginView += ShowLoginView;
             this.mainView.LogoutEvent += LogoutAndRemoveSessionToken;
 
             logger = new FileLogger();
-            baseUrl = ApiRepository.GetAppSetting("ApiBaseUrl");
+            baseUrl = ApiRepository.GetSetting<string>("ApiBaseUrl");
+           
             if(baseUrl != null)
             {
                 ApiRepository.InitializeClient(baseUrl);
                 ApiRepository.IsConnected(logger);
             }
 
+            // License view
+
+
+            // License request
+
+
+        }
+
+        private void ShowLicense(object? sender, EventArgs e)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Dispose();
+            }
+
+            ILicenseView licenseView = new LicenseView();
+            ILicenseViewRepository licenseViewRepository = new LicenseViewRepository(logger);
+            new LicenseViewPresenter(licenseView, licenseViewRepository, logger);
+
+            activeForm = (Form)licenseView;
+            mainView.OpenChildForm((Form)licenseView);
+        }
+
+        private void ShowRequestLicenseView(object? sender, EventArgs e)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Dispose();
+            }
+
+            ILicenseRequestView licenseRequestView = new LicenseRequestView();
+            ILicenseRequestRepository licenseRequestRepository = new LicenseRequestRepository(logger);
+            new LicenseRequestPresenter(licenseRequestView, licenseRequestRepository, logger);
+
+            activeForm = (Form)licenseRequestView;
+            mainView.OpenChildForm((Form)licenseRequestView);
         }
 
         private async void LogoutAndRemoveSessionToken(object? sender, EventArgs e)
@@ -46,7 +86,7 @@ namespace LicenseHubWF.Presenters
             try
             {
                 IConfirmationView confirmationView = new ConfirmationView();
-                confirmationView.WarningMessage = ApiRepository.GetAppSetting("LogoutConfirmationMessage");
+                confirmationView.WarningMessage = ApiRepository.GetSetting<string>("LogoutConfirmationMessage");
                 confirmationView.Show();
 
                 confirmationView.AcceptOrCancelEvent += async delegate 
@@ -85,21 +125,6 @@ namespace LicenseHubWF.Presenters
             new LoginPresenter(loginView, loginRepository, logger);
         }
 
-        private void ShowRequestLicenseView(object? sender, EventArgs e)
-        {
-            if(activeForm != null)
-            {
-                activeForm.Close();
-            }
-            ILicenseRequestView view = LicenseRequestView.GetInstance();
-            activeForm = (Form)view;
 
-
-            ILicenseRequestRepository repository = new LicenseRequestRepository("1234", logger);
-            new LicenseRequestPresenter(view, repository, logger);
-
-            mainView.OpenChildForm((Form)view);
-
-        }
     }
 }

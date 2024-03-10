@@ -134,7 +134,7 @@
             textBoxRequestKey.Location = new Point(40, 325);
             textBoxRequestKey.Name = "textBoxRequestKey";
             textBoxRequestKey.ReadOnly = true;
-            textBoxRequestKey.Size = new Size(280, 25);
+            textBoxRequestKey.Size = new Size(600, 25);
             textBoxRequestKey.TabIndex = 6;
             // 
             // checkedListBoxPackages
@@ -144,7 +144,7 @@
             checkedListBoxPackages.FormattingEnabled = true;
             checkedListBoxPackages.Location = new Point(360, 70);
             checkedListBoxPackages.Name = "checkedListBoxPackages";
-            checkedListBoxPackages.Size = new Size(280, 282);
+            checkedListBoxPackages.Size = new Size(280, 242);
             checkedListBoxPackages.TabIndex = 7;
             // 
             // labelPackages

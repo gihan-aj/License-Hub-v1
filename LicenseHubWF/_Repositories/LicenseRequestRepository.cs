@@ -17,9 +17,8 @@ namespace LicenseHubWF._Repositories
         private IFileLogger _logger;
 
         // Constructor
-        public LicenseRequestRepository(string sessionToken, IFileLogger logger) 
+        public LicenseRequestRepository(IFileLogger logger) 
         {
-            this.sessionToken = sessionToken;
             _logger = logger;
         }
 

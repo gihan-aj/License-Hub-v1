@@ -18,6 +18,7 @@ namespace LicenseHubWF.Views
             InitializeComponent();
 
             // Generate events
+            btnViewLicense.Click += delegate { ShowLicenseView?.Invoke(this, EventArgs.Empty); };
             btnRequestLicense.Click += delegate { ShowRequestLicenseView?.Invoke(this, EventArgs.Empty); };
             btnLogin.Click += delegate { ShowLoginView?.Invoke(this, EventArgs.Empty); };
             btnLogout.Click += delegate { LogoutEvent?.Invoke(this, EventArgs.Empty); };
@@ -75,6 +76,8 @@ namespace LicenseHubWF.Views
         {
             this.panelChildFormWindow.Controls.Add(childForm);
             this.panelChildFormWindow.Tag = childForm;
+            childForm.Show();
+ 
         }
     }
 }

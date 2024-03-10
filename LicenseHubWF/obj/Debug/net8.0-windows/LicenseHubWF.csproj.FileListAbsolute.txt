@@ -27,3 +27,4 @@ C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\bin\Debug\net8.0-windows\N
 C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\obj\Debug\net8.0-windows\LicenseHubWF.sourcelink.json
 C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\obj\Debug\net8.0-windows\LicenseHubWF.Views.LoginView.resources
 C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\obj\Debug\net8.0-windows\LicenseHubWF.Views.ConfirmationView.resources
+C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\obj\Debug\net8.0-windows\LicenseHubWF.Views.LicenseView.resources

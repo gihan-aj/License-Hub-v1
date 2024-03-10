@@ -39,7 +39,7 @@ namespace LicenseHubWF.Presenters
             LoadPackages();
 
             // Show view
-            this.view.Show();
+            //this.view.Show();
         }
 
         // Methods
