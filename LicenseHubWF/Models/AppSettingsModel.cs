@@ -9,13 +9,23 @@ namespace LicenseHubWF.Models
     public class AppSettingsModel
     {
         private string _apiBaseUrl = "https://9je93.wiremockapi.cloud/api/";
+
         private string _dateFormat = "yyyy-MM-dd";
+
         private string _messageBoxTitleConfirmation = "Are you sure ?";
+
         private string _messageBoxTitleInfo = "Information";
+
         private string _messageBoxTitleError = "Error";
+
         private string _licenseFilePath = AppDomain.CurrentDomain.BaseDirectory;
+
+        private string _logoutSuccessMessage = "Logout Successfull.";
+
         private string _licenseValid = "This license is valid";
+
         private string _licenseInvalid = "This license is invalid";
+
         private string _logoutConfirmationMessage = "Are you sure you want to logout?";
 
         public string ApiBaseUrl { get => _apiBaseUrl; set => _apiBaseUrl = value; }
@@ -27,5 +37,6 @@ namespace LicenseHubWF.Models
         public string MessageBoxTitleConfirmation { get => _messageBoxTitleConfirmation; set => _messageBoxTitleConfirmation = value; }
         public string MessageBoxTitleInfo { get => _messageBoxTitleInfo; set => _messageBoxTitleInfo = value; }
         public string MessageBoxTitleError { get => _messageBoxTitleError; set => _messageBoxTitleError = value; }
+        public string LogoutSuccessMessage { get => _logoutSuccessMessage; set => _logoutSuccessMessage = value; }
     }
 }

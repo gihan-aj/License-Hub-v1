@@ -108,6 +108,13 @@ namespace LicenseHubWF.Presenters
 
                                 logger.LogInfo($"LogoutAndRemoveSessionToken -> Session Token removed.");
 
+                                IMessageBoxView confirmView = new MessageBoxView()
+                                {
+                                    Title = "Info",
+                                    Message = ApiRepository.GetSetting<string>("LogoutSuccessMessage")
+                                };
+                                confirmView.Show();
+
                             }
                         }
                     }
@@ -115,6 +122,12 @@ namespace LicenseHubWF.Presenters
             }
             catch (Exception ex)
             {
+                IMessageBoxView confirmView = new MessageBoxView()
+                {
+                    Title = "Error",
+                    Message = ex.Message
+                };
+                confirmView.Show();
                 await ApiRepository.IsConnected(logger);
                 logger.LogError($"LogoutAndRemoveSessionToken -> {ex.Message}");
             }

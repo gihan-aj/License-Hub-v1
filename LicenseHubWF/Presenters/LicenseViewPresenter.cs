@@ -69,6 +69,10 @@ namespace LicenseHubWF.Presenters
             }
             catch (Exception ex)
             {
+                IMessageBoxView confirmView = new MessageBoxView();
+                confirmView.Title = "Error";
+                confirmView.Message = ex.Message;
+                confirmView.Show();
                 _logger.LogError($"BrowseLicenseFile -> {ex.Message}");
             }
 

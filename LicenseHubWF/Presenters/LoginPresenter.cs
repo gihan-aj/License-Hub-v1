@@ -60,6 +60,12 @@ namespace LicenseHubWF.Presenters
             catch (Exception ex)
             {
                 await ApiRepository.IsConnected(_logger);
+                IMessageBoxView confirmView = new MessageBoxView()
+                {
+                    Title = "Error",
+                    Message = ex.Message
+                };
+                confirmView.Show();
                 _logger.LogError($"LoginAndGetSessionToken -> {ex.Message}");
             }
 

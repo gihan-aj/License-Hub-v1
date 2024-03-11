@@ -54,6 +54,10 @@ namespace LicenseHubWF.Presenters
             }
             catch (Exception ex)
             {
+                IMessageBoxView confirmView = new MessageBoxView();
+                confirmView.Title = "Error";
+                confirmView.Message = ex.Message;
+                confirmView.Show();
                 _logger.LogError($"LoadClients -> {ex.Message}");
             }
 
@@ -70,6 +74,10 @@ namespace LicenseHubWF.Presenters
             }
             catch (Exception ex)
             {
+                IMessageBoxView confirmView = new MessageBoxView();
+                confirmView.Title = "Error";
+                confirmView.Message = ex.Message;
+                confirmView.Show();
                 _logger.LogError($"LoadPackages -> {ex.Message}");
             }
 
@@ -85,6 +93,10 @@ namespace LicenseHubWF.Presenters
             }
             catch (Exception ex)
             {
+                IMessageBoxView confirmView = new MessageBoxView();
+                confirmView.Title = "Error";
+                confirmView.Message = ex.Message;
+                confirmView.Show();
                 _logger.LogError($"LoadPCName -> {ex.Message}");
             }
         }
@@ -99,6 +111,10 @@ namespace LicenseHubWF.Presenters
             }
             catch (Exception ex)
             {
+                IMessageBoxView confirmView = new MessageBoxView();
+                confirmView.Title = "Error";
+                confirmView.Message = ex.Message;
+                confirmView.Show();
                 _logger.LogError($"LoadRequestKey -> {ex.Message}");
             }
 
@@ -112,6 +128,13 @@ namespace LicenseHubWF.Presenters
             }
             catch (Exception ex)
             {
+                IMessageBoxView confirmView = new MessageBoxView()
+                {
+                    Title = "Error",
+                    Message = ex.Message
+                };
+                confirmView.Show();
+
                 _logger.LogError($"RequestLicense -> {ex.Message}");
             }
             
