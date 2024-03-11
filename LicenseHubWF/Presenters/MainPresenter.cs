@@ -85,13 +85,15 @@ namespace LicenseHubWF.Presenters
         {
             try
             {
-                IConfirmationView confirmationView = new ConfirmationView();
-                confirmationView.WarningMessage = ApiRepository.GetSetting<string>("LogoutConfirmationMessage");
-                confirmationView.Show();
 
-                confirmationView.AcceptOrCancelEvent += async delegate 
+                IMessageBoxView confirmView = new MessageBoxView();
+                confirmView.Title = "Confirmation";
+                confirmView.Message = ApiRepository.GetSetting<string>("LogoutConfirmationMessage");
+                confirmView.Show();
+
+                confirmView.ClickEvent += async delegate
                 {
-                    if (confirmationView.IsAccepted)
+                    if (confirmView.IsAccepted)
                     {
                         LogoutModel logoutDetails = await mainRepository.Logout();
 

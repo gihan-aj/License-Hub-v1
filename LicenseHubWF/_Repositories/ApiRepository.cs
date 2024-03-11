@@ -21,7 +21,6 @@ namespace LicenseHubWF._Repositories
         // Fields
         private static UserModel? _user;
         private static bool _connectivity = false;
-        private static Dictionary<string, string> _appSettings = new Dictionary<string, string>();
         private static AppSettingsModel _settings = new AppSettingsModel();
         private static string _appSetttingsPath = string.Empty;
 
@@ -150,12 +149,6 @@ namespace LicenseHubWF._Repositories
             ApiClient.DefaultRequestHeaders.Accept.Clear();
             ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
-
-
-
-
-
-
 
         public static async Task IsConnected(IFileLogger logger)
         {

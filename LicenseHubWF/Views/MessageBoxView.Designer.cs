@@ -1,6 +1,6 @@
 ﻿namespace LicenseHubWF.Views
 {
-    partial class ConfirmationView
+    partial class MessageBoxView
     {
         /// <summary>
         /// Required designer variable.
@@ -29,50 +29,51 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label1 = new Label();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            messageBoxIcon = new FontAwesome.Sharp.IconPictureBox();
+            messageBoxTitle = new Label();
             btnAccept = new FontAwesome.Sharp.IconButton();
             btnDecline = new FontAwesome.Sharp.IconButton();
-            txtWarningMessage = new TextBox();
+            btnOk = new FontAwesome.Sharp.IconButton();
+            lblMessage = new Label();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)messageBoxIcon).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(88, 40, 65);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(iconPictureBox1);
+            panel1.Controls.Add(messageBoxIcon);
+            panel1.Controls.Add(messageBoxTitle);
             panel1.Dock = DockStyle.Top;
             panel1.ForeColor = Color.FromArgb(249, 158, 76);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(350, 113);
-            panel1.TabIndex = 0;
+            panel1.Size = new Size(350, 99);
+            panel1.TabIndex = 1;
             // 
-            // label1
+            // messageBoxIcon
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(117, 76);
-            label1.Name = "label1";
-            label1.Size = new Size(116, 21);
-            label1.TabIndex = 1;
-            label1.Text = "Are you sure ?";
+            messageBoxIcon.BackColor = Color.FromArgb(88, 40, 65);
+            messageBoxIcon.ForeColor = Color.FromArgb(249, 158, 76);
+            messageBoxIcon.IconChar = FontAwesome.Sharp.IconChar.CircleExclamation;
+            messageBoxIcon.IconColor = Color.FromArgb(249, 158, 76);
+            messageBoxIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            messageBoxIcon.IconSize = 40;
+            messageBoxIcon.Location = new Point(155, 12);
+            messageBoxIcon.Name = "messageBoxIcon";
+            messageBoxIcon.Size = new Size(40, 40);
+            messageBoxIcon.TabIndex = 2;
+            messageBoxIcon.TabStop = false;
             // 
-            // iconPictureBox1
+            // messageBoxTitle
             // 
-            iconPictureBox1.BackColor = Color.FromArgb(88, 40, 65);
-            iconPictureBox1.ForeColor = Color.FromArgb(249, 158, 76);
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.CircleExclamation;
-            iconPictureBox1.IconColor = Color.FromArgb(249, 158, 76);
-            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 40;
-            iconPictureBox1.Location = new Point(155, 25);
-            iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(40, 40);
-            iconPictureBox1.TabIndex = 0;
-            iconPictureBox1.TabStop = false;
+            messageBoxTitle.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            messageBoxTitle.Location = new Point(0, 55);
+            messageBoxTitle.Name = "messageBoxTitle";
+            messageBoxTitle.Size = new Size(350, 24);
+            messageBoxTitle.TabIndex = 1;
+            messageBoxTitle.Text = "Are you sure ?";
+            messageBoxTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnAccept
             // 
@@ -84,10 +85,10 @@
             btnAccept.IconChar = FontAwesome.Sharp.IconChar.None;
             btnAccept.IconColor = Color.FromArgb(249, 158, 76);
             btnAccept.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnAccept.Location = new Point(33, 177);
+            btnAccept.Location = new Point(21, 185);
             btnAccept.Name = "btnAccept";
             btnAccept.Size = new Size(125, 40);
-            btnAccept.TabIndex = 2;
+            btnAccept.TabIndex = 6;
             btnAccept.Text = "Yes";
             btnAccept.UseVisualStyleBackColor = false;
             // 
@@ -101,57 +102,69 @@
             btnDecline.IconChar = FontAwesome.Sharp.IconChar.None;
             btnDecline.IconColor = Color.FromArgb(249, 158, 76);
             btnDecline.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnDecline.Location = new Point(191, 177);
+            btnDecline.Location = new Point(203, 185);
             btnDecline.Name = "btnDecline";
             btnDecline.Size = new Size(125, 40);
-            btnDecline.TabIndex = 3;
+            btnDecline.TabIndex = 7;
             btnDecline.Text = "No";
             btnDecline.UseVisualStyleBackColor = false;
             // 
-            // txtWarningMessage
+            // btnOk
             // 
-            txtWarningMessage.BackColor = Color.FromArgb(204, 42, 73);
-            txtWarningMessage.BorderStyle = BorderStyle.None;
-            txtWarningMessage.ForeColor = Color.FromArgb(88, 40, 65);
-            txtWarningMessage.Location = new Point(33, 130);
-            txtWarningMessage.Multiline = true;
-            txtWarningMessage.Name = "txtWarningMessage";
-            txtWarningMessage.ReadOnly = true;
-            txtWarningMessage.Size = new Size(283, 31);
-            txtWarningMessage.TabIndex = 4;
-            txtWarningMessage.TextAlign = HorizontalAlignment.Center;
+            btnOk.BackColor = Color.FromArgb(88, 40, 65);
+            btnOk.FlatAppearance.BorderSize = 0;
+            btnOk.FlatStyle = FlatStyle.Flat;
+            btnOk.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnOk.ForeColor = Color.FromArgb(249, 158, 76);
+            btnOk.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnOk.IconColor = Color.FromArgb(249, 158, 76);
+            btnOk.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnOk.Location = new Point(108, 185);
+            btnOk.Name = "btnOk";
+            btnOk.Size = new Size(125, 40);
+            btnOk.TabIndex = 8;
+            btnOk.Text = "Ok";
+            btnOk.UseVisualStyleBackColor = false;
             // 
-            // ConfirmationView
+            // lblMessage
+            // 
+            lblMessage.Location = new Point(0, 112);
+            lblMessage.Name = "lblMessage";
+            lblMessage.Size = new Size(350, 56);
+            lblMessage.TabIndex = 9;
+            lblMessage.Text = "Notification Message";
+            lblMessage.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // MessageBoxView
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(204, 42, 73);
             ClientSize = new Size(350, 250);
-            Controls.Add(txtWarningMessage);
+            Controls.Add(lblMessage);
+            Controls.Add(btnOk);
             Controls.Add(btnDecline);
             Controls.Add(btnAccept);
             Controls.Add(panel1);
             Font = new Font("Segoe UI", 10F);
             ForeColor = Color.FromArgb(88, 40, 65);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "ConfirmationView";
+            Name = "MessageBoxView";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ConfirmationView";
+            Text = "MessageBoxView";
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)messageBoxIcon).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Panel panel1;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private Label label1;
-        private Label label2;
+        private Label messageBoxTitle;
         private FontAwesome.Sharp.IconButton btnAccept;
         private FontAwesome.Sharp.IconButton btnDecline;
-        private TextBox txtWarningMessage;
+        private FontAwesome.Sharp.IconPictureBox messageBoxIcon;
+        private FontAwesome.Sharp.IconButton btnOk;
+        private Label lblMessage;
     }
 }

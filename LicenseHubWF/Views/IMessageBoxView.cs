@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace LicenseHubWF.Views
 {
-    public interface IConfirmationView
+    public interface IMessageBoxView
     {
-        string? WarningMessage { set; }
-        bool IsAccepted { get; set; }
+        string Title { set; }
+        string Message { set; }
+        bool IsAccepted { get;  }
 
-        event EventHandler AcceptOrCancelEvent;
+        event EventHandler ClickEvent;
 
         void Show();
         void Close();
