@@ -35,7 +35,6 @@ namespace LicenseHubWF.Views
             dateFormat = ApiRepository.GetSetting<string>("DateFormat");
 
             this.TopLevel = false;
-            lblNotification.Text = string.Empty;
             lblFilePath.Text = string.Empty;
         }
 

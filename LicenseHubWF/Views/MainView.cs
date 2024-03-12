@@ -16,10 +16,17 @@ namespace LicenseHubWF.Views
         public MainView()
         {
             InitializeComponent();
+            AssociateAndRaiseViewEvents();
 
+        }
+
+        private void AssociateAndRaiseViewEvents()
+        {
             // Generate events
             btnViewLicense.Click += delegate { ShowLicenseView?.Invoke(this, EventArgs.Empty); };
             btnRequestLicense.Click += delegate { ShowRequestLicenseView?.Invoke(this, EventArgs.Empty); };
+            btnRequestKey.Click += delegate { ShowRequestKeyView?.Invoke(this, EventArgs.Empty); };
+
             btnLogin.Click += delegate { ShowLoginView?.Invoke(this, EventArgs.Empty); };
             btnLogout.Click += delegate { LogoutEvent?.Invoke(this, EventArgs.Empty); };
 
@@ -31,7 +38,6 @@ namespace LicenseHubWF.Views
 
             btnLogin.Visible = true;
             btnLogout.Visible = false;
-     
         }
 
         private void OnConnectivityChanged(object? sender, EventArgs e)

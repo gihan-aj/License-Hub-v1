@@ -16,5 +16,8 @@
     <Compile Update="Views\MessageBoxView.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\RequestKeyView.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

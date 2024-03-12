@@ -31,6 +31,7 @@ namespace LicenseHubWF.Presenters
             // Events
             this.mainView.ShowLicenseView += ShowLicense;
             this.mainView.ShowRequestLicenseView += ShowRequestLicenseView;
+            this.mainView.ShowRequestKeyView += ShowRequestKey;
             this.mainView.ShowLoginView += ShowLoginView;
             this.mainView.LogoutEvent += LogoutAndRemoveSessionToken;
 
@@ -53,32 +54,126 @@ namespace LicenseHubWF.Presenters
 
         private void ShowLicense(object? sender, EventArgs e)
         {
-            if (activeForm != null)
+            try
             {
-                activeForm.Dispose();
+                if (activeForm != null)
+                {
+                    activeForm.Dispose();
+                }
+
+                ILicenseView licenseView = new LicenseView();
+                ILicenseViewRepository licenseViewRepository = new LicenseViewRepository(logger);
+                new LicenseViewPresenter(licenseView, licenseViewRepository, logger);
+
+                activeForm = (Form)licenseView;
+                mainView.OpenChildForm((Form)licenseView);
+            }
+            catch (Exception ex)
+            {
+
+                logger.LogError($"ShowLicense -> {ex.Message}");
+                logger.LogError($"ShowLicense -> Exception: {ex}");
+
+                IMessageBoxView messageBox = new MessageBoxView()
+                {
+                    Title = "Error",
+                    Message = ex.Message
+                };
+                messageBox.Show();
             }
 
-            ILicenseView licenseView = new LicenseView();
-            ILicenseViewRepository licenseViewRepository = new LicenseViewRepository(logger);
-            new LicenseViewPresenter(licenseView, licenseViewRepository, logger);
-
-            activeForm = (Form)licenseView;
-            mainView.OpenChildForm((Form)licenseView);
         }
 
         private void ShowRequestLicenseView(object? sender, EventArgs e)
         {
-            if (activeForm != null)
+            try
             {
-                activeForm.Dispose();
+                if(ApiRepository.User == null)
+                {
+                    ILoginView loginView = new LoginView();
+                    ILoginRepository loginRepository = new LoginRepository(logger);
+                    new LoginPresenter(loginView, loginRepository, logger);
+
+                    ApiRepository.SessionTokenChanged += delegate
+                    {
+                        if (!string.IsNullOrEmpty(ApiRepository.SessionToken))
+                        {
+                            if (activeForm != null)
+                            {
+                                activeForm.Dispose();
+                            }
+
+                            ILicenseRequestView licenseRequestView = new LicenseRequestView();
+                            ILicenseRequestRepository licenseRequestRepository = new LicenseRequestRepository(logger);
+                            new LicenseRequestPresenter(licenseRequestView, licenseRequestRepository, logger);
+
+                            activeForm = (Form)licenseRequestView;
+                            mainView.OpenChildForm((Form)licenseRequestView);
+                        }
+                    };
+                }
+                else
+                {
+                    if (activeForm != null)
+                    {
+                        activeForm.Dispose();
+                    }
+
+                    ILicenseRequestView licenseRequestView = new LicenseRequestView();
+                    ILicenseRequestRepository licenseRequestRepository = new LicenseRequestRepository(logger);
+                    new LicenseRequestPresenter(licenseRequestView, licenseRequestRepository, logger);
+
+                    activeForm = (Form)licenseRequestView;
+                    mainView.OpenChildForm((Form)licenseRequestView);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                logger.LogError($"ShowRequestLicenseView -> {ex.Message}");
+                logger.LogError($"ShowRequestLicenseView -> Exception: {ex}");
+
+                IMessageBoxView messageBox = new MessageBoxView()
+                {
+                    Title = "Error",
+                    Message = ex.Message
+                };
+                messageBox.Show();
             }
 
-            ILicenseRequestView licenseRequestView = new LicenseRequestView();
-            ILicenseRequestRepository licenseRequestRepository = new LicenseRequestRepository(logger);
-            new LicenseRequestPresenter(licenseRequestView, licenseRequestRepository, logger);
+        }
 
-            activeForm = (Form)licenseRequestView;
-            mainView.OpenChildForm((Form)licenseRequestView);
+        private void ShowRequestKey(object? sender, EventArgs e)
+        {
+            try
+            {
+                if (activeForm != null)
+                {
+                    activeForm.Dispose();
+                }
+
+                IRequestKeyView requestKeyView = new RequestKeyView();
+                ILicenseRequestRepository requestKeyRepository = new LicenseRequestRepository(logger);
+                new RequestKeyPresenter(requestKeyView, requestKeyRepository, logger);
+
+                activeForm = (Form)requestKeyView;
+                mainView.OpenChildForm((Form)requestKeyView);
+            }
+            catch (Exception ex)
+            {
+
+                logger.LogError($"ShowRequestKey -> {ex.Message}");
+                logger.LogError($"ShowRequestKey -> Exception: {ex}");
+
+                IMessageBoxView messageBox = new MessageBoxView()
+                {
+                    Title = "Error",
+                    Message = ex.Message
+                };
+                messageBox.Show();
+            }
+
         }
 
         private async void LogoutAndRemoveSessionToken(object? sender, EventArgs e)

@@ -13,5 +13,6 @@ namespace LicenseHubWF.Models
         Task<IEnumerable<PackageModel>> GetPackages();
         string GetPCName();
         string GetRequestKey();
+        void VisitLicenseAgreement();
     }
 }

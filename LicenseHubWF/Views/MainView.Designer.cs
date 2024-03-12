@@ -42,6 +42,9 @@
             btnMinimize = new FontAwesome.Sharp.IconButton();
             btnClose = new FontAwesome.Sharp.IconButton();
             panelChildFormWindow = new Panel();
+            btnRequestKey = new FontAwesome.Sharp.IconButton();
+            btnDownloadLicense = new FontAwesome.Sharp.IconButton();
+            btnConfiguration = new FontAwesome.Sharp.IconButton();
             panelSideBar.SuspendLayout();
             panelTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconNoConnectivity).BeginInit();
@@ -52,6 +55,9 @@
             // panelSideBar
             // 
             panelSideBar.BackColor = Color.FromArgb(88, 40, 65);
+            panelSideBar.Controls.Add(btnConfiguration);
+            panelSideBar.Controls.Add(btnDownloadLicense);
+            panelSideBar.Controls.Add(btnRequestKey);
             panelSideBar.Controls.Add(btnLogout);
             panelSideBar.Controls.Add(btnLogin);
             panelSideBar.Controls.Add(btnRequestLicense);
@@ -272,6 +278,66 @@
             panelChildFormWindow.Size = new Size(680, 468);
             panelChildFormWindow.TabIndex = 2;
             // 
+            // btnRequestKey
+            // 
+            btnRequestKey.FlatAppearance.BorderSize = 0;
+            btnRequestKey.FlatStyle = FlatStyle.Flat;
+            btnRequestKey.Font = new Font("Segoe UI", 12F);
+            btnRequestKey.IconChar = FontAwesome.Sharp.IconChar.Key;
+            btnRequestKey.IconColor = Color.FromArgb(249, 158, 76);
+            btnRequestKey.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnRequestKey.IconSize = 30;
+            btnRequestKey.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRequestKey.Location = new Point(0, 310);
+            btnRequestKey.Name = "btnRequestKey";
+            btnRequestKey.Padding = new Padding(10, 0, 0, 0);
+            btnRequestKey.Size = new Size(220, 60);
+            btnRequestKey.TabIndex = 5;
+            btnRequestKey.Text = "Request Key";
+            btnRequestKey.TextAlign = ContentAlignment.MiddleLeft;
+            btnRequestKey.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnRequestKey.UseVisualStyleBackColor = true;
+            // 
+            // btnDownloadLicense
+            // 
+            btnDownloadLicense.FlatAppearance.BorderSize = 0;
+            btnDownloadLicense.FlatStyle = FlatStyle.Flat;
+            btnDownloadLicense.Font = new Font("Segoe UI", 12F);
+            btnDownloadLicense.IconChar = FontAwesome.Sharp.IconChar.Download;
+            btnDownloadLicense.IconColor = Color.FromArgb(249, 158, 76);
+            btnDownloadLicense.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnDownloadLicense.IconSize = 30;
+            btnDownloadLicense.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDownloadLicense.Location = new Point(0, 250);
+            btnDownloadLicense.Name = "btnDownloadLicense";
+            btnDownloadLicense.Padding = new Padding(10, 0, 0, 0);
+            btnDownloadLicense.Size = new Size(220, 60);
+            btnDownloadLicense.TabIndex = 6;
+            btnDownloadLicense.Text = "Download License";
+            btnDownloadLicense.TextAlign = ContentAlignment.MiddleLeft;
+            btnDownloadLicense.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnDownloadLicense.UseVisualStyleBackColor = true;
+            // 
+            // btnConfiguration
+            // 
+            btnConfiguration.FlatAppearance.BorderSize = 0;
+            btnConfiguration.FlatStyle = FlatStyle.Flat;
+            btnConfiguration.Font = new Font("Segoe UI", 12F);
+            btnConfiguration.IconChar = FontAwesome.Sharp.IconChar.Server;
+            btnConfiguration.IconColor = Color.FromArgb(249, 158, 76);
+            btnConfiguration.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnConfiguration.IconSize = 30;
+            btnConfiguration.ImageAlign = ContentAlignment.MiddleLeft;
+            btnConfiguration.Location = new Point(0, 376);
+            btnConfiguration.Name = "btnConfiguration";
+            btnConfiguration.Padding = new Padding(10, 0, 0, 0);
+            btnConfiguration.Size = new Size(220, 60);
+            btnConfiguration.TabIndex = 7;
+            btnConfiguration.Text = "Configuration";
+            btnConfiguration.TextAlign = ContentAlignment.MiddleLeft;
+            btnConfiguration.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnConfiguration.UseVisualStyleBackColor = true;
+            // 
             // MainView
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -309,5 +375,8 @@
         private FontAwesome.Sharp.IconPictureBox iconConnectivity;
         private FontAwesome.Sharp.IconPictureBox iconNoConnectivity;
         private FontAwesome.Sharp.IconButton btnLogout;
+        private FontAwesome.Sharp.IconButton btnDownloadLicense;
+        private FontAwesome.Sharp.IconButton btnRequestKey;
+        private FontAwesome.Sharp.IconButton btnConfiguration;
     }
 }

@@ -20,6 +20,7 @@ namespace LicenseHubWF._Repositories
     {
         // Fields
         private static UserModel? _user;
+        private static string _sessionToken = string.Empty;
         private static bool _connectivity = false;
         private static AppSettingsModel _settings = new AppSettingsModel();
         private static string _appSetttingsPath = string.Empty;
@@ -27,11 +28,20 @@ namespace LicenseHubWF._Repositories
         // Events
         public static event EventHandler UserChanged;
         public static event EventHandler ConnectivityChanged; 
+        public static event EventHandler SessionTokenChanged; 
 
         // Properties
 
         public static HttpClient? ApiClient { get; set; }
-        public static string? SessionToken { get; set; }
+        public static string SessionToken
+        {
+            get => _sessionToken;
+            set 
+            {
+                _sessionToken = value;
+                SessionTokenChanged?.Invoke(null, EventArgs.Empty);
+            }
+        }
         public static UserModel? User 
         { 
             get => _user; 

@@ -28,6 +28,7 @@ namespace LicenseHubWF.Presenters
 
             // Subscribe event handler methods to view events
             this.view.RequestLicenseEvent += RequestLicense;
+            this.view.LicenseAgreementEvent += ShowLicenseAgreement;
 
             // Set binding sources
             // ...
@@ -42,6 +43,26 @@ namespace LicenseHubWF.Presenters
             //this.view.Show();
         }
 
+        private void ShowLicenseAgreement(object? sender, EventArgs e)
+        {
+            try
+            {
+                repository.VisitLicenseAgreement();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"ShowLicenseAgreement -> {ex.Message}");
+                _logger.LogError($"ShowLicenseAgreement -> Exception : {ex}");
+
+                IMessageBoxView confirmView = new MessageBoxView()
+                {
+                    Title = "Error",
+                    Message = ex.Message
+                };
+                confirmView.Show();
+            }
+        }
+
         // Methods
         private async void LoadClients()
         {
@@ -54,11 +75,15 @@ namespace LicenseHubWF.Presenters
             }
             catch (Exception ex)
             {
-                IMessageBoxView confirmView = new MessageBoxView();
-                confirmView.Title = "Error";
-                confirmView.Message = ex.Message;
-                confirmView.Show();
                 _logger.LogError($"LoadClients -> {ex.Message}");
+                _logger.LogError($"LoadClients -> Exception : {ex}");
+
+                IMessageBoxView confirmView = new MessageBoxView()
+                {
+                    Title = "Error",
+                    Message = ex.Message
+                };
+                confirmView.Show();
             }
 
         }
@@ -74,11 +99,15 @@ namespace LicenseHubWF.Presenters
             }
             catch (Exception ex)
             {
-                IMessageBoxView confirmView = new MessageBoxView();
-                confirmView.Title = "Error";
-                confirmView.Message = ex.Message;
-                confirmView.Show();
                 _logger.LogError($"LoadPackages -> {ex.Message}");
+                _logger.LogError($"LoadPackages -> Exception : {ex}");
+
+                IMessageBoxView confirmView = new MessageBoxView()
+                {
+                    Title = "Error",
+                    Message = ex.Message
+                };
+                confirmView.Show();
             }
 
         }
@@ -93,11 +122,15 @@ namespace LicenseHubWF.Presenters
             }
             catch (Exception ex)
             {
-                IMessageBoxView confirmView = new MessageBoxView();
-                confirmView.Title = "Error";
-                confirmView.Message = ex.Message;
-                confirmView.Show();
                 _logger.LogError($"LoadPCName -> {ex.Message}");
+                _logger.LogError($"LoadPCName -> Exception : {ex}");
+
+                IMessageBoxView confirmView = new MessageBoxView()
+                {
+                    Title = "Error",
+                    Message = ex.Message
+                };
+                confirmView.Show();
             }
         }
 
@@ -111,11 +144,15 @@ namespace LicenseHubWF.Presenters
             }
             catch (Exception ex)
             {
-                IMessageBoxView confirmView = new MessageBoxView();
-                confirmView.Title = "Error";
-                confirmView.Message = ex.Message;
-                confirmView.Show();
                 _logger.LogError($"LoadRequestKey -> {ex.Message}");
+                _logger.LogError($"LoadRequestKey -> Exception : {ex}");
+
+                IMessageBoxView confirmView = new MessageBoxView()
+                {
+                    Title = "Error",
+                    Message = ex.Message
+                };
+                confirmView.Show();
             }
 
         }
@@ -125,9 +162,20 @@ namespace LicenseHubWF.Presenters
             try
             {
                 _logger.LogInfo($"RequestLicense -> License requested.");
+                if (view.IsAgreementAccepted)
+                {
+
+                }
+                else
+                {
+                    throw new Exception("License agreement must be accepted");
+                }
             }
             catch (Exception ex)
             {
+                _logger.LogError($"RequestLicense -> {ex.Message}");
+                _logger.LogError($"RequestLicense -> Exception : {ex}");
+
                 IMessageBoxView confirmView = new MessageBoxView()
                 {
                     Title = "Error",
@@ -135,7 +183,6 @@ namespace LicenseHubWF.Presenters
                 };
                 confirmView.Show();
 
-                _logger.LogError($"RequestLicense -> {ex.Message}");
             }
             
 

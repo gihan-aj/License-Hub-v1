@@ -23,6 +23,7 @@ namespace LicenseHubWF._Repositories
         }
 
         // Methods
+        // Client list
         public async Task<IEnumerable<ClientModel>> GetClients()
         {
             using(var request = new HttpRequestMessage(HttpMethod.Get, "clients"))
@@ -45,24 +46,10 @@ namespace LicenseHubWF._Repositories
                     }
                 }
             }
-            //using (HttpResponseMessage response =  await ApiRepository.ApiClient.GetAsync("clients"))
-            //{
-            //    _logger.LogInfo($"GetClients -> {response.RequestMessage}");
-
-            //    if (response.IsSuccessStatusCode)
-            //    {
-            //        List<ClientModel> clientList = await response.Content.ReadAsAsync<List<ClientModel>>();
-
-            //        return clientList;
-            //    }
-            //    else
-            //    {
-            //        throw new Exception(response.ReasonPhrase);
-            //    }
-            //}
 
         }
 
+        // Package list
         public async Task<IEnumerable<PackageModel>> GetPackages()
         {
 
@@ -84,29 +71,39 @@ namespace LicenseHubWF._Repositories
 
         }
 
+        // Request key
         public string GetRequestKey()
         {
-            string hardwareId = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\IDConfigDB\Hardware Profiles\0001", "HwProfileGuid", null).ToString();
-            hardwareId.Replace("{", "").Replace("}", "").Trim();
-
-            //Encryption
-            // The key and initialization factor
-            byte[] key = new byte[16];
-            byte[] iv = new byte[16];
-
-            using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
+            try
             {
-                rng.GetBytes(key);
-                rng.GetBytes(iv);                
+                string hardwareId = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\IDConfigDB\Hardware Profiles\0001", "HwProfileGuid", null).ToString();
+                hardwareId.Replace("{", "").Replace("}", "").Trim();
+
+                //Encryption
+                // The key and initialization factor
+                byte[] key = new byte[16];
+                byte[] iv = new byte[16];
+
+                using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
+                {
+                    rng.GetBytes(key);
+                    rng.GetBytes(iv);
+                }
+
+                byte[] encryptedHardwareId = Encrypt(hardwareId, key, iv);
+                string requestKey = Convert.ToBase64String(encryptedHardwareId);
+
+                return hardwareId.Replace("{", "").Replace("}", "").Trim().ToUpper();
             }
+            catch (Exception)
+            {
 
-            byte[] encryptedHardwareId = Encrypt(hardwareId, key, iv);
-            string requestKey = Convert.ToBase64String(encryptedHardwareId);
-
-            return requestKey.ToUpper();
+                throw;
+            }
        
         }
 
+        // PC name
         public string GetPCName()
         {
 
@@ -114,9 +111,27 @@ namespace LicenseHubWF._Repositories
      
         }
 
+        // License agreement
+        public void VisitLicenseAgreement()
+        {
+            string filePath = ApiRepository.GetSetting<string>("LicenseAgreementPath");
+
+            if(File.Exists(filePath))
+            {
+                
+                System.Diagnostics.Process.Start(ApiRepository.GetSetting<string>("TxtReader"),filePath);
+            }
+            else
+            {
+                throw new FileNotFoundException("License Agreement not found.");
+            }
+            
+        }
+
+        // Request license
         public void Request(LicenseRequestModel licenseRequest)
         {
-         
+            
         }
 
         private byte[] Encrypt(string simpleText, byte[] key, byte[] iv)
@@ -162,5 +177,7 @@ namespace LicenseHubWF._Repositories
             }
             return simpleText;
         }
+
+
     }
 }

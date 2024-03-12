@@ -1,0 +1,72 @@
+License Agreement
+(*just a mock agrement)
+
+This License Agreement ("Agreement") is made and entered into as of [DATE] by and between [YOUR COMPANY NAME], a [STATE] corporation with a principal place of business at [YOUR COMPANY ADDRESS] ("Licensor"), and you, the end user ("Licensee").
+
+1. Grant of License
+
+Licensor grants to Licensee a non-exclusive, non-transferable, limited license to use the [SOFTWARE NAME] software (the "Software") in accordance with the terms and conditions of this Agreement.
+
+2. Restrictions on Use
+
+Licensee may not:
+
+Reverse engineer, decompile, or disassemble the Software.
+Modify or create derivative works of the Software.
+Distribute, sublicense, rent, lease, or loan the Software.
+Use the Software for any illegal or unauthorized purpose.
+3. Ownership
+
+The Software and all intellectual property rights therein are and shall remain the exclusive property of Licensor.
+
+4. Term and Termination
+
+This Agreement shall commence on the Effective Date and shall continue for a period of [DURATION] (the "Term"). This Agreement may be terminated by either party upon written notice to the other party of any material breach of this Agreement.
+
+5. Disclaimer of Warranties
+
+THE SOFTWARE IS PROVIDED "AS IS" AND WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. LICENSOR DOES NOT WARRANT THAT THE SOFTWARE WILL FUNCTION WITHOUT INTERRUPTION OR ERROR OR THAT THE SOFTWARE WILL BE FREE FROM DEFECTS.
+
+6. Limitation of Liability
+
+IN NO EVENT SHALL LICENSOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE, OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR IN CONNECTION WITH THE USE OF THE SOFTWARE, EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+7. Indemnification
+
+Licensee agrees to indemnify and hold harmless Licensor from and against any and all claims, losses, damages, expenses, and liabilities (including attorneys' fees) arising out of or in connection with Licensee's use of the Software.
+
+8. Governing Law
+
+This Agreement shall be governed by and construed in accordance with the laws of the State of [STATE].
+
+9. Entire Agreement
+
+This Agreement constitutes the entire agreement between the parties with respect to the subject matter hereof and supersedes all prior or contemporaneous communications, representations, or agreements, whether oral or written.
+
+10. Severability
+
+If any provision of this Agreement is held to be invalid or unenforceable, such provision shall be struck and the remaining provisions shall remain in full force and effect.
+
+11. Notices
+
+All notices and other communications hereunder shall be in writing and shall be deemed to have been duly given when delivered personally, sent by certified or registered mail, postage prepaid, return receipt requested, or sent by overnight courier service, addressed as follows:
+
+If to Licensor:
+[YOUR COMPANY NAME]
+[YOUR COMPANY ADDRESS]
+
+If to Licensee:
+[Licensee Name]
+[Licensee Address]
+
+12. Waiver
+
+No waiver by either party of any breach of this Agreement shall be deemed a waiver of any prior or subsequent breach.
+
+13. Binding Effect
+
+This Agreement shall be binding upon and inure to the benefit of the parties hereto and their respective successors and permitted assigns.
+
+BY CLICKING "I ACCEPT" OR INSTALLING OR USING THE SOFTWARE, YOU AGREE TO BE BOUND BY THE TERMS OF THIS AGREEMENT.
+
+[YOUR COMPANY NAME]

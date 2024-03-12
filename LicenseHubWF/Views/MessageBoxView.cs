@@ -60,7 +60,15 @@ namespace LicenseHubWF.Views
             set
             {
                 _message = value;
-                lblMessage.Text = _message;
+                if(_message.Length > 80)
+                {
+                    lblMessage.Text = _message;
+                }
+                else
+                {
+                    lblMessage.Text = _message;
+
+                }
             } 
         }
         public bool IsAccepted { 

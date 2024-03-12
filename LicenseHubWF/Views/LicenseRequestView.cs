@@ -1,4 +1,5 @@
-﻿using LicenseHubWF.Models;
+﻿using LicenseHubWF._Repositories;
+using LicenseHubWF.Models;
 using LoggerLib;
 using Microsoft.Windows.Themes;
 using System;
@@ -21,19 +22,50 @@ namespace LicenseHubWF.Views
             AssociateAndRaiseViewEvents();
 
             checkedListBoxPackages.CheckOnClick = true;
+            checkBoxAgreement.Text = ApiRepository.GetSetting<string>("LicenseAgreementCheckBoxText");
             this.TopLevel = false;
         }
 
         private void AssociateAndRaiseViewEvents()
         {
             //this.Load += delegate { LoadClientsEvent?.Invoke(this, EventArgs.Empty);  LoadPackagesEvent?.Invoke(this, EventArgs.Empty);};
+            linkAgreement.Click += delegate { LicenseAgreementEvent?.Invoke(this, EventArgs.Empty); };
+
             btnRequest.Click += delegate { RequestLicenseEvent?.Invoke(this, EventArgs.Empty);  };
+
+            btnReset.Click += delegate
+            {
+                comboBoxClients.SelectedIndex = -1;
+
+                if(checkedListBoxPackages.CheckedItems.Count > 0)
+                {
+                    for(int i = 0; i < checkedListBoxPackages.Items.Count; i++)
+                    {
+                        checkedListBoxPackages.SetItemChecked(i, false);
+                    }
+                }
+
+                radioButtonFull.Checked = false;
+                radioButtonTrial.Checked = false;
+            };
         }
 
         // Properties
-        public ClientModel Client 
+        public string Client 
         { 
-            get { return (ClientModel)comboBoxClients.SelectedItem; } 
+            get 
+            {
+                ClientModel? client = comboBoxClients.SelectedItem as ClientModel;
+                if(client != null)
+                {
+                    return client.ClientCode;
+                }
+                else
+                {
+                    return string.Empty;
+                }
+                
+            } 
             set { } 
         }
 
@@ -78,10 +110,20 @@ namespace LicenseHubWF.Views
             } 
             set { } 
         }
+        public bool IsAgreementAccepted
+        {
+            get
+            {
+                return checkBoxAgreement.Checked;
+            }
+
+        }
 
         // Events
 
         public event EventHandler RequestLicenseEvent;
+        public event EventHandler ResetEvent;
+        public event EventHandler LicenseAgreementEvent;
 
         // Methods
 
@@ -105,40 +147,40 @@ namespace LicenseHubWF.Views
         }
 
         // Singleton pattern (Open a single form instance)
-        private static LicenseRequestView instance;
-        public static LicenseRequestView GetInstance()
-        {
-            //if (instance == null || instance.IsDisposed)
-            //{
-            //    instance = new LicenseRequestView();
-            //    instance.MdiParent = parentContainer;
-            //    instance.Show();
-            //    instance.Location = new Point(0, 130);
-            //}
-            //else
-            //{
-            //    if (instance.WindowState == FormWindowState.Minimized)
-            //    {
-            //        instance.WindowState = FormWindowState.Normal;
-            //    }
-            //    instance.BringToFront();
-            //}
+        //private static LicenseRequestView instance;
+        //public static LicenseRequestView GetInstance()
+        //{
+        //    //if (instance == null || instance.IsDisposed)
+        //    //{
+        //    //    instance = new LicenseRequestView();
+        //    //    instance.MdiParent = parentContainer;
+        //    //    instance.Show();
+        //    //    instance.Location = new Point(0, 130);
+        //    //}
+        //    //else
+        //    //{
+        //    //    if (instance.WindowState == FormWindowState.Minimized)
+        //    //    {
+        //    //        instance.WindowState = FormWindowState.Normal;
+        //    //    }
+        //    //    instance.BringToFront();
+        //    //}
 
-            //if (instance != null)
-            //{
-            //    instance.Dispose();
-            //}
+        //    //if (instance != null)
+        //    //{
+        //    //    instance.Dispose();
+        //    //}
 
-            //instance = new LicenseRequestView();
-            //instance.TopLevel = false;
+        //    //instance = new LicenseRequestView();
+        //    //instance.TopLevel = false;
 
-            //return instance;
-            if( instance == null)
-            {
-                instance = new LicenseRequestView();
-            }
-            return instance;
-        }
+        //    //return instance;
+        //    if( instance == null)
+        //    {
+        //        instance = new LicenseRequestView();
+        //    }
+        //    return instance;
+        //}
 
     }
 }

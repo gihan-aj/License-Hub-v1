@@ -43,14 +43,13 @@
             btnBrowse = new FontAwesome.Sharp.IconButton();
             btnValidate = new FontAwesome.Sharp.IconButton();
             lblFilePath = new Label();
-            lblNotification = new Label();
             SuspendLayout();
             // 
             // lblLicenseId
             // 
             lblLicenseId.AutoSize = true;
             lblLicenseId.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLicenseId.Location = new Point(38, 62);
+            lblLicenseId.Location = new Point(38, 40);
             lblLicenseId.Name = "lblLicenseId";
             lblLicenseId.Size = new Size(71, 17);
             lblLicenseId.TabIndex = 0;
@@ -60,7 +59,7 @@
             // 
             lblPackageList.AutoSize = true;
             lblPackageList.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPackageList.Location = new Point(358, 161);
+            lblPackageList.Location = new Point(358, 130);
             lblPackageList.Name = "lblPackageList";
             lblPackageList.Size = new Size(64, 17);
             lblPackageList.TabIndex = 2;
@@ -70,7 +69,7 @@
             // 
             lblPcName.AutoSize = true;
             lblPcName.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPcName.Location = new Point(38, 272);
+            lblPcName.Location = new Point(38, 220);
             lblPcName.Name = "lblPcName";
             lblPcName.Size = new Size(64, 17);
             lblPcName.TabIndex = 3;
@@ -80,7 +79,7 @@
             // 
             lblEndDate.AutoSize = true;
             lblEndDate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblEndDate.Location = new Point(197, 161);
+            lblEndDate.Location = new Point(192, 130);
             lblEndDate.Name = "lblEndDate";
             lblEndDate.Size = new Size(64, 17);
             lblEndDate.TabIndex = 4;
@@ -90,7 +89,7 @@
             // 
             lblStartDate.AutoSize = true;
             lblStartDate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblStartDate.Location = new Point(38, 161);
+            lblStartDate.Location = new Point(38, 130);
             lblStartDate.Name = "lblStartDate";
             lblStartDate.Size = new Size(70, 17);
             lblStartDate.TabIndex = 5;
@@ -100,7 +99,7 @@
             // 
             lblCustomer.AutoSize = true;
             lblCustomer.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCustomer.Location = new Point(358, 62);
+            lblCustomer.Location = new Point(358, 40);
             lblCustomer.Name = "lblCustomer";
             lblCustomer.Size = new Size(67, 17);
             lblCustomer.TabIndex = 6;
@@ -110,7 +109,7 @@
             // 
             txtLicenseId.BorderStyle = BorderStyle.FixedSingle;
             txtLicenseId.ForeColor = Color.FromArgb(88, 40, 65);
-            txtLicenseId.Location = new Point(38, 100);
+            txtLicenseId.Location = new Point(38, 70);
             txtLicenseId.Name = "txtLicenseId";
             txtLicenseId.Size = new Size(280, 25);
             txtLicenseId.TabIndex = 7;
@@ -119,7 +118,7 @@
             // 
             txtCustomer.BorderStyle = BorderStyle.FixedSingle;
             txtCustomer.ForeColor = Color.FromArgb(88, 40, 65);
-            txtCustomer.Location = new Point(358, 100);
+            txtCustomer.Location = new Point(358, 70);
             txtCustomer.Name = "txtCustomer";
             txtCustomer.Size = new Size(280, 25);
             txtCustomer.TabIndex = 8;
@@ -128,7 +127,7 @@
             // 
             txtStartDate.BorderStyle = BorderStyle.FixedSingle;
             txtStartDate.ForeColor = Color.FromArgb(88, 40, 65);
-            txtStartDate.Location = new Point(38, 195);
+            txtStartDate.Location = new Point(38, 160);
             txtStartDate.Name = "txtStartDate";
             txtStartDate.Size = new Size(126, 25);
             txtStartDate.TabIndex = 9;
@@ -137,16 +136,16 @@
             // 
             txtEndDate.BorderStyle = BorderStyle.FixedSingle;
             txtEndDate.ForeColor = Color.FromArgb(88, 40, 65);
-            txtEndDate.Location = new Point(197, 195);
+            txtEndDate.Location = new Point(192, 160);
             txtEndDate.Name = "txtEndDate";
-            txtEndDate.Size = new Size(121, 25);
+            txtEndDate.Size = new Size(126, 25);
             txtEndDate.TabIndex = 10;
             // 
             // txtPcName
             // 
             txtPcName.BorderStyle = BorderStyle.FixedSingle;
             txtPcName.ForeColor = Color.FromArgb(88, 40, 65);
-            txtPcName.Location = new Point(38, 309);
+            txtPcName.Location = new Point(38, 250);
             txtPcName.Name = "txtPcName";
             txtPcName.Size = new Size(280, 25);
             txtPcName.TabIndex = 11;
@@ -155,10 +154,10 @@
             // 
             txtPackageList.BorderStyle = BorderStyle.FixedSingle;
             txtPackageList.ForeColor = Color.FromArgb(88, 40, 65);
-            txtPackageList.Location = new Point(358, 195);
+            txtPackageList.Location = new Point(358, 162);
             txtPackageList.Multiline = true;
             txtPackageList.Name = "txtPackageList";
-            txtPackageList.Size = new Size(280, 138);
+            txtPackageList.Size = new Size(280, 181);
             txtPackageList.TabIndex = 12;
             // 
             // btnBrowse
@@ -166,11 +165,12 @@
             btnBrowse.BackColor = Color.FromArgb(88, 40, 65);
             btnBrowse.FlatAppearance.BorderSize = 0;
             btnBrowse.FlatStyle = FlatStyle.Flat;
+            btnBrowse.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnBrowse.ForeColor = SystemColors.Window;
             btnBrowse.IconChar = FontAwesome.Sharp.IconChar.None;
             btnBrowse.IconColor = Color.Black;
             btnBrowse.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnBrowse.Location = new Point(38, 388);
+            btnBrowse.Location = new Point(38, 400);
             btnBrowse.Name = "btnBrowse";
             btnBrowse.Size = new Size(280, 30);
             btnBrowse.TabIndex = 13;
@@ -182,11 +182,12 @@
             btnValidate.BackColor = Color.FromArgb(88, 40, 65);
             btnValidate.FlatAppearance.BorderSize = 0;
             btnValidate.FlatStyle = FlatStyle.Flat;
+            btnValidate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnValidate.ForeColor = SystemColors.Window;
             btnValidate.IconChar = FontAwesome.Sharp.IconChar.None;
             btnValidate.IconColor = Color.Black;
             btnValidate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnValidate.Location = new Point(358, 388);
+            btnValidate.Location = new Point(358, 400);
             btnValidate.Name = "btnValidate";
             btnValidate.Size = new Size(280, 30);
             btnValidate.TabIndex = 14;
@@ -195,27 +196,17 @@
             // 
             // lblFilePath
             // 
-            lblFilePath.Location = new Point(37, 353);
+            lblFilePath.Location = new Point(38, 370);
             lblFilePath.Name = "lblFilePath";
             lblFilePath.Size = new Size(601, 20);
             lblFilePath.TabIndex = 15;
             lblFilePath.Text = "File Path";
-            // 
-            // lblNotification
-            // 
-            lblNotification.ForeColor = Color.FromArgb(204, 42, 73);
-            lblNotification.Location = new Point(38, 23);
-            lblNotification.Name = "lblNotification";
-            lblNotification.Size = new Size(601, 20);
-            lblNotification.TabIndex = 16;
-            lblNotification.Text = "Notification";
             // 
             // LicenseView
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(680, 470);
-            Controls.Add(lblNotification);
             Controls.Add(lblFilePath);
             Controls.Add(btnValidate);
             Controls.Add(btnBrowse);
@@ -257,6 +248,5 @@
         private FontAwesome.Sharp.IconButton btnBrowse;
         private FontAwesome.Sharp.IconButton btnValidate;
         private Label lblFilePath;
-        private Label lblNotification;
     }
 }

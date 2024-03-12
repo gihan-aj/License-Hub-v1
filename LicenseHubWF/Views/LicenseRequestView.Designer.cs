@@ -40,16 +40,19 @@
             checkedListBoxPackages = new CheckedListBox();
             labelPackages = new Label();
             btnRequest = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
+            btnReset = new FontAwesome.Sharp.IconButton();
+            linkAgreement = new LinkLabel();
+            checkBoxAgreement = new CheckBox();
             groupBoxVersion.SuspendLayout();
             SuspendLayout();
             // 
             // labelClient
             // 
             labelClient.AutoSize = true;
-            labelClient.Location = new Point(40, 40);
+            labelClient.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelClient.Location = new Point(40, 30);
             labelClient.Name = "labelClient";
-            labelClient.Size = new Size(44, 19);
+            labelClient.Size = new Size(44, 17);
             labelClient.TabIndex = 0;
             labelClient.Text = "Client";
             // 
@@ -57,7 +60,7 @@
             // 
             comboBoxClients.ForeColor = Color.FromArgb(88, 40, 65);
             comboBoxClients.FormattingEnabled = true;
-            comboBoxClients.Location = new Point(40, 70);
+            comboBoxClients.Location = new Point(40, 60);
             comboBoxClients.Name = "comboBoxClients";
             comboBoxClients.Size = new Size(280, 25);
             comboBoxClients.TabIndex = 1;
@@ -67,8 +70,9 @@
             groupBoxVersion.Controls.Add(radioButtonFull);
             groupBoxVersion.Controls.Add(radioButtonTrial);
             groupBoxVersion.FlatStyle = FlatStyle.Flat;
+            groupBoxVersion.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBoxVersion.ForeColor = Color.FromArgb(88, 40, 65);
-            groupBoxVersion.Location = new Point(40, 120);
+            groupBoxVersion.Location = new Point(40, 100);
             groupBoxVersion.Name = "groupBoxVersion";
             groupBoxVersion.Size = new Size(280, 80);
             groupBoxVersion.TabIndex = 2;
@@ -81,7 +85,7 @@
             radioButtonFull.FlatStyle = FlatStyle.Flat;
             radioButtonFull.Location = new Point(160, 30);
             radioButtonFull.Name = "radioButtonFull";
-            radioButtonFull.Size = new Size(96, 23);
+            radioButtonFull.Size = new Size(98, 21);
             radioButtonFull.TabIndex = 1;
             radioButtonFull.TabStop = true;
             radioButtonFull.Text = "Full Version";
@@ -93,7 +97,7 @@
             radioButtonTrial.FlatStyle = FlatStyle.Flat;
             radioButtonTrial.Location = new Point(20, 30);
             radioButtonTrial.Name = "radioButtonTrial";
-            radioButtonTrial.Size = new Size(99, 23);
+            radioButtonTrial.Size = new Size(102, 21);
             radioButtonTrial.TabIndex = 0;
             radioButtonTrial.TabStop = true;
             radioButtonTrial.Text = "Trial Version";
@@ -102,18 +106,20 @@
             // labelComputerName
             // 
             labelComputerName.AutoSize = true;
-            labelComputerName.Location = new Point(40, 220);
+            labelComputerName.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelComputerName.Location = new Point(40, 190);
             labelComputerName.Name = "labelComputerName";
-            labelComputerName.Size = new Size(111, 19);
+            labelComputerName.Size = new Size(109, 17);
             labelComputerName.TabIndex = 3;
             labelComputerName.Text = "Computer Name";
             // 
             // labelRequestKey
             // 
             labelRequestKey.AutoSize = true;
-            labelRequestKey.Location = new Point(40, 295);
+            labelRequestKey.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelRequestKey.Location = new Point(40, 280);
             labelRequestKey.Name = "labelRequestKey";
-            labelRequestKey.Size = new Size(84, 19);
+            labelRequestKey.Size = new Size(83, 17);
             labelRequestKey.TabIndex = 4;
             labelRequestKey.Text = "Request Key";
             // 
@@ -121,7 +127,7 @@
             // 
             textBoxComputerName.BorderStyle = BorderStyle.FixedSingle;
             textBoxComputerName.ForeColor = Color.FromArgb(88, 40, 65);
-            textBoxComputerName.Location = new Point(40, 250);
+            textBoxComputerName.Location = new Point(40, 220);
             textBoxComputerName.Name = "textBoxComputerName";
             textBoxComputerName.ReadOnly = true;
             textBoxComputerName.Size = new Size(280, 25);
@@ -131,7 +137,7 @@
             // 
             textBoxRequestKey.BorderStyle = BorderStyle.FixedSingle;
             textBoxRequestKey.ForeColor = Color.FromArgb(88, 40, 65);
-            textBoxRequestKey.Location = new Point(40, 325);
+            textBoxRequestKey.Location = new Point(40, 310);
             textBoxRequestKey.Name = "textBoxRequestKey";
             textBoxRequestKey.ReadOnly = true;
             textBoxRequestKey.Size = new Size(600, 25);
@@ -142,17 +148,18 @@
             checkedListBoxPackages.BorderStyle = BorderStyle.FixedSingle;
             checkedListBoxPackages.ForeColor = Color.FromArgb(88, 40, 65);
             checkedListBoxPackages.FormattingEnabled = true;
-            checkedListBoxPackages.Location = new Point(360, 70);
+            checkedListBoxPackages.Location = new Point(360, 61);
             checkedListBoxPackages.Name = "checkedListBoxPackages";
-            checkedListBoxPackages.Size = new Size(280, 242);
+            checkedListBoxPackages.Size = new Size(280, 222);
             checkedListBoxPackages.TabIndex = 7;
             // 
             // labelPackages
             // 
             labelPackages.AutoSize = true;
-            labelPackages.Location = new Point(360, 40);
+            labelPackages.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelPackages.Location = new Point(360, 30);
             labelPackages.Name = "labelPackages";
-            labelPackages.Size = new Size(65, 19);
+            labelPackages.Size = new Size(64, 17);
             labelPackages.TabIndex = 8;
             labelPackages.Text = "Packages";
             // 
@@ -161,39 +168,63 @@
             btnRequest.BackColor = Color.FromArgb(88, 40, 65);
             btnRequest.FlatAppearance.BorderSize = 0;
             btnRequest.FlatStyle = FlatStyle.Flat;
+            btnRequest.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRequest.ForeColor = SystemColors.Window;
             btnRequest.IconChar = FontAwesome.Sharp.IconChar.None;
             btnRequest.IconColor = Color.Black;
             btnRequest.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnRequest.Location = new Point(360, 370);
+            btnRequest.Location = new Point(40, 400);
             btnRequest.Name = "btnRequest";
             btnRequest.Size = new Size(280, 30);
             btnRequest.TabIndex = 9;
             btnRequest.Text = "Request";
             btnRequest.UseVisualStyleBackColor = false;
             // 
-            // iconButton1
+            // btnReset
             // 
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.ForeColor = Color.FromArgb(88, 40, 65);
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new Point(360, 406);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(280, 30);
-            iconButton1.TabIndex = 10;
-            iconButton1.Text = "Reset";
-            iconButton1.UseVisualStyleBackColor = false;
+            btnReset.FlatAppearance.BorderSize = 0;
+            btnReset.FlatStyle = FlatStyle.Flat;
+            btnReset.ForeColor = Color.FromArgb(88, 40, 65);
+            btnReset.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnReset.IconColor = Color.Black;
+            btnReset.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnReset.Location = new Point(360, 400);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(280, 30);
+            btnReset.TabIndex = 10;
+            btnReset.Text = "Reset";
+            btnReset.UseVisualStyleBackColor = false;
+            // 
+            // linkAgreement
+            // 
+            linkAgreement.AutoSize = true;
+            linkAgreement.Location = new Point(40, 338);
+            linkAgreement.Name = "linkAgreement";
+            linkAgreement.Size = new Size(158, 19);
+            linkAgreement.TabIndex = 11;
+            linkAgreement.TabStop = true;
+            linkAgreement.Text = "View License Agreement";
+            // 
+            // checkBoxAgreement
+            // 
+            checkBoxAgreement.AutoSize = true;
+            checkBoxAgreement.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            checkBoxAgreement.Location = new Point(40, 360);
+            checkBoxAgreement.Name = "checkBoxAgreement";
+            checkBoxAgreement.Size = new Size(91, 21);
+            checkBoxAgreement.TabIndex = 12;
+            checkBoxAgreement.Text = "checkBox1";
+            checkBoxAgreement.UseVisualStyleBackColor = true;
             // 
             // LicenseRequestView
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Window;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(680, 470);
-            Controls.Add(iconButton1);
+            Controls.Add(checkBoxAgreement);
+            Controls.Add(linkAgreement);
+            Controls.Add(btnReset);
             Controls.Add(btnRequest);
             Controls.Add(labelPackages);
             Controls.Add(checkedListBoxPackages);
@@ -229,6 +260,8 @@
         private CheckedListBox checkedListBoxPackages;
         private Label labelPackages;
         private FontAwesome.Sharp.IconButton btnRequest;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnReset;
+        private LinkLabel linkAgreement;
+        private CheckBox checkBoxAgreement;
     }
 }

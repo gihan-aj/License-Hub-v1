@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Gihan\\source\\repos\\LicenseHubWF\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C1D25882-3DFD-4C11-B7F5-3ABE308A96D7}|LicenseHubWF\\LicenseHubWF.csproj|c:\\users\\gihan\\source\\repos\\licensehubwf\\licensehubwf\\presenters\\loginpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1D25882-3DFD-4C11-B7F5-3ABE308A96D7}|LicenseHubWF\\LicenseHubWF.csproj|solutionrelative:licensehubwf\\presenters\\loginpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C1D25882-3DFD-4C11-B7F5-3ABE308A96D7}|LicenseHubWF\\LicenseHubWF.csproj|c:\\users\\gihan\\source\\repos\\licensehubwf\\licensehubwf\\presenters\\mainpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C1D25882-3DFD-4C11-B7F5-3ABE308A96D7}|LicenseHubWF\\LicenseHubWF.csproj|solutionrelative:licensehubwf\\presenters\\mainpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C1D25882-3DFD-4C11-B7F5-3ABE308A96D7}|LicenseHubWF\\LicenseHubWF.csproj|c:\\users\\gihan\\source\\repos\\licensehubwf\\licensehubwf\\presenters\\licenserequestpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1D25882-3DFD-4C11-B7F5-3ABE308A96D7}|LicenseHubWF\\LicenseHubWF.csproj|solutionrelative:licensehubwf\\presenters\\licenserequestpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C1D25882-3DFD-4C11-B7F5-3ABE308A96D7}|LicenseHubWF\\LicenseHubWF.csproj|c:\\users\\gihan\\source\\repos\\licensehubwf\\licensehubwf\\presenters\\loginpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1D25882-3DFD-4C11-B7F5-3ABE308A96D7}|LicenseHubWF\\LicenseHubWF.csproj|solutionrelative:licensehubwf\\presenters\\loginpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C1D25882-3DFD-4C11-B7F5-3ABE308A96D7}|LicenseHubWF\\LicenseHubWF.csproj|c:\\users\\gihan\\source\\repos\\licensehubwf\\licensehubwf\\presenters\\licenseviewpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1D25882-3DFD-4C11-B7F5-3ABE308A96D7}|LicenseHubWF\\LicenseHubWF.csproj|solutionrelative:licensehubwf\\presenters\\licenseviewpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C1D25882-3DFD-4C11-B7F5-3ABE308A96D7}|LicenseHubWF\\LicenseHubWF.csproj|c:\\users\\gihan\\source\\repos\\licensehubwf\\licensehubwf\\models\\appsettingsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1D25882-3DFD-4C11-B7F5-3ABE308A96D7}|LicenseHubWF\\LicenseHubWF.csproj|solutionrelative:licensehubwf\\models\\appsettingsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C1D25882-3DFD-4C11-B7F5-3ABE308A96D7}|LicenseHubWF\\LicenseHubWF.csproj|c:\\users\\gihan\\source\\repos\\licensehubwf\\licensehubwf\\_repositories\\apirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1D25882-3DFD-4C11-B7F5-3ABE308A96D7}|LicenseHubWF\\LicenseHubWF.csproj|solutionrelative:licensehubwf\\_repositories\\apirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LoginPresenter.cs",
-              "DocumentMoniker": "C:\\Users\\Gihan\\source\\repos\\LicenseHubWF\\LicenseHubWF\\Presenters\\LoginPresenter.cs",
-              "RelativeDocumentMoniker": "LicenseHubWF\\Presenters\\LoginPresenter.cs",
-              "ToolTip": "C:\\Users\\Gihan\\source\\repos\\LicenseHubWF\\LicenseHubWF\\Presenters\\LoginPresenter.cs",
-              "RelativeToolTip": "LicenseHubWF\\Presenters\\LoginPresenter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEMAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T17:11:28.651Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AppSettingsModel.cs",
-              "DocumentMoniker": "C:\\Users\\Gihan\\source\\repos\\LicenseHubWF\\LicenseHubWF\\Models\\AppSettingsModel.cs",
-              "RelativeDocumentMoniker": "LicenseHubWF\\Models\\AppSettingsModel.cs",
-              "ToolTip": "C:\\Users\\Gihan\\source\\repos\\LicenseHubWF\\LicenseHubWF\\Models\\AppSettingsModel.cs",
-              "RelativeToolTip": "LicenseHubWF\\Models\\AppSettingsModel.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAQwCcAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T17:07:42.135Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "LicenseRequestPresenter.cs",
-              "DocumentMoniker": "C:\\Users\\Gihan\\source\\repos\\LicenseHubWF\\LicenseHubWF\\Presenters\\LicenseRequestPresenter.cs",
-              "RelativeDocumentMoniker": "LicenseHubWF\\Presenters\\LicenseRequestPresenter.cs",
-              "ToolTip": "C:\\Users\\Gihan\\source\\repos\\LicenseHubWF\\LicenseHubWF\\Presenters\\LicenseRequestPresenter.cs",
-              "RelativeToolTip": "LicenseHubWF\\Presenters\\LicenseRequestPresenter.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAgwIIAAAAAAAAA",
+              "Title": "ApiRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Gihan\\source\\repos\\LicenseHubWF\\LicenseHubWF\\_Repositories\\ApiRepository.cs",
+              "RelativeDocumentMoniker": "LicenseHubWF\\_Repositories\\ApiRepository.cs",
+              "ToolTip": "C:\\Users\\Gihan\\source\\repos\\LicenseHubWF\\LicenseHubWF\\_Repositories\\ApiRepository.cs",
+              "RelativeToolTip": "LicenseHubWF\\_Repositories\\ApiRepository.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAcwCkAAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T17:03:07.592Z",
+              "WhenOpened": "2024-03-12T13:48:47.384Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "LoginPresenter.cs",
+              "DocumentMoniker": "C:\\Users\\Gihan\\source\\repos\\LicenseHubWF\\LicenseHubWF\\Presenters\\LoginPresenter.cs",
+              "RelativeDocumentMoniker": "LicenseHubWF\\Presenters\\LoginPresenter.cs",
+              "ToolTip": "C:\\Users\\Gihan\\source\\repos\\LicenseHubWF\\LicenseHubWF\\Presenters\\LoginPresenter.cs",
+              "RelativeToolTip": "LicenseHubWF\\Presenters\\LoginPresenter.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T13:39:35.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "MainPresenter.cs",
               "DocumentMoniker": "C:\\Users\\Gihan\\source\\repos\\LicenseHubWF\\LicenseHubWF\\Presenters\\MainPresenter.cs",
               "RelativeDocumentMoniker": "LicenseHubWF\\Presenters\\MainPresenter.cs",
               "ToolTip": "C:\\Users\\Gihan\\source\\repos\\LicenseHubWF\\LicenseHubWF\\Presenters\\MainPresenter.cs",
               "RelativeToolTip": "LicenseHubWF\\Presenters\\MainPresenter.cs",
-              "ViewState": "AQIAAGUAAAAAAAAAAAAIwHwAAAAAAAAA",
+              "ViewState": "AQIAAIwAAAAAAAAAAAAwwG4AAABNAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T17:01:46.341Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LicenseViewPresenter.cs",
-              "DocumentMoniker": "C:\\Users\\Gihan\\source\\repos\\LicenseHubWF\\LicenseHubWF\\Presenters\\LicenseViewPresenter.cs",
-              "RelativeDocumentMoniker": "LicenseHubWF\\Presenters\\LicenseViewPresenter.cs",
-              "ToolTip": "C:\\Users\\Gihan\\source\\repos\\LicenseHubWF\\LicenseHubWF\\Presenters\\LicenseViewPresenter.cs",
-              "RelativeToolTip": "LicenseHubWF\\Presenters\\LicenseViewPresenter.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAA1wEcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T17:00:28.998Z",
+              "WhenOpened": "2024-03-12T13:24:37.053Z",
               "EditorCaption": ""
             }
           ]

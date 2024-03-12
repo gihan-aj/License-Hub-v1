@@ -10,14 +10,17 @@ namespace LicenseHubWF.Views
     public interface ILicenseRequestView
     {
         // Properties - Fields
-        ClientModel Client { get; set; }
+        string Client { get; set; }
         string RequestKey { get; set; }
         string PCName { get; set; }
         string LicenseType { get; set; }
         List<string> Packages {  get; set; }
+        bool IsAgreementAccepted { get; }
 
         // Events
         event EventHandler RequestLicenseEvent;
+        event EventHandler ResetEvent;
+        event EventHandler LicenseAgreementEvent;
 
         // Methods
         void SetClientList(IEnumerable<ClientModel> clientList);

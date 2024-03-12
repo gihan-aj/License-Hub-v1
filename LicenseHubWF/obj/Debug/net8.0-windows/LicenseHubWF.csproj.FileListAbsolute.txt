@@ -28,3 +28,4 @@ C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\obj\Debug\net8.0-windows\L
 C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\obj\Debug\net8.0-windows\LicenseHubWF.Views.LoginView.resources
 C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\obj\Debug\net8.0-windows\LicenseHubWF.Views.LicenseView.resources
 C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\obj\Debug\net8.0-windows\LicenseHubWF.Views.MessageBoxView.resources
+C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\obj\Debug\net8.0-windows\LicenseHubWF.Views.RequestKeyView.resources

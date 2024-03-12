@@ -59,7 +59,7 @@
             messageBoxIcon.IconColor = Color.FromArgb(249, 158, 76);
             messageBoxIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             messageBoxIcon.IconSize = 40;
-            messageBoxIcon.Location = new Point(155, 12);
+            messageBoxIcon.Location = new Point(155, 23);
             messageBoxIcon.Name = "messageBoxIcon";
             messageBoxIcon.Size = new Size(40, 40);
             messageBoxIcon.TabIndex = 2;
@@ -128,9 +128,10 @@
             // 
             // lblMessage
             // 
-            lblMessage.Location = new Point(0, 112);
+            lblMessage.Location = new Point(21, 112);
+            lblMessage.MaximumSize = new Size(340, 56);
             lblMessage.Name = "lblMessage";
-            lblMessage.Size = new Size(350, 56);
+            lblMessage.Size = new Size(307, 56);
             lblMessage.TabIndex = 9;
             lblMessage.Text = "Notification Message";
             lblMessage.TextAlign = ContentAlignment.MiddleCenter;
