@@ -4,6 +4,9 @@
     <Compile Update="Views\ConfigurationView.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\LicenseDownloadView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\LicenseRequestView.cs">
       <SubType>Form</SubType>
     </Compile>

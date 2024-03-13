@@ -20,6 +20,8 @@ namespace LicenseHubWF.Presenters
         private string? baseUrl;
         private IFileLogger logger;
 
+        private event EventHandler _promptLoginEvent;
+
         public MainPresenter(IMainView mainView, IMainRepository mainRepository, IFileLogger logger)
         {
             this.mainView = mainView;
@@ -35,6 +37,16 @@ namespace LicenseHubWF.Presenters
             this.mainView.ShowConfigurationView += ShowConfiguration;
             this.mainView.ShowLoginView += ShowLoginView;
             this.mainView.LogoutEvent += LogoutAndRemoveSessionToken;
+
+            ApiRepository.SessionTokenChanged += delegate
+            {
+                if(string.IsNullOrEmpty(ApiRepository.SessionToken))
+                {
+                    _promptLoginEvent?.Invoke(null, EventArgs.Empty);   
+                }
+            };
+
+            _promptLoginEvent += ShowLoginView;
 
             logger = new FileLogger();
             SetUpConnection(logger);

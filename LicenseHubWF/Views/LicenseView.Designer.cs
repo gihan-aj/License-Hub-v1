@@ -111,6 +111,7 @@
             txtLicenseId.ForeColor = Color.FromArgb(88, 40, 65);
             txtLicenseId.Location = new Point(38, 70);
             txtLicenseId.Name = "txtLicenseId";
+            txtLicenseId.ReadOnly = true;
             txtLicenseId.Size = new Size(280, 25);
             txtLicenseId.TabIndex = 7;
             // 
@@ -120,6 +121,7 @@
             txtCustomer.ForeColor = Color.FromArgb(88, 40, 65);
             txtCustomer.Location = new Point(358, 70);
             txtCustomer.Name = "txtCustomer";
+            txtCustomer.ReadOnly = true;
             txtCustomer.Size = new Size(280, 25);
             txtCustomer.TabIndex = 8;
             // 
@@ -129,6 +131,7 @@
             txtStartDate.ForeColor = Color.FromArgb(88, 40, 65);
             txtStartDate.Location = new Point(38, 160);
             txtStartDate.Name = "txtStartDate";
+            txtStartDate.ReadOnly = true;
             txtStartDate.Size = new Size(126, 25);
             txtStartDate.TabIndex = 9;
             // 
@@ -138,6 +141,7 @@
             txtEndDate.ForeColor = Color.FromArgb(88, 40, 65);
             txtEndDate.Location = new Point(192, 160);
             txtEndDate.Name = "txtEndDate";
+            txtEndDate.ReadOnly = true;
             txtEndDate.Size = new Size(126, 25);
             txtEndDate.TabIndex = 10;
             // 
@@ -147,6 +151,7 @@
             txtPcName.ForeColor = Color.FromArgb(88, 40, 65);
             txtPcName.Location = new Point(38, 250);
             txtPcName.Name = "txtPcName";
+            txtPcName.ReadOnly = true;
             txtPcName.Size = new Size(280, 25);
             txtPcName.TabIndex = 11;
             // 
@@ -157,6 +162,7 @@
             txtPackageList.Location = new Point(358, 162);
             txtPackageList.Multiline = true;
             txtPackageList.Name = "txtPackageList";
+            txtPackageList.ReadOnly = true;
             txtPackageList.Size = new Size(280, 181);
             txtPackageList.TabIndex = 12;
             // 

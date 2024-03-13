@@ -216,3 +216,7 @@
    at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
    at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
    at LicenseHubWF._Repositories.ApiRepository.IsConnected(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 194
+2024-03-13 17:09:19 -> [ERROR] : LoadLicenseFile -> Unable to find the specified file.
+2024-03-13 17:16:27 -> [ERROR] : RequestLicense -> License agreement must be accepted
+2024-03-13 17:16:27 -> [ERROR] : RequestLicense -> Exception : System.Exception: License agreement must be accepted
+   at LicenseHubWF.Presenters.LicenseRequestPresenter.RequestLicense(Object sender, EventArgs e) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\LicenseRequestPresenter.cs:line 171

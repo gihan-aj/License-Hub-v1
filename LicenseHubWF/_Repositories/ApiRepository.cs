@@ -265,6 +265,7 @@ namespace LicenseHubWF._Repositories
 
                         if(!tokenVerification.Success)
                         {
+                            _sessionToken = string.Empty;
                             tokenVerification.User = null;
                         }
 

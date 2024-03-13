@@ -62,7 +62,7 @@ namespace LicenseHubWF.Views
             {
                 license = value;
                 txtLicenseId.Text = license.LicenseId;
-                txtCustomer.Text = license.Customer;
+                txtCustomer.Text = license.Client;
                 txtStartDate.Text = license.StartDate.ToString(dateFormat);
                 txtEndDate.Text = license.EndDate.ToString(dateFormat);
                 txtPcName.Text = license.PcName;
