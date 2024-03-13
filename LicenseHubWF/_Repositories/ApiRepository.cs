@@ -1,4 +1,5 @@
 ﻿using LicenseHubWF.Models;
+using LicenseHubWF.Views;
 using LoggerLib;
 using Microsoft.Win32;
 using Newtonsoft.Json;
@@ -154,29 +155,124 @@ namespace LicenseHubWF._Repositories
         // Initiate HttpClient at the start
         public static void InitializeClient(string baseUrl)
         {
-            ApiClient = new HttpClient();
-            ApiClient.BaseAddress = new Uri(baseUrl);
-            ApiClient.DefaultRequestHeaders.Accept.Clear();
-            ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            try
+            {
+                if(baseUrl != null)
+                {
+                    ApiClient = new HttpClient();
+                    ApiClient.BaseAddress = new Uri(baseUrl);
+                    ApiClient.DefaultRequestHeaders.Accept.Clear();
+                    ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                }
+                else
+                {
+                    throw new Exception("Base url not found.");
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
 
         public static async Task IsConnected(IFileLogger logger)
         {
-            using (var request = new HttpRequestMessage(HttpMethod.Get, "test"))
+            try
             {
-                using (var response = await ApiClient.SendAsync(request))
+                string baseUrl = GetSetting<string>("ApiBaseUrl");
+                Connectivity = false;
+
+                if (baseUrl != null)
                 {
-                    logger.LogInfo($"IsConnected -> {response.RequestMessage}");
+                    InitializeClient(baseUrl);
+
+                    using (var request = new HttpRequestMessage(HttpMethod.Get, "test"))
+                    {
+                        using (var response = await ApiClient.SendAsync(request))
+                        {
+                            logger.LogInfo($"IsConnected -> {response.RequestMessage}");
+
+                            if (response.IsSuccessStatusCode)
+                            {
+                                TestModel testResponse = await response.Content.ReadAsAsync<TestModel>();
+                                if (!string.IsNullOrEmpty(testResponse.Message))
+                                {
+                                    Connectivity = true;
+                                    logger.LogInfo($"IsConnected -> Server connection working.");
+                                }
+                                else
+                                {
+                                    Connectivity = false;
+                                    logger.LogError($"IsConnected -> Incorrect url");
+                                }
+
+                            }
+                            else
+                            {
+                                Connectivity = false;
+                                logger.LogError($"IsConnected -> {response.ReasonPhrase}");
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    Connectivity = false;
+                    throw new Exception("Base url not found.");
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                logger.LogError($"IsConnected -> {ex.Message}");
+                logger.LogError($"IsConnected -> Exception: {ex}");
+
+                IMessageBoxView messageBox = new MessageBoxView()
+                {
+                    Title = "Error",
+                    Message = ex.Message
+                };
+                messageBox.Show();
+            }
+
+        }
+
+        public static async Task<TokenVerificationModel> VerifyToken(IFileLogger logger)
+        {
+            if(string.IsNullOrEmpty(_sessionToken))
+            {
+                return new TokenVerificationModel()
+                {
+                    Success = false
+                };
+            }
+
+            using (var request = new HttpRequestMessage(HttpMethod.Get, "verify"))
+            {
+                request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _sessionToken);
+
+                using (HttpResponseMessage response = await ApiClient.SendAsync(request))
+                {
+                    logger.LogInfo($"VerifyToken -> {response.RequestMessage}");
 
                     if (response.IsSuccessStatusCode)
                     {
-                        Connectivity = true;
-                        logger.LogInfo($"IsConnected -> Server connection working.");
+                        TokenVerificationModel tokenVerification = await response.Content.ReadAsAsync<TokenVerificationModel>();
+
+                        if(!tokenVerification.Success)
+                        {
+                            tokenVerification.User = null;
+                        }
+
+                        return tokenVerification;
                     }
                     else
                     {
-                        Connectivity = false;
-                        logger.LogError($"IsConnected -> {response.ReasonPhrase}");
+                        throw new Exception(response.ReasonPhrase);
                     }
                 }
             }

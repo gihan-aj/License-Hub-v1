@@ -1,0 +1,304 @@
+2024-03-13 08:59:29 -> [INFO]  : _________APP STARTED____________
+2024-03-13 08:59:30 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-13 09:04:40 -> [INFO]  : _________APP STARTED____________
+2024-03-13 09:04:40 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-13 09:09:06 -> [INFO]  : _________APP STARTED____________
+2024-03-13 09:09:06 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-13 09:09:07 -> [ERROR] : SetUpConnection -> Base url not found.
+2024-03-13 09:09:07 -> [ERROR] : SetUpConnection -> Exception: System.Exception: Base url not found.
+   at LicenseHubWF._Repositories.ApiRepository.InitializeClient(String baseUrl) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 168
+   at LicenseHubWF.Presenters.MainPresenter.SetUpConnection(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\MainPresenter.cs:line 50
+2024-03-13 09:10:19 -> [INFO]  : _________APP STARTED____________
+2024-03-13 09:10:19 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-13 09:10:20 -> [ERROR] : SetUpConnection -> Base url not found.
+2024-03-13 09:10:20 -> [ERROR] : SetUpConnection -> Exception: System.Exception: Base url not found.
+   at LicenseHubWF._Repositories.ApiRepository.InitializeClient(String baseUrl) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 168
+   at LicenseHubWF.Presenters.MainPresenter.SetUpConnection(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\MainPresenter.cs:line 50
+2024-03-13 09:10:44 -> [ERROR] : LoadLicenseFile -> Unable to find the specified file.
+2024-03-13 09:19:45 -> [INFO]  : _________APP STARTED____________
+2024-03-13 09:19:45 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-13 09:19:45 -> [ERROR] : SetUpConnection -> Base url not found.
+2024-03-13 09:19:45 -> [ERROR] : SetUpConnection -> Exception: System.Exception: Base url not found.
+   at LicenseHubWF._Repositories.ApiRepository.InitializeClient(String baseUrl) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 168
+   at LicenseHubWF.Presenters.MainPresenter.SetUpConnection(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\MainPresenter.cs:line 50
+2024-03-13 09:23:55 -> [INFO]  : _________APP STARTED____________
+2024-03-13 09:23:55 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-13 09:23:55 -> [ERROR] : SetUpConnection -> Base url not found.
+2024-03-13 09:23:55 -> [ERROR] : SetUpConnection -> Exception: System.Exception: Base url not found.
+   at LicenseHubWF._Repositories.ApiRepository.InitializeClient(String baseUrl) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 168
+   at LicenseHubWF.Presenters.MainPresenter.SetUpConnection(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\MainPresenter.cs:line 50
+2024-03-13 09:25:00 -> [INFO]  : _________APP STARTED____________
+2024-03-13 09:25:00 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-13 09:25:01 -> [ERROR] : SetUpConnection -> Base url not found.
+2024-03-13 09:25:01 -> [ERROR] : SetUpConnection -> Exception: System.Exception: Base url not found.
+   at LicenseHubWF._Repositories.ApiRepository.InitializeClient(String baseUrl) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 168
+   at LicenseHubWF.Presenters.MainPresenter.SetUpConnection(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\MainPresenter.cs:line 50
+2024-03-13 09:27:14 -> [INFO]  : _________APP STARTED____________
+2024-03-13 09:27:14 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-13 09:27:14 -> [ERROR] : SetUpConnection -> Base url not found.
+2024-03-13 09:27:14 -> [ERROR] : SetUpConnection -> Exception: System.Exception: Base url not found.
+   at LicenseHubWF._Repositories.ApiRepository.InitializeClient(String baseUrl) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 169
+   at LicenseHubWF.Presenters.MainPresenter.SetUpConnection(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\MainPresenter.cs:line 50
+2024-03-13 09:27:17 -> [ERROR] : IsConnected -> Base url not found.
+2024-03-13 09:27:17 -> [ERROR] : IsConnected -> Exception: System.Exception: Base url not found.
+   at LicenseHubWF._Repositories.ApiRepository.IsConnected(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 208
+2024-03-13 09:27:17 -> [ERROR] : LoginAndGetSessionToken -> Not connected to server.
+2024-03-13 09:27:24 -> [ERROR] : IsConnected -> Base url not found.
+2024-03-13 09:27:24 -> [ERROR] : IsConnected -> Exception: System.Exception: Base url not found.
+   at LicenseHubWF._Repositories.ApiRepository.IsConnected(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 208
+2024-03-13 09:27:24 -> [ERROR] : LoginAndGetSessionToken -> Not connected to server.
+2024-03-13 09:28:01 -> [INFO]  : _________APP STARTED____________
+2024-03-13 09:28:01 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-13 09:28:01 -> [ERROR] : SetUpConnection -> Base url not found.
+2024-03-13 09:28:01 -> [ERROR] : SetUpConnection -> Exception: System.Exception: Base url not found.
+   at LicenseHubWF._Repositories.ApiRepository.InitializeClient(String baseUrl) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 169
+   at LicenseHubWF.Presenters.MainPresenter.SetUpConnection(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\MainPresenter.cs:line 50
+2024-03-13 09:28:27 -> [INFO]  : _________APP STARTED____________
+2024-03-13 09:28:28 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-13 09:28:28 -> [ERROR] : SetUpConnection -> Base url not found.
+2024-03-13 09:28:28 -> [ERROR] : SetUpConnection -> Exception: System.Exception: Base url not found.
+   at LicenseHubWF._Repositories.ApiRepository.InitializeClient(String baseUrl) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 169
+   at LicenseHubWF.Presenters.MainPresenter.SetUpConnection(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\MainPresenter.cs:line 50
+2024-03-13 09:31:33 -> [INFO]  : _________APP STARTED____________
+2024-03-13 09:31:33 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-13 09:31:33 -> [ERROR] : SetUpConnection -> Base url not found.
+2024-03-13 09:31:33 -> [ERROR] : SetUpConnection -> Exception: System.Exception: Base url not found.
+   at LicenseHubWF._Repositories.ApiRepository.InitializeClient(String baseUrl) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 169
+   at LicenseHubWF.Presenters.MainPresenter.SetUpConnection(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\MainPresenter.cs:line 50
+2024-03-13 09:33:18 -> [INFO]  : _________APP STARTED____________
+2024-03-13 09:33:18 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-13 09:33:18 -> [ERROR] : SetUpConnection -> Base url not found.
+2024-03-13 09:33:18 -> [ERROR] : SetUpConnection -> Exception: System.Exception: Base url not found.
+   at LicenseHubWF._Repositories.ApiRepository.InitializeClient(String baseUrl) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 169
+   at LicenseHubWF.Presenters.MainPresenter.SetUpConnection(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\MainPresenter.cs:line 50
+2024-03-13 09:43:59 -> [INFO]  : _________APP STARTED____________
+2024-03-13 09:43:59 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-13 09:44:01 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-13 09:44:01 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-13 09:44:10 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-13 09:44:10 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-13 09:44:19 -> [ERROR] : IsConnected -> Invalid URI: The URI is empty.
+2024-03-13 09:44:19 -> [ERROR] : IsConnected -> Exception: System.UriFormatException: Invalid URI: The URI is empty.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString)
+   at LicenseHubWF._Repositories.ApiRepository.InitializeClient(String baseUrl) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 163
+   at LicenseHubWF._Repositories.ApiRepository.IsConnected(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 189
+2024-03-13 09:45:50 -> [INFO]  : _________APP STARTED____________
+2024-03-13 09:45:50 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-13 09:45:50 -> [ERROR] : IsConnected -> Invalid URI: The URI is empty.
+2024-03-13 09:45:50 -> [ERROR] : IsConnected -> Exception: System.UriFormatException: Invalid URI: The URI is empty.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString)
+   at LicenseHubWF._Repositories.ApiRepository.InitializeClient(String baseUrl) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 163
+   at LicenseHubWF._Repositories.ApiRepository.IsConnected(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 189
+2024-03-13 09:45:54 -> [ERROR] : IsConnected -> Invalid URI: The URI is empty.
+2024-03-13 09:45:54 -> [ERROR] : IsConnected -> Exception: System.UriFormatException: Invalid URI: The URI is empty.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString)
+   at LicenseHubWF._Repositories.ApiRepository.InitializeClient(String baseUrl) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 163
+   at LicenseHubWF._Repositories.ApiRepository.IsConnected(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 189
+2024-03-13 09:46:21 -> [ERROR] : IsConnected -> Invalid URI: The format of the URI could not be determined.
+2024-03-13 09:46:21 -> [ERROR] : IsConnected -> Exception: System.UriFormatException: Invalid URI: The format of the URI could not be determined.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString)
+   at LicenseHubWF._Repositories.ApiRepository.InitializeClient(String baseUrl) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 163
+   at LicenseHubWF._Repositories.ApiRepository.IsConnected(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 189
+2024-03-13 09:47:04 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-13 09:47:04 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-13 09:47:26 -> [ERROR] : IsConnected -> No such host is known. (9je93.wireockapi.cloud:443)
+2024-03-13 09:47:26 -> [ERROR] : IsConnected -> Exception: System.Net.Http.HttpRequestException: No such host is known. (9je93.wireockapi.cloud:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at LicenseHubWF._Repositories.ApiRepository.IsConnected(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 193
+2024-03-13 09:47:52 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-13 09:47:52 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-13 09:48:44 -> [INFO]  : _________APP STARTED____________
+2024-03-13 09:48:44 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-13 09:48:46 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-13 09:48:46 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-13 09:48:56 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-13 09:48:56 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-13 09:49:25 -> [ERROR] : IsConnected -> No such host is known. (9je93.wireockapi.cloud:443)
+2024-03-13 09:49:25 -> [ERROR] : IsConnected -> Exception: System.Net.Http.HttpRequestException: No such host is known. (9je93.wireockapi.cloud:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at LicenseHubWF._Repositories.ApiRepository.IsConnected(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 193
+2024-03-13 09:54:43 -> [ERROR] : IsConnected -> The SSL connection could not be established, see inner exception.
+2024-03-13 09:54:43 -> [ERROR] : IsConnected -> Exception: System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
+ ---> System.Security.Authentication.AuthenticationException: Authentication failed because the remote party sent a TLS alert: 'IllegalParameter'.
+ ---> System.ComponentModel.Win32Exception (0x80090326): The message received was unexpected or badly formatted.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at LicenseHubWF._Repositories.ApiRepository.IsConnected(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 193
+2024-03-13 09:55:00 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-13 09:55:00 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-13 10:15:16 -> [INFO]  : _________APP STARTED____________
+2024-03-13 10:15:16 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-13 10:15:17 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-13 10:15:17 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-13 10:15:21 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-13 10:15:21 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-13 10:15:27 -> [ERROR] : IsConnected -> No such host is known. (9je93.wiremckapi.cloud:443)
+2024-03-13 10:15:27 -> [ERROR] : IsConnected -> Exception: System.Net.Http.HttpRequestException: No such host is known. (9je93.wiremckapi.cloud:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at LicenseHubWF._Repositories.ApiRepository.IsConnected(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 193
+2024-03-13 10:16:00 -> [ERROR] : IsConnected -> No such host is known. (9je93.wiremckapi.cloud:443)
+2024-03-13 10:16:00 -> [ERROR] : IsConnected -> Exception: System.Net.Http.HttpRequestException: No such host is known. (9je93.wiremckapi.cloud:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at LicenseHubWF._Repositories.ApiRepository.IsConnected(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 193
+2024-03-13 10:16:27 -> [INFO]  : _________APP STARTED____________
+2024-03-13 10:16:27 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-13 10:16:33 -> [ERROR] : IsConnected -> No such host is known. (9je93.wiremckapi.cloud:443)
+2024-03-13 10:16:33 -> [ERROR] : IsConnected -> Exception: System.Net.Http.HttpRequestException: No such host is known. (9je93.wiremckapi.cloud:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at LicenseHubWF._Repositories.ApiRepository.IsConnected(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 193
+2024-03-13 10:18:44 -> [INFO]  : _________APP STARTED____________
+2024-03-13 10:18:44 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-13 10:18:44 -> [ERROR] : IsConnected -> No such host is known. (9je93.wiremckapi.cloud:443)
+2024-03-13 10:18:44 -> [ERROR] : IsConnected -> Exception: System.Net.Http.HttpRequestException: No such host is known. (9je93.wiremckapi.cloud:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at LicenseHubWF._Repositories.ApiRepository.IsConnected(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 194
+2024-03-13 10:18:50 -> [ERROR] : IsConnected -> No such host is known. (9je93.wiremckapi.cloud:443)
+2024-03-13 10:18:50 -> [ERROR] : IsConnected -> Exception: System.Net.Http.HttpRequestException: No such host is known. (9je93.wiremckapi.cloud:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at LicenseHubWF._Repositories.ApiRepository.IsConnected(IFileLogger logger) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\_Repositories\ApiRepository.cs:line 194
+2024-03-13 10:19:03 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-13 10:19:03 -> [INFO]  : IsConnected -> Server connection working.

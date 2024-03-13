@@ -69,3 +69,14 @@
 2024-03-12 18:53:42 -> [ERROR] : LoadLicenseFile -> Unable to find the specified file.
 2024-03-12 19:33:32 -> [ERROR] : LoadLicenseFile -> Unable to find the specified file.
 2024-03-12 19:34:00 -> [ERROR] : LoadLicenseFile -> Unable to find the specified file.
+2024-03-12 23:12:34 -> [ERROR] : LoadLicenseFile -> Unable to find the specified file.
+2024-03-12 23:14:53 -> [ERROR] : ShowConfiguration -> Top-level control cannot be added to a control.
+2024-03-12 23:14:53 -> [ERROR] : ShowConfiguration -> Exception: System.ArgumentException: Top-level control cannot be added to a control.
+   at System.Windows.Forms.Control.ControlCollection.Add(Control value)
+   at LicenseHubWF.Views.MainView.OpenChildForm(Form childForm) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Views\MainView.cs:line 84
+   at LicenseHubWF.Presenters.MainPresenter.ShowConfiguration(Object sender, EventArgs e) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\MainPresenter.cs:line 189
+2024-03-12 23:15:34 -> [ERROR] : ShowConfiguration -> Top-level control cannot be added to a control.
+2024-03-12 23:15:34 -> [ERROR] : ShowConfiguration -> Exception: System.ArgumentException: Top-level control cannot be added to a control.
+   at System.Windows.Forms.Control.ControlCollection.Add(Control value)
+   at LicenseHubWF.Views.MainView.OpenChildForm(Form childForm) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Views\MainView.cs:line 84
+   at LicenseHubWF.Presenters.MainPresenter.ShowConfiguration(Object sender, EventArgs e) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\MainPresenter.cs:line 189

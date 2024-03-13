@@ -30,26 +30,35 @@ namespace LicenseHubWF.Presenters
 
             // Events
             this.mainView.ShowLicenseView += ShowLicense;
-            this.mainView.ShowRequestLicenseView += ShowRequestLicenseView;
+            this.mainView.ShowRequestLicenseView += VerifyAndShowRequestLicenseView;
             this.mainView.ShowRequestKeyView += ShowRequestKey;
+            this.mainView.ShowConfigurationView += ShowConfiguration;
             this.mainView.ShowLoginView += ShowLoginView;
             this.mainView.LogoutEvent += LogoutAndRemoveSessionToken;
 
             logger = new FileLogger();
-            baseUrl = ApiRepository.GetSetting<string>("ApiBaseUrl");
-           
-            if(baseUrl != null)
+            SetUpConnection(logger);
+
+        }
+
+        private async void SetUpConnection(IFileLogger logger)
+        {
+            try
             {
-                ApiRepository.InitializeClient(baseUrl);
-                ApiRepository.IsConnected(logger);
+                await ApiRepository.IsConnected(logger);
             }
+            catch (Exception ex)
+            {
+                logger.LogError($"SetUpConnection -> {ex.Message}");
+                logger.LogError($"SetUpConnection -> Exception: {ex}");
 
-            // License view
-
-
-            // License request
-
-
+                IMessageBoxView messageBox = new MessageBoxView()
+                {
+                    Title = "Error",
+                    Message = ex.Message
+                };
+                messageBox.Show();
+            }
         }
 
         private void ShowLicense(object? sender, EventArgs e)
@@ -84,11 +93,12 @@ namespace LicenseHubWF.Presenters
 
         }
 
-        private void ShowRequestLicenseView(object? sender, EventArgs e)
+        private async void VerifyAndShowRequestLicenseView(object? sender, EventArgs e)
         {
             try
             {
-                if(ApiRepository.User == null)
+                TokenVerificationModel tokenVerification = await ApiRepository.VerifyToken(logger);
+                if (tokenVerification.Success == false)
                 {
                     ILoginView loginView = new LoginView();
                     ILoginRepository loginRepository = new LoginRepository(logger);
@@ -96,35 +106,12 @@ namespace LicenseHubWF.Presenters
 
                     ApiRepository.SessionTokenChanged += delegate
                     {
-                        if (!string.IsNullOrEmpty(ApiRepository.SessionToken))
-                        {
-                            if (activeForm != null)
-                            {
-                                activeForm.Dispose();
-                            }
-
-                            ILicenseRequestView licenseRequestView = new LicenseRequestView();
-                            ILicenseRequestRepository licenseRequestRepository = new LicenseRequestRepository(logger);
-                            new LicenseRequestPresenter(licenseRequestView, licenseRequestRepository, logger);
-
-                            activeForm = (Form)licenseRequestView;
-                            mainView.OpenChildForm((Form)licenseRequestView);
-                        }
+                        ShowRequestLicenseView();
                     };
                 }
                 else
                 {
-                    if (activeForm != null)
-                    {
-                        activeForm.Dispose();
-                    }
-
-                    ILicenseRequestView licenseRequestView = new LicenseRequestView();
-                    ILicenseRequestRepository licenseRequestRepository = new LicenseRequestRepository(logger);
-                    new LicenseRequestPresenter(licenseRequestView, licenseRequestRepository, logger);
-
-                    activeForm = (Form)licenseRequestView;
-                    mainView.OpenChildForm((Form)licenseRequestView);
+                    ShowRequestLicenseView();
                 }
 
             }
@@ -142,6 +129,24 @@ namespace LicenseHubWF.Presenters
                 messageBox.Show();
             }
 
+        }
+
+        private void ShowRequestLicenseView()
+        {
+            if (!string.IsNullOrEmpty(ApiRepository.SessionToken))
+            {
+                if (activeForm != null)
+                {
+                    activeForm.Dispose();
+                }
+
+                ILicenseRequestView licenseRequestView = new LicenseRequestView();
+                ILicenseRequestRepository licenseRequestRepository = new LicenseRequestRepository(logger);
+                new LicenseRequestPresenter(licenseRequestView, licenseRequestRepository, logger);
+
+                activeForm = (Form)licenseRequestView;
+                mainView.OpenChildForm((Form)licenseRequestView);
+            }
         }
 
         private void ShowRequestKey(object? sender, EventArgs e)
@@ -174,6 +179,35 @@ namespace LicenseHubWF.Presenters
                 messageBox.Show();
             }
 
+        }
+
+        private void ShowConfiguration(object? sender, EventArgs e)
+        {
+            try
+            {
+                if (activeForm != null)
+                {
+                    activeForm.Dispose();
+                }
+
+                IConfigurationView configurationView = new ConfigurationView();
+                new ConfigurationPresenter(configurationView, logger);
+
+                activeForm = (Form)configurationView;
+                mainView.OpenChildForm((Form)configurationView);
+            }
+            catch (Exception ex)
+            {
+                logger.LogError($"ShowConfiguration -> {ex.Message}");
+                logger.LogError($"ShowConfiguration -> Exception: {ex}");
+
+                IMessageBoxView messageBox = new MessageBoxView()
+                {
+                    Title = "Error",
+                    Message = ex.Message
+                };
+                messageBox.Show();
+            }
         }
 
         private async void LogoutAndRemoveSessionToken(object? sender, EventArgs e)

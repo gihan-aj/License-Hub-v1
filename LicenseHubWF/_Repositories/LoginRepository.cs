@@ -20,32 +20,49 @@ namespace LicenseHubWF._Repositories
 
         public async Task<LoginResponseModel> Login(LoginModel loginDetails)
         {
-            using (var request = new HttpRequestMessage(HttpMethod.Post, "remote-user/login"))
+            try
             {
-                request.Content = new StringContent(JsonConvert.SerializeObject(loginDetails), Encoding.UTF8, "application/json");
-
-                using(var response = await ApiRepository.ApiClient.SendAsync(request))
+                if (ApiRepository.Connectivity)
                 {
-                    _logger.LogInfo($"Login -> {response.RequestMessage}");
+                    using (var request = new HttpRequestMessage(HttpMethod.Post, "remote-user/login"))
+                    {
+                        request.Content = new StringContent(JsonConvert.SerializeObject(loginDetails), Encoding.UTF8, "application/json");
 
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var responseContent = await response.Content.ReadAsStringAsync();
-                        try
+                        using (var response = await ApiRepository.ApiClient.SendAsync(request))
                         {
-                            return JsonConvert.DeserializeObject<LoginResponseModel>(responseContent);
+                            _logger.LogInfo($"Login -> {response.RequestMessage}");
+
+                            if (response.IsSuccessStatusCode)
+                            {
+                                var responseContent = await response.Content.ReadAsStringAsync();
+                                try
+                                {
+                                    return JsonConvert.DeserializeObject<LoginResponseModel>(responseContent);
+                                }
+                                catch
+                                {
+                                    throw;
+                                }
+                            }
+                            else
+                            {
+                                throw new Exception(response.ReasonPhrase);
+                            }
                         }
-                        catch
-                        {
-                            throw;
-                        }
-                    }
-                    else
-                    {
-                        throw new Exception(response.ReasonPhrase);
                     }
                 }
+                else
+                {
+                    throw new Exception("Not connected to server.");
+                }
+
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
     }
 }

@@ -36,6 +36,10 @@ namespace LicenseHubWF.Models
 
         private string _requestKeyInfo = "Please contact 'keys.dspcontrols.lk' with this key";
 
+        private string _connectionTestSuccessMessage = "Connection successful!";
+
+        private string _connectionTestFailMessage = "Connection unsuccessful!";
+
         public string ApiBaseUrl { get => _apiBaseUrl; set => _apiBaseUrl = value; }
         public string DateFormat { get => _dateFormat; set => _dateFormat = value; }
         public string LicenseFilePath { get => _licenseFilePath; set => _licenseFilePath = value; }
@@ -50,5 +54,7 @@ namespace LicenseHubWF.Models
         public string LicenseAgreementPath { get => _licenseAgreementPath; set => _licenseAgreementPath = value; }
         public string TxtReader { get => _txtReader; set => _txtReader = value; }
         public string RequestKeyInfo { get => _requestKeyInfo; set => _requestKeyInfo = value; }
+        public string ConnectionTestSuccessMessage { get => _connectionTestSuccessMessage; set => _connectionTestSuccessMessage = value; }
+        public string ConnectionTestFailMessage { get => _connectionTestFailMessage; set => _connectionTestFailMessage = value; }
     }
 }

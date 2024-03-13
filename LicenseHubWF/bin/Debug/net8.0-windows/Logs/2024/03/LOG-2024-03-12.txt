@@ -909,3 +909,171 @@
   Accept: application/json
 }
 2024-03-12 19:35:35 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-12 21:10:43 -> [INFO]  : _________APP STARTED____________
+2024-03-12 21:10:43 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-12 21:10:46 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-12 21:10:46 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-12 21:10:52 -> [INFO]  : Login -> Method: POST, RequestUri: 'https://9je93.wiremockapi.cloud/api/remote-user/login', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
+{
+  Accept: application/json
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 26
+}
+2024-03-12 21:10:52 -> [INFO]  : LoginAndGetSessionToken -> login successful
+2024-03-12 21:10:52 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-03-12 21:10:52 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-03-12 21:10:52 -> [INFO]  : LoginAndGetSessionToken -> user01999999 logged in with user@email.com.
+2024-03-12 21:10:52 -> [INFO]  : LoginAndGetSessionToken -> Session Token 1234567890.
+2024-03-12 21:10:53 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer
+  Accept: application/json
+}
+2024-03-12 21:10:53 -> [INFO]  : LoadClients -> Client list loaded.
+2024-03-12 21:10:53 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-12 21:10:53 -> [INFO]  : LoadPackages -> Package list loaded.
+2024-03-12 21:11:25 -> [INFO]  : VerifyToken -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/verify', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer 1234567890
+  Accept: application/json
+}
+2024-03-12 21:11:25 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-03-12 21:11:25 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-03-12 21:11:26 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer
+  Accept: application/json
+}
+2024-03-12 21:11:26 -> [INFO]  : LoadClients -> Client list loaded.
+2024-03-12 21:11:26 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-12 21:11:26 -> [INFO]  : LoadPackages -> Package list loaded.
+2024-03-12 21:13:58 -> [INFO]  : VerifyToken -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/verify', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer 1234567890
+  Accept: application/json
+}
+2024-03-12 21:13:58 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-03-12 21:13:58 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-03-12 21:13:59 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer
+  Accept: application/json
+}
+2024-03-12 21:13:59 -> [INFO]  : LoadClients -> Client list loaded.
+2024-03-12 21:13:59 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-12 21:13:59 -> [INFO]  : LoadPackages -> Package list loaded.
+2024-03-12 21:43:37 -> [INFO]  : _________APP STARTED____________
+2024-03-12 21:43:37 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-12 21:43:38 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-12 21:43:38 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-12 21:43:40 -> [INFO]  : Login -> Method: POST, RequestUri: 'https://9je93.wiremockapi.cloud/api/remote-user/login', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
+{
+  Accept: application/json
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 26
+}
+2024-03-12 21:43:40 -> [INFO]  : LoginAndGetSessionToken -> login successful
+2024-03-12 21:43:40 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-03-12 21:43:40 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-03-12 21:43:40 -> [INFO]  : LoginAndGetSessionToken -> user01999999 logged in with user@email.com.
+2024-03-12 21:43:40 -> [INFO]  : LoginAndGetSessionToken -> Session Token 1234567890.
+2024-03-12 21:43:41 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer
+  Accept: application/json
+}
+2024-03-12 21:43:41 -> [INFO]  : LoadClients -> Client list loaded.
+2024-03-12 21:43:41 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-12 21:43:41 -> [INFO]  : LoadPackages -> Package list loaded.
+2024-03-12 23:12:24 -> [INFO]  : _________APP STARTED____________
+2024-03-12 23:12:24 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings created.
+2024-03-12 23:12:25 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-12 23:12:25 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-12 23:12:34 -> [ERROR] : LoadLicenseFile -> Unable to find the specified file.
+2024-03-12 23:13:35 -> [INFO]  : _________APP STARTED____________
+2024-03-12 23:13:36 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-12 23:13:37 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-12 23:13:37 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-12 23:14:50 -> [INFO]  : _________APP STARTED____________
+2024-03-12 23:14:50 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-12 23:14:52 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-12 23:14:52 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-12 23:14:53 -> [ERROR] : ShowConfiguration -> Top-level control cannot be added to a control.
+2024-03-12 23:14:53 -> [ERROR] : ShowConfiguration -> Exception: System.ArgumentException: Top-level control cannot be added to a control.
+   at System.Windows.Forms.Control.ControlCollection.Add(Control value)
+   at LicenseHubWF.Views.MainView.OpenChildForm(Form childForm) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Views\MainView.cs:line 84
+   at LicenseHubWF.Presenters.MainPresenter.ShowConfiguration(Object sender, EventArgs e) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\MainPresenter.cs:line 189
+2024-03-12 23:15:32 -> [INFO]  : _________APP STARTED____________
+2024-03-12 23:15:32 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-12 23:15:33 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-12 23:15:33 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-12 23:15:34 -> [ERROR] : ShowConfiguration -> Top-level control cannot be added to a control.
+2024-03-12 23:15:34 -> [ERROR] : ShowConfiguration -> Exception: System.ArgumentException: Top-level control cannot be added to a control.
+   at System.Windows.Forms.Control.ControlCollection.Add(Control value)
+   at LicenseHubWF.Views.MainView.OpenChildForm(Form childForm) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Views\MainView.cs:line 84
+   at LicenseHubWF.Presenters.MainPresenter.ShowConfiguration(Object sender, EventArgs e) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\MainPresenter.cs:line 189
+2024-03-12 23:16:48 -> [INFO]  : _________APP STARTED____________
+2024-03-12 23:16:48 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-12 23:16:50 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-12 23:16:50 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-12 23:17:30 -> [INFO]  : _________APP STARTED____________
+2024-03-12 23:17:30 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-12 23:17:31 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-12 23:17:31 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-12 23:17:54 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-12 23:17:54 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-12 23:18:12 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-12 23:18:12 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-12 23:18:24 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-12 23:18:24 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-12 23:18:45 -> [INFO]  : _________APP STARTED____________
+2024-03-12 23:18:45 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-12 23:20:25 -> [INFO]  : _________APP STARTED____________
+2024-03-12 23:20:25 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-12 23:23:20 -> [INFO]  : _________APP STARTED____________
+2024-03-12 23:23:20 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
