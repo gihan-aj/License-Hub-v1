@@ -26,10 +26,14 @@ namespace LicenseHubWF._Repositories
         private static AppSettingsModel _settings = new AppSettingsModel();
         private static string _appSetttingsPath = string.Empty;
 
+        // Delegates
+        public delegate void VerificationFailedEventHandler(object? sender, EventArgs e);
+
         // Events
         public static event EventHandler UserChanged;
         public static event EventHandler ConnectivityChanged; 
-        public static event EventHandler SessionTokenChanged; 
+        public static event EventHandler SessionTokenChanged;
+        public static event VerificationFailedEventHandler VerificationFailed;
 
         // Properties
 
@@ -185,44 +189,52 @@ namespace LicenseHubWF._Repositories
                 string baseUrl = GetSetting<string>("ApiBaseUrl");
                 Connectivity = false;
 
-                if (baseUrl != null)
+                if(ApiClient != null)
                 {
-                    InitializeClient(baseUrl);
-
-                    using (var request = new HttpRequestMessage(HttpMethod.Get, "test"))
+                    if (baseUrl != null)
                     {
-                        using (var response = await ApiClient.SendAsync(request))
-                        {
-                            logger.LogInfo($"IsConnected -> {response.RequestMessage}");
+                        InitializeClient(baseUrl);
 
-                            if (response.IsSuccessStatusCode)
+                        using (var request = new HttpRequestMessage(HttpMethod.Get, "test"))
+                        {
+                            using (var response = await ApiClient.SendAsync(request))
                             {
-                                TestModel testResponse = await response.Content.ReadAsAsync<TestModel>();
-                                if (!string.IsNullOrEmpty(testResponse.Message))
+                                logger.LogInfo($"IsConnected -> {response.RequestMessage}");
+
+                                if (response.IsSuccessStatusCode)
                                 {
-                                    Connectivity = true;
-                                    logger.LogInfo($"IsConnected -> Server connection working.");
+                                    TestModel testResponse = await response.Content.ReadAsAsync<TestModel>();
+                                    if (!string.IsNullOrEmpty(testResponse.Message))
+                                    {
+                                        Connectivity = true;
+                                        logger.LogInfo($"IsConnected -> Server connection working.");
+                                    }
+                                    else
+                                    {
+                                        Connectivity = false;
+                                        logger.LogError($"IsConnected -> Incorrect url");
+                                    }
+
                                 }
                                 else
                                 {
                                     Connectivity = false;
-                                    logger.LogError($"IsConnected -> Incorrect url");
+                                    logger.LogError($"IsConnected -> {response.ReasonPhrase}");
                                 }
-
-                            }
-                            else
-                            {
-                                Connectivity = false;
-                                logger.LogError($"IsConnected -> {response.ReasonPhrase}");
                             }
                         }
+                    }
+                    else
+                    {
+                        Connectivity = false;
+                        throw new Exception("Base url not found.");
                     }
                 }
                 else
                 {
-                    Connectivity = false;
-                    throw new Exception("Base url not found.");
+                    throw new Exception("Http client initiation has failed.");
                 }
+                
 
             }
             catch (Exception ex)
@@ -250,33 +262,58 @@ namespace LicenseHubWF._Repositories
                     Success = false
                 };
             }
-
-            using (var request = new HttpRequestMessage(HttpMethod.Get, "verify"))
+            try
             {
-                request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _sessionToken);
-
-                using (HttpResponseMessage response = await ApiClient.SendAsync(request))
+                if (ApiClient != null)
                 {
-                    logger.LogInfo($"VerifyToken -> {response.RequestMessage}");
-
-                    if (response.IsSuccessStatusCode)
+                    using (var request = new HttpRequestMessage(HttpMethod.Get, "verify"))
                     {
-                        TokenVerificationModel tokenVerification = await response.Content.ReadAsAsync<TokenVerificationModel>();
+                        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _sessionToken);
 
-                        if(!tokenVerification.Success)
+                        using (HttpResponseMessage response = await ApiClient.SendAsync(request))
                         {
-                            _sessionToken = string.Empty;
-                            tokenVerification.User = null;
-                        }
+                            logger.LogInfo($"VerifyToken -> {response.RequestMessage}");
 
-                        return tokenVerification;
-                    }
-                    else
-                    {
-                        throw new Exception(response.ReasonPhrase);
+                            if (response.IsSuccessStatusCode)
+                            {
+                                TokenVerificationModel tokenVerification = await response.Content.ReadAsAsync<TokenVerificationModel>();
+
+                                if (!tokenVerification.Success)
+                                {
+                                    _sessionToken = string.Empty;
+                                    //tokenVerification.User = null;
+                                }
+                                else
+                                {
+                                    if (!tokenVerification.Success)
+                                    {
+                                        VerificationFailed.Invoke(null, EventArgs.Empty);
+                                    }
+                                }
+
+                                return tokenVerification;
+                            }
+                            else
+                            {
+                                throw new Exception(response.ReasonPhrase);
+                            }
+                        }
                     }
                 }
+                else
+                {
+                    throw new Exception("Http client initiation has failed.");
+                }
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+
+
         }
 
         //public static string? GetAppSetting(string key)

@@ -140,7 +140,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(204, 42, 73);
+            BackColor = SystemColors.Window;
             ClientSize = new Size(350, 250);
             Controls.Add(lblMessage);
             Controls.Add(btnOk);

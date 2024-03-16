@@ -20,6 +20,7 @@ namespace LicenseHubWF
 
             IFileLogger logger = new FileLogger();
             logger.LogInfo("_________APP STARTED____________");
+
             ApiRepository.LoadAppSettingsFile(logger);
 
             IMainView view = new MainView();

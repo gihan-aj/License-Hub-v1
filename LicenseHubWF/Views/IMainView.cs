@@ -8,6 +8,7 @@ namespace LicenseHubWF.Views
 {
     public interface IMainView
     {
+        string CurrentPageName { set; }
 
         event EventHandler ShowLicenseView;
         event EventHandler ShowRequestLicenseView;

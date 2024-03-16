@@ -13,6 +13,7 @@ namespace LicenseHubWF.Views
 {
     public partial class MainView : Form, IMainView
     {
+        private string _currentPageName;
         public MainView()
         {
             InitializeComponent();
@@ -39,6 +40,17 @@ namespace LicenseHubWF.Views
 
             btnLogin.Visible = true;
             btnLogout.Visible = false;
+
+            lblPageName.Text = string.Empty;
+        }
+
+        public string CurrentPageName
+        {
+            set
+            {
+                _currentPageName = value;
+                lblPageName.Text = _currentPageName.ToUpper();
+            }
         }
 
         private void OnConnectivityChanged(object? sender, EventArgs e)

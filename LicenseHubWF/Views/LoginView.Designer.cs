@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             btnClose = new FontAwesome.Sharp.IconButton();
             btnReset = new FontAwesome.Sharp.IconButton();
             btnLogin = new FontAwesome.Sharp.IconButton();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             txtEmail = new TextBox();
             txtPassword = new TextBox();
             panel1.SuspendLayout();
@@ -49,6 +49,20 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(300, 200);
             panel1.TabIndex = 0;
+            // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = Color.FromArgb(88, 40, 65);
+            iconPictureBox1.ForeColor = Color.FromArgb(249, 158, 76);
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.User;
+            iconPictureBox1.IconColor = Color.FromArgb(249, 158, 76);
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 70;
+            iconPictureBox1.Location = new Point(115, 80);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(70, 70);
+            iconPictureBox1.TabIndex = 2;
+            iconPictureBox1.TabStop = false;
             // 
             // btnClose
             // 
@@ -73,7 +87,7 @@
             btnReset.Dock = DockStyle.Bottom;
             btnReset.FlatAppearance.BorderSize = 0;
             btnReset.FlatStyle = FlatStyle.Flat;
-            btnReset.Font = new Font("Segoe UI", 12F);
+            btnReset.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReset.IconChar = FontAwesome.Sharp.IconChar.None;
             btnReset.IconColor = Color.FromArgb(249, 158, 76);
             btnReset.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -92,7 +106,7 @@
             btnLogin.Dock = DockStyle.Bottom;
             btnLogin.FlatAppearance.BorderSize = 0;
             btnLogin.FlatStyle = FlatStyle.Flat;
-            btnLogin.Font = new Font("Segoe UI", 12F);
+            btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogin.IconChar = FontAwesome.Sharp.IconChar.None;
             btnLogin.IconColor = Color.FromArgb(249, 158, 76);
             btnLogin.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -104,20 +118,6 @@
             btnLogin.TabIndex = 3;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
-            // 
-            // iconPictureBox1
-            // 
-            iconPictureBox1.BackColor = Color.FromArgb(88, 40, 65);
-            iconPictureBox1.ForeColor = Color.FromArgb(249, 158, 76);
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.User;
-            iconPictureBox1.IconColor = Color.FromArgb(249, 158, 76);
-            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 70;
-            iconPictureBox1.Location = new Point(115, 80);
-            iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(70, 70);
-            iconPictureBox1.TabIndex = 2;
-            iconPictureBox1.TabStop = false;
             // 
             // txtEmail
             // 
@@ -145,7 +145,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(204, 42, 73);
+            BackColor = SystemColors.Window;
             ClientSize = new Size(300, 460);
             Controls.Add(txtPassword);
             Controls.Add(txtEmail);

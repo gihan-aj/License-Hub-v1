@@ -16,6 +16,8 @@ namespace LicenseHubWF.Presenters
         private ILoginRepository _repository;
         private IFileLogger _logger;
 
+        private event EventHandler _loginSuccessfullEvent;
+        private event EventHandler _loginFailedEvent;
         public LoginPresenter(ILoginView view, ILoginRepository repository, IFileLogger logger)
         {
             _view = view;
@@ -50,11 +52,28 @@ namespace LicenseHubWF.Presenters
                         ApiRepository.SessionToken = loginDetails.SessionToken;
                         ApiRepository.User = loginDetails.User;
 
+                        _loginSuccessfullEvent.Invoke(this, EventArgs.Empty); 
+
                         _logger.LogInfo($"LoginAndGetSessionToken -> {loginDetails.User.Name} logged in with {loginDetails.User.Email}.");
                         _logger.LogInfo($"LoginAndGetSessionToken -> Session Token {loginDetails.SessionToken}.");
 
                         _view.Dispose();
                     }
+                    else
+                    {
+                        _loginFailedEvent.Invoke(this, EventArgs.Empty);
+                        IMessageBoxView confirmView = new MessageBoxView()
+                        {
+                            Title = "Warning",
+                            Message = loginDetails.Message,
+                        };
+                        confirmView.Show();
+                        _logger.LogError($"LoginAndGetSessionToken -> {loginDetails.Message}");
+                    }
+                }
+                else
+                {
+                    _loginFailedEvent.Invoke(this, EventArgs.Empty);
                 }
             }
             catch (Exception ex)

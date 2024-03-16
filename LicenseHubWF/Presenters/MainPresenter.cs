@@ -14,41 +14,29 @@ namespace LicenseHubWF.Presenters
 {
     public class MainPresenter
     {
-        private IMainView mainView;
-        private IMainRepository mainRepository;
+        private IMainView _mainView;
+        private IMainRepository _mainRepository;
         private Form? activeForm;
-        private string? baseUrl;
-        private IFileLogger logger;
-
-        private event EventHandler _promptLoginEvent;
+        private IFileLogger _logger;
 
         public MainPresenter(IMainView mainView, IMainRepository mainRepository, IFileLogger logger)
         {
-            this.mainView = mainView;
-            this.mainRepository = mainRepository;
-            this.logger = logger;
+            this._mainView = mainView;
+            this._mainRepository = mainRepository;
+            this._logger = logger;
 
             
 
             // Events
-            this.mainView.ShowLicenseView += ShowLicense;
-            this.mainView.ShowRequestLicenseView += VerifyAndShowRequestLicenseView;
-            this.mainView.ShowRequestKeyView += ShowRequestKey;
-            this.mainView.ShowConfigurationView += ShowConfiguration;
-            this.mainView.ShowLoginView += ShowLoginView;
-            this.mainView.LogoutEvent += LogoutAndRemoveSessionToken;
+            this._mainView.ShowLicenseView += ShowLicense;
+            this._mainView.ShowRequestLicenseView += VerifyAndShowRequestLicenseView;
+            this._mainView.ShowRequestKeyView += ShowRequestKey;
+            this._mainView.ShowConfigurationView += ShowConfiguration;
+            this._mainView.ShowLoginView += ShowLoginView;
+            this._mainView.LogoutEvent += LogoutAndRemoveSessionToken;
 
-            ApiRepository.SessionTokenChanged += delegate
-            {
-                if(string.IsNullOrEmpty(ApiRepository.SessionToken))
-                {
-                    _promptLoginEvent?.Invoke(null, EventArgs.Empty);   
-                }
-            };
+            ApiRepository.VerificationFailed += ShowLoginView;
 
-            _promptLoginEvent += ShowLoginView;
-
-            logger = new FileLogger();
             SetUpConnection(logger);
 
         }
@@ -83,17 +71,18 @@ namespace LicenseHubWF.Presenters
                 }
 
                 ILicenseView licenseView = new LicenseView();
-                ILicenseViewRepository licenseViewRepository = new LicenseViewRepository(logger);
-                new LicenseViewPresenter(licenseView, licenseViewRepository, logger);
+                ILicenseViewRepository licenseViewRepository = new LicenseViewRepository(_logger);
+                new LicenseViewPresenter(licenseView, licenseViewRepository, _logger);
 
                 activeForm = (Form)licenseView;
-                mainView.OpenChildForm((Form)licenseView);
+                _mainView.OpenChildForm((Form)licenseView);
+                _mainView.CurrentPageName = "License";
             }
             catch (Exception ex)
             {
 
-                logger.LogError($"ShowLicense -> {ex.Message}");
-                logger.LogError($"ShowLicense -> Exception: {ex}");
+                _logger.LogError($"ShowLicense -> {ex.Message}");
+                _logger.LogError($"ShowLicense -> Exception: {ex}");
 
                 IMessageBoxView messageBox = new MessageBoxView()
                 {
@@ -109,12 +98,12 @@ namespace LicenseHubWF.Presenters
         {
             try
             {
-                TokenVerificationModel tokenVerification = await ApiRepository.VerifyToken(logger);
+                TokenVerificationModel tokenVerification = await ApiRepository.VerifyToken(_logger);
                 if (tokenVerification.Success == false)
                 {
                     ILoginView loginView = new LoginView();
-                    ILoginRepository loginRepository = new LoginRepository(logger);
-                    new LoginPresenter(loginView, loginRepository, logger);
+                    ILoginRepository loginRepository = new LoginRepository(_logger);
+                    new LoginPresenter(loginView, loginRepository, _logger);
 
                     ApiRepository.SessionTokenChanged += delegate
                     {
@@ -130,8 +119,8 @@ namespace LicenseHubWF.Presenters
             catch (Exception ex)
             {
 
-                logger.LogError($"ShowRequestLicenseView -> {ex.Message}");
-                logger.LogError($"ShowRequestLicenseView -> Exception: {ex}");
+                _logger.LogError($"ShowRequestLicenseView -> {ex.Message}");
+                _logger.LogError($"ShowRequestLicenseView -> Exception: {ex}");
 
                 IMessageBoxView messageBox = new MessageBoxView()
                 {
@@ -153,11 +142,12 @@ namespace LicenseHubWF.Presenters
                 }
 
                 ILicenseRequestView licenseRequestView = new LicenseRequestView();
-                ILicenseRequestRepository licenseRequestRepository = new LicenseRequestRepository(logger);
-                new LicenseRequestPresenter(licenseRequestView, licenseRequestRepository, logger);
+                ILicenseRequestRepository licenseRequestRepository = new LicenseRequestRepository(_logger);
+                new LicenseRequestPresenter(licenseRequestView, licenseRequestRepository, _logger);
 
                 activeForm = (Form)licenseRequestView;
-                mainView.OpenChildForm((Form)licenseRequestView);
+                _mainView.OpenChildForm((Form)licenseRequestView);
+                _mainView.CurrentPageName = "License Request";
             }
         }
 
@@ -171,17 +161,18 @@ namespace LicenseHubWF.Presenters
                 }
 
                 IRequestKeyView requestKeyView = new RequestKeyView();
-                ILicenseRequestRepository requestKeyRepository = new LicenseRequestRepository(logger);
-                new RequestKeyPresenter(requestKeyView, requestKeyRepository, logger);
+                ILicenseRequestRepository requestKeyRepository = new LicenseRequestRepository(_logger);
+                new RequestKeyPresenter(requestKeyView, requestKeyRepository, _logger);
 
                 activeForm = (Form)requestKeyView;
-                mainView.OpenChildForm((Form)requestKeyView);
+                _mainView.OpenChildForm((Form)requestKeyView);
+                _mainView.CurrentPageName = "Request Key";
             }
             catch (Exception ex)
             {
 
-                logger.LogError($"ShowRequestKey -> {ex.Message}");
-                logger.LogError($"ShowRequestKey -> Exception: {ex}");
+                _logger.LogError($"ShowRequestKey -> {ex.Message}");
+                _logger.LogError($"ShowRequestKey -> Exception: {ex}");
 
                 IMessageBoxView messageBox = new MessageBoxView()
                 {
@@ -203,15 +194,16 @@ namespace LicenseHubWF.Presenters
                 }
 
                 IConfigurationView configurationView = new ConfigurationView();
-                new ConfigurationPresenter(configurationView, logger);
+                new ConfigurationPresenter(configurationView, _logger);
 
                 activeForm = (Form)configurationView;
-                mainView.OpenChildForm((Form)configurationView);
+                _mainView.OpenChildForm((Form)configurationView);
+                _mainView.CurrentPageName = "Configuration";
             }
             catch (Exception ex)
             {
-                logger.LogError($"ShowConfiguration -> {ex.Message}");
-                logger.LogError($"ShowConfiguration -> Exception: {ex}");
+                _logger.LogError($"ShowConfiguration -> {ex.Message}");
+                _logger.LogError($"ShowConfiguration -> Exception: {ex}");
 
                 IMessageBoxView messageBox = new MessageBoxView()
                 {
@@ -236,9 +228,9 @@ namespace LicenseHubWF.Presenters
                 {
                     if (confirmView.IsAccepted)
                     {
-                        LogoutModel logoutDetails = await mainRepository.Logout();
+                        LogoutModel logoutDetails = await _mainRepository.Logout();
 
-                        logger.LogInfo($"LogoutAndRemoveSessionToken -> {logoutDetails.Message}");
+                        _logger.LogInfo($"LogoutAndRemoveSessionToken -> {logoutDetails.Message}");
 
                         if (logoutDetails != null)
                         {
@@ -247,7 +239,7 @@ namespace LicenseHubWF.Presenters
                                 ApiRepository.SessionToken = null;
                                 ApiRepository.User = null;
 
-                                logger.LogInfo($"LogoutAndRemoveSessionToken -> Session Token removed.");
+                                _logger.LogInfo($"LogoutAndRemoveSessionToken -> Session Token removed.");
 
                                 IMessageBoxView confirmView = new MessageBoxView()
                                 {
@@ -269,16 +261,16 @@ namespace LicenseHubWF.Presenters
                     Message = ex.Message
                 };
                 confirmView.Show();
-                await ApiRepository.IsConnected(logger);
-                logger.LogError($"LogoutAndRemoveSessionToken -> {ex.Message}");
+                await ApiRepository.IsConnected(_logger);
+                _logger.LogError($"LogoutAndRemoveSessionToken -> {ex.Message}");
             }
         }
 
         private void ShowLoginView(object? sender, EventArgs e)
         {
             ILoginView loginView = new LoginView();
-            ILoginRepository loginRepository = new LoginRepository(logger);
-            new LoginPresenter(loginView, loginRepository, logger);
+            ILoginRepository loginRepository = new LoginRepository(_logger);
+            new LoginPresenter(loginView, loginRepository, _logger);
         }
 
 

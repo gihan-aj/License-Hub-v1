@@ -220,3 +220,6 @@
 2024-03-13 17:16:27 -> [ERROR] : RequestLicense -> License agreement must be accepted
 2024-03-13 17:16:27 -> [ERROR] : RequestLicense -> Exception : System.Exception: License agreement must be accepted
    at LicenseHubWF.Presenters.LicenseRequestPresenter.RequestLicense(Object sender, EventArgs e) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\LicenseRequestPresenter.cs:line 171
+2024-03-13 23:38:49 -> [ERROR] : RequestLicense -> License agreement must be accepted
+2024-03-13 23:38:49 -> [ERROR] : RequestLicense -> Exception : System.Exception: License agreement must be accepted
+   at LicenseHubWF.Presenters.LicenseRequestPresenter.RequestLicense(Object sender, EventArgs e) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\LicenseRequestPresenter.cs:line 171
