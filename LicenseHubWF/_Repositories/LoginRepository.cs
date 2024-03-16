@@ -13,6 +13,9 @@ namespace LicenseHubWF._Repositories
     {
         private IFileLogger _logger;
 
+        public event EventHandler LoginSuccessfull;
+        public event EventHandler LoginFailed;
+
         public LoginRepository(IFileLogger logger)
         {
             _logger = logger;

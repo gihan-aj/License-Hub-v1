@@ -28,6 +28,7 @@ namespace LicenseHubWF.Views
             AssociateAndRaiseViewEvents();
 
             _dateFormat = ApiRepository.GetSetting<string>("DateFormat");
+            TopLevel = false;
         }
 
         public bool IsAvailable

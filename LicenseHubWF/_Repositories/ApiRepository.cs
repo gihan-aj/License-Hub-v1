@@ -189,12 +189,12 @@ namespace LicenseHubWF._Repositories
                 string baseUrl = GetSetting<string>("ApiBaseUrl");
                 Connectivity = false;
 
-                if(ApiClient != null)
+                if (baseUrl != null)
                 {
-                    if (baseUrl != null)
-                    {
-                        InitializeClient(baseUrl);
+                    InitializeClient(baseUrl);
 
+                    if (ApiClient != null)
+                    {
                         using (var request = new HttpRequestMessage(HttpMethod.Get, "test"))
                         {
                             using (var response = await ApiClient.SendAsync(request))
@@ -226,15 +226,17 @@ namespace LicenseHubWF._Repositories
                     }
                     else
                     {
-                        Connectivity = false;
-                        throw new Exception("Base url not found.");
+                        throw new Exception("Http client initiation has failed.");
                     }
+
+
                 }
                 else
                 {
-                    throw new Exception("Http client initiation has failed.");
+                    Connectivity = false;
+                    throw new Exception("Base url not found.");
                 }
-                
+
 
             }
             catch (Exception ex)

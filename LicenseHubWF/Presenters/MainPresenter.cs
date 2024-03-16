@@ -30,6 +30,7 @@ namespace LicenseHubWF.Presenters
             // Events
             this._mainView.ShowLicenseView += ShowLicense;
             this._mainView.ShowRequestLicenseView += VerifyAndShowRequestLicenseView;
+            this._mainView.ShowDownloadLicenseView += VerifyAndShowDownloadLicenseView;
             this._mainView.ShowRequestKeyView += ShowRequestKey;
             this._mainView.ShowConfigurationView += ShowConfiguration;
             this._mainView.ShowLoginView += ShowLoginView;
@@ -148,6 +149,63 @@ namespace LicenseHubWF.Presenters
                 activeForm = (Form)licenseRequestView;
                 _mainView.OpenChildForm((Form)licenseRequestView);
                 _mainView.CurrentPageName = "License Request";
+            }
+        }
+
+        private async void VerifyAndShowDownloadLicenseView(object? sender, EventArgs e)
+        {
+            try
+            {
+                TokenVerificationModel tokenVerification = await ApiRepository.VerifyToken(_logger);
+                if (tokenVerification.Success == false)
+                {
+                    ILoginView loginView = new LoginView();
+                    ILoginRepository loginRepository = new LoginRepository(_logger);
+                    new LoginPresenter(loginView, loginRepository, _logger);
+
+                    ApiRepository.SessionTokenChanged += delegate
+                    {
+                        ShowDownloadLicenseView();
+                    };
+                }
+                else
+                {
+                    ShowDownloadLicenseView();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                _logger.LogError($"ShowRequestLicenseView -> {ex.Message}");
+                _logger.LogError($"ShowRequestLicenseView -> Exception: {ex}");
+
+                IMessageBoxView messageBox = new MessageBoxView()
+                {
+                    Title = "Error",
+                    Message = ex.Message
+                };
+                messageBox.Show();
+            }
+
+        }
+
+        private void ShowDownloadLicenseView()
+        {
+            if (!string.IsNullOrEmpty(ApiRepository.SessionToken))
+            {
+                if (activeForm != null)
+                {
+                    activeForm.Dispose();
+                }
+
+                ILicenseDownloadView view = new LicenseDownloadView();
+                ILicenseDownloadRepository repository = new LicenseDownloadRepository(_logger);
+                new LicenseDownloadPresenter(view, repository, _logger);
+
+                activeForm = (Form)view;
+                _mainView.OpenChildForm((Form)view);
+                _mainView.CurrentPageName = "License Download";
             }
         }
 
@@ -270,7 +328,8 @@ namespace LicenseHubWF.Presenters
         {
             ILoginView loginView = new LoginView();
             ILoginRepository loginRepository = new LoginRepository(_logger);
-            new LoginPresenter(loginView, loginRepository, _logger);
+            var loginPresenter = new LoginPresenter(loginView, loginRepository, _logger);
+
         }
 
 

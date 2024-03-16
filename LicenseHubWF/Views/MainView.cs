@@ -26,6 +26,7 @@ namespace LicenseHubWF.Views
             // Generate events
             btnViewLicense.Click += delegate { ShowLicenseView?.Invoke(this, EventArgs.Empty); };
             btnRequestLicense.Click += delegate { ShowRequestLicenseView?.Invoke(this, EventArgs.Empty); };
+            btnDownloadLicense.Click += delegate { ShowDownloadLicenseView?.Invoke(this, EventArgs.Empty); };
             btnRequestKey.Click += delegate { ShowRequestKeyView?.Invoke(this, EventArgs.Empty); };
             btnConfiguration.Click += delegate { ShowConfigurationView?.Invoke(this, EventArgs.Empty); };
 

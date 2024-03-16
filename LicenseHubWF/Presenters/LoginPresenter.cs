@@ -16,8 +16,6 @@ namespace LicenseHubWF.Presenters
         private ILoginRepository _repository;
         private IFileLogger _logger;
 
-        private event EventHandler _loginSuccessfullEvent;
-        private event EventHandler _loginFailedEvent;
         public LoginPresenter(ILoginView view, ILoginRepository repository, IFileLogger logger)
         {
             _view = view;
@@ -52,7 +50,6 @@ namespace LicenseHubWF.Presenters
                         ApiRepository.SessionToken = loginDetails.SessionToken;
                         ApiRepository.User = loginDetails.User;
 
-                        _loginSuccessfullEvent.Invoke(this, EventArgs.Empty); 
 
                         _logger.LogInfo($"LoginAndGetSessionToken -> {loginDetails.User.Name} logged in with {loginDetails.User.Email}.");
                         _logger.LogInfo($"LoginAndGetSessionToken -> Session Token {loginDetails.SessionToken}.");
@@ -61,7 +58,6 @@ namespace LicenseHubWF.Presenters
                     }
                     else
                     {
-                        _loginFailedEvent.Invoke(this, EventArgs.Empty);
                         IMessageBoxView confirmView = new MessageBoxView()
                         {
                             Title = "Warning",
@@ -73,7 +69,7 @@ namespace LicenseHubWF.Presenters
                 }
                 else
                 {
-                    _loginFailedEvent.Invoke(this, EventArgs.Empty);
+
                 }
             }
             catch (Exception ex)
