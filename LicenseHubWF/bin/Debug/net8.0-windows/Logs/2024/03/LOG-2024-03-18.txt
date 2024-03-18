@@ -1,0 +1,158 @@
+2024-03-18 20:49:25 -> [INFO]  : _________APP STARTED____________
+2024-03-18 20:49:25 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-18 20:49:27 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-18 20:49:27 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-18 20:49:30 -> [INFO]  : Login -> Method: POST, RequestUri: 'https://9je93.wiremockapi.cloud/api/remote-user/login', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
+{
+  Accept: application/json
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 26
+}
+2024-03-18 20:49:30 -> [INFO]  : LoginAndGetSessionToken -> login successful
+2024-03-18 20:49:30 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-03-18 20:49:30 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-03-18 20:49:30 -> [INFO]  : LoginAndGetSessionToken -> user01999999 logged in with user@email.com.
+2024-03-18 20:49:30 -> [INFO]  : LoginAndGetSessionToken -> Session Token 1234567890.
+2024-03-18 20:49:30 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer
+  Accept: application/json
+}
+2024-03-18 20:49:30 -> [INFO]  : LoadClients -> Client list loaded.
+2024-03-18 20:49:30 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-18 20:49:30 -> [INFO]  : LoadPackages -> Package list loaded.
+2024-03-18 20:49:41 -> [INFO]  : RequestLicense -> License requested.
+2024-03-18 20:49:41 -> [ERROR] : RequestLicense -> * Select the license type.
+
+2024-03-18 20:49:41 -> [ERROR] : RequestLicense -> Exception : System.Exception: * Select the license type.
+
+   at LicenseHubWF.Presenters.Common.ModelDataValidation.Validate(Object model) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\Common\ModelDataValidation.cs:line 26
+   at LicenseHubWF.Presenters.LicenseRequestPresenter.RequestLicense(Object sender, EventArgs e) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\LicenseRequestPresenter.cs:line 176
+2024-03-18 20:49:57 -> [INFO]  : RequestLicense -> License requested.
+2024-03-18 20:49:57 -> [ERROR] : RequestLicense -> * Select the license type.
+
+2024-03-18 20:49:57 -> [ERROR] : RequestLicense -> Exception : System.Exception: * Select the license type.
+
+   at LicenseHubWF.Presenters.Common.ModelDataValidation.Validate(Object model) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\Common\ModelDataValidation.cs:line 26
+   at LicenseHubWF.Presenters.LicenseRequestPresenter.RequestLicense(Object sender, EventArgs e) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\LicenseRequestPresenter.cs:line 176
+2024-03-18 20:50:08 -> [INFO]  : RequestLicense -> License requested.
+2024-03-18 21:13:24 -> [INFO]  : _________APP STARTED____________
+2024-03-18 21:13:24 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-18 21:13:26 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-18 21:13:26 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-18 21:13:27 -> [INFO]  : Login -> Method: POST, RequestUri: 'https://9je93.wiremockapi.cloud/api/remote-user/login', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
+{
+  Accept: application/json
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 26
+}
+2024-03-18 21:13:27 -> [INFO]  : LoginAndGetSessionToken -> login successful
+2024-03-18 21:13:27 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-03-18 21:13:27 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-03-18 21:13:27 -> [INFO]  : LoginAndGetSessionToken -> user01999999 logged in with user@email.com.
+2024-03-18 21:13:27 -> [INFO]  : LoginAndGetSessionToken -> Session Token 1234567890.
+2024-03-18 21:13:28 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer
+  Accept: application/json
+}
+2024-03-18 21:13:28 -> [INFO]  : LoadClients -> Client list loaded.
+2024-03-18 21:13:28 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-18 21:13:28 -> [INFO]  : LoadPackages -> Package list loaded.
+2024-03-18 21:23:47 -> [INFO]  : _________APP STARTED____________
+2024-03-18 21:23:47 -> [INFO]  : CreateAndReadAppSettingsFile -> App settings loaded.
+2024-03-18 21:23:49 -> [INFO]  : IsConnected -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-18 21:23:49 -> [INFO]  : IsConnected -> Server connection working.
+2024-03-18 21:23:50 -> [INFO]  : Login -> Method: POST, RequestUri: 'https://9je93.wiremockapi.cloud/api/remote-user/login', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
+{
+  Accept: application/json
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 26
+}
+2024-03-18 21:23:50 -> [INFO]  : LoginAndGetSessionToken -> login successful
+2024-03-18 21:23:50 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-03-18 21:23:50 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-03-18 21:23:50 -> [INFO]  : LoginAndGetSessionToken -> user01999999 logged in with user@email.com.
+2024-03-18 21:23:50 -> [INFO]  : LoginAndGetSessionToken -> Session Token 1234567890.
+2024-03-18 21:23:50 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer
+  Accept: application/json
+}
+2024-03-18 21:23:50 -> [INFO]  : LoadClients -> Client list loaded.
+2024-03-18 21:23:51 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-18 21:23:51 -> [INFO]  : LoadPackages -> Package list loaded.
+2024-03-18 21:24:10 -> [INFO]  : RequestLicense -> License requested.
+2024-03-18 21:24:10 -> [ERROR] : RequestLicense -> License agreement must be accepted
+2024-03-18 21:24:10 -> [ERROR] : RequestLicense -> Exception : System.Exception: License agreement must be accepted
+   at LicenseHubWF.Presenters.LicenseRequestPresenter.RequestLicense(Object sender, EventArgs e) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\LicenseRequestPresenter.cs:line 193
+2024-03-18 21:24:13 -> [INFO]  : RequestLicense -> License requested.
+2024-03-18 21:24:13 -> [ERROR] : RequestLicense -> License type must be selected.
+2024-03-18 21:24:13 -> [ERROR] : RequestLicense -> Exception : System.Exception: License type must be selected.
+   at LicenseHubWF.Presenters.LicenseRequestPresenter.RequestLicense(Object sender, EventArgs e) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\LicenseRequestPresenter.cs:line 173
+2024-03-18 21:24:17 -> [INFO]  : RequestLicense -> License requested.
+2024-03-18 21:24:17 -> [ERROR] : RequestLicense -> Select required packages.
+2024-03-18 21:24:17 -> [ERROR] : RequestLicense -> Exception : System.Exception: Select required packages.
+   at LicenseHubWF.Presenters.LicenseRequestPresenter.RequestLicense(Object sender, EventArgs e) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\LicenseRequestPresenter.cs:line 177
+2024-03-18 21:24:26 -> [INFO]  : RequestLicense -> License requested.
+2024-03-18 21:24:32 -> [INFO]  : RequestLicense -> License requested.
+2024-03-18 21:24:32 -> [ERROR] : RequestLicense -> Client must be selected.
+2024-03-18 21:24:32 -> [ERROR] : RequestLicense -> Exception : System.Exception: Client must be selected.
+   at LicenseHubWF.Presenters.LicenseRequestPresenter.RequestLicense(Object sender, EventArgs e) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\LicenseRequestPresenter.cs:line 169
+2024-03-18 21:24:43 -> [INFO]  : RequestLicense -> License requested.
+2024-03-18 21:24:43 -> [ERROR] : RequestLicense -> Client must be selected.
+2024-03-18 21:24:43 -> [ERROR] : RequestLicense -> Exception : System.Exception: Client must be selected.
+   at LicenseHubWF.Presenters.LicenseRequestPresenter.RequestLicense(Object sender, EventArgs e) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\LicenseRequestPresenter.cs:line 169
+2024-03-18 21:24:46 -> [INFO]  : RequestLicense -> License requested.
+2024-03-18 21:24:46 -> [ERROR] : RequestLicense -> Client must be selected.
+2024-03-18 21:24:46 -> [ERROR] : RequestLicense -> Exception : System.Exception: Client must be selected.
+   at LicenseHubWF.Presenters.LicenseRequestPresenter.RequestLicense(Object sender, EventArgs e) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\LicenseRequestPresenter.cs:line 169
+2024-03-18 21:24:50 -> [INFO]  : RequestLicense -> License requested.
+2024-03-18 21:24:50 -> [ERROR] : RequestLicense -> License type must be selected.
+2024-03-18 21:24:50 -> [ERROR] : RequestLicense -> Exception : System.Exception: License type must be selected.
+   at LicenseHubWF.Presenters.LicenseRequestPresenter.RequestLicense(Object sender, EventArgs e) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\LicenseRequestPresenter.cs:line 173
+2024-03-18 21:24:54 -> [INFO]  : RequestLicense -> License requested.
+2024-03-18 21:24:54 -> [ERROR] : RequestLicense -> Select required packages.
+2024-03-18 21:24:54 -> [ERROR] : RequestLicense -> Exception : System.Exception: Select required packages.
+   at LicenseHubWF.Presenters.LicenseRequestPresenter.RequestLicense(Object sender, EventArgs e) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\LicenseRequestPresenter.cs:line 177
+2024-03-18 21:25:28 -> [INFO]  : VerifyToken -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/verify', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer 1234567890
+  Accept: application/json
+}
+2024-03-18 21:26:05 -> [INFO]  : VerifyToken -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/verify', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer 1234567890
+  Accept: application/json
+}
+2024-03-18 21:26:05 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-03-18 21:26:05 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-03-18 21:26:06 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer
+  Accept: application/json
+}
+2024-03-18 21:26:06 -> [INFO]  : LoadClients -> Client list loaded.
+2024-03-18 21:26:06 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'https://9je93.wiremockapi.cloud/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-03-18 21:26:06 -> [INFO]  : LoadPackages -> Package list loaded.

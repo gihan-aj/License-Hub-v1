@@ -164,6 +164,29 @@ namespace LicenseHubWF.Presenters
                 _logger.LogInfo($"RequestLicense -> License requested.");
                 if (view.IsAgreementAccepted)
                 {
+                    if (string.IsNullOrEmpty(view.Client))
+                    {
+                        throw new Exception("Client must be selected.");
+                    }
+                    if (string.IsNullOrEmpty(view.LicenseType))
+                    {
+                        throw new Exception("License type must be selected.");
+                    }
+                    if (view.Packages.Count == 0)
+                    {
+                        throw new Exception("Select required packages.");
+                    }
+
+                    LicenseRequestModel licenseRequest = new LicenseRequestModel()
+                    {
+                        Client = view.Client,
+                        LicenseType = view.LicenseType,
+                        PcName = view.PCName,
+                        RequestKey = view.RequestKey,
+                        Packages = view.Packages
+                    };
+
+                    //new Common.ModelDataValidation().Validate( licenseRequest );
 
                 }
                 else

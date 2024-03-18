@@ -36,6 +36,7 @@ namespace LicenseHubWF.Views
             btnReset.Click += delegate
             {
                 comboBoxClients.SelectedIndex = -1;
+                Client = string.Empty;
 
                 if(checkedListBoxPackages.CheckedItems.Count > 0)
                 {
@@ -44,9 +45,11 @@ namespace LicenseHubWF.Views
                         checkedListBoxPackages.SetItemChecked(i, false);
                     }
                 }
+                Packages = [];
 
                 radioButtonFull.Checked = false;
                 radioButtonTrial.Checked = false;
+                LicenseType = string.Empty;
             };
         }
 

@@ -15,7 +15,7 @@ namespace LicenseHubWF.Models
         private string client;
         private string licenseType;
         private string pcName;
-        private string[] packages;
+        private List<string> packages;
 
         // Properties
 
@@ -23,15 +23,15 @@ namespace LicenseHubWF.Models
 
         public string RequestKey { get => requestKey; set => requestKey = value; }
 
-        [Required(ErrorMessage ="The client should be selected.")]
+        //[Required(ErrorMessage ="The client should be selected.")]
         public string Client { get => client; set => client = value; }
 
-        [Required(ErrorMessage = "Select the license type.")]
+        //[Required(ErrorMessage = "Select the license type.")]
         public string LicenseType { get => licenseType; set => licenseType = value; }
 
         public string PcName { get => pcName; set => pcName = value; }
 
-        [Required(ErrorMessage = "Select requesting packages.")]
-        public string[] Packages { get => packages; set => packages = value; }
+        //[Required(ErrorMessage = "Select requesting packages.")]
+        public List<string> Packages { get => packages; set => packages = value; }
     }
 }

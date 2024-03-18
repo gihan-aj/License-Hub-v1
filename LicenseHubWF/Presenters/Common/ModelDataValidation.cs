@@ -20,7 +20,7 @@ namespace LicenseHubWF.Presenters.Common
             {
                 foreach (ValidationResult result in results)
                 {
-                    errorMessage = "* " + result.ErrorMessage + "\n";
+                    errorMessage = result.ErrorMessage + "\n";
                 }
 
                 throw new Exception(errorMessage);
