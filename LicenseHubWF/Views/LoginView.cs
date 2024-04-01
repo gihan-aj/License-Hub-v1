@@ -12,14 +12,11 @@ namespace LicenseHubWF.Views
 {
     public partial class LoginView : Form, ILoginView
     {
+        private static LoginView? instance;
         public LoginView()
         {
             InitializeComponent();
-            AssociateAndRaiseViewEvents();
-        }
 
-        private void AssociateAndRaiseViewEvents()
-        {
             btnLogin.Click += delegate { LoginEvent?.Invoke(this, EventArgs.Empty); };
             btnReset.Click += delegate { Email = ""; Password = ""; };
             btnClose.Click += delegate { this.Close(); };
@@ -36,7 +33,20 @@ namespace LicenseHubWF.Views
             set { txtPassword.Text = value; }
         }
 
-        public event EventHandler LoginEvent;
+        public event EventHandler? LoginEvent;
+
+        public static LoginView GetInstance()
+        {
+            if(instance == null || instance.IsDisposed)
+            {
+                instance = new LoginView();
+            }
+            else
+            {
+                instance.BringToFront();
+            }
+             return instance;
+        }
 
         // Singleton pattern (Open a single form instance)
         //private static LoginView? instance;

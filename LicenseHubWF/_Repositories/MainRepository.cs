@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static LicenseHubWF.Models.AppServiceModel;
 
 namespace LicenseHubWF._Repositories
 {
@@ -18,31 +19,27 @@ namespace LicenseHubWF._Repositories
             _logger = logger;
         }
 
-        public async Task<LogoutModel> Logout()
+        public async Task<LogoutResponse> Logout()
         {
-            using (var request = new HttpRequestMessage(HttpMethod.Post, "remote-user/logout"))
+            using (var request = new HttpRequestMessage(HttpMethod.Get, "Logout"))
             {
-                request.Content = new StringContent(JsonConvert.SerializeObject(ApiRepository.SessionToken), Encoding.UTF8, "application/json");
+                //request.Content = new StringContent(JsonConvert.SerializeObject(BaseRepository.SessionToken), Encoding.UTF8, "application/json");
 
-                using (var response = await ApiRepository.ApiClient.SendAsync(request))
+                using (var response = await BaseRepository.HttpClientService.SendAsync(request))
                 {
                     _logger.LogInfo($"Logout -> {response.RequestMessage}");
 
                     if (response.IsSuccessStatusCode)
                     {
                         var responseContent = await response.Content.ReadAsStringAsync();
-                        try
-                        {
-                            return JsonConvert.DeserializeObject<LogoutModel>(responseContent);
-                        }
-                        catch
-                        {
-                            throw;
-                        }
+
+                        
+                        return JsonConvert.DeserializeObject<LogoutResponse>(responseContent)?? throw new JsonException();
+                        
                     }
                     else
                     {
-                        throw new Exception(response.ReasonPhrase);
+                        throw new Exception("logout failed");
                     }
                 }
             }

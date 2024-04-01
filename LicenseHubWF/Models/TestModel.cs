@@ -8,6 +8,7 @@ namespace LicenseHubWF.Models
 {
     public class TestModel
     {
-        public string Message { get; set; }
+        public bool Flag { get; set; }
+        public string Message { get; set; } = string.Empty;
     }
 }

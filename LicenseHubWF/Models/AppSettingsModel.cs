@@ -8,7 +8,7 @@ namespace LicenseHubWF.Models
 {
     public class AppSettingsModel
     {
-        private string _apiBaseUrl = "https://9je93.wiremockapi.cloud/api/";
+        private string _apiBaseUrl = "http://localhost:5000/api/";
 
         private string _dateFormat = "yyyy-MM-dd";
 

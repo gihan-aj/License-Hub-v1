@@ -243,15 +243,15 @@
             panelTopBar.ForeColor = Color.FromArgb(243, 111, 56);
             panelTopBar.Location = new Point(220, 0);
             panelTopBar.Name = "panelTopBar";
-            panelTopBar.Size = new Size(680, 130);
+            panelTopBar.Size = new Size(680, 100);
             panelTopBar.TabIndex = 1;
             // 
             // lblPageName
             // 
             lblPageName.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPageName.Location = new Point(40, 48);
+            lblPageName.Location = new Point(81, 17);
             lblPageName.Name = "lblPageName";
-            lblPageName.Size = new Size(595, 37);
+            lblPageName.Size = new Size(492, 37);
             lblPageName.TabIndex = 6;
             lblPageName.Text = "label1";
             lblPageName.TextAlign = ContentAlignment.MiddleCenter;
@@ -264,7 +264,7 @@
             iconNoConnectivity.IconColor = Color.FromArgb(243, 111, 56);
             iconNoConnectivity.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconNoConnectivity.IconSize = 40;
-            iconNoConnectivity.Location = new Point(633, 90);
+            iconNoConnectivity.Location = new Point(633, 51);
             iconNoConnectivity.Name = "iconNoConnectivity";
             iconNoConnectivity.Size = new Size(40, 40);
             iconNoConnectivity.TabIndex = 5;
@@ -278,7 +278,7 @@
             iconConnectivity.IconColor = Color.FromArgb(243, 111, 56);
             iconConnectivity.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconConnectivity.IconSize = 40;
-            iconConnectivity.Location = new Point(633, 90);
+            iconConnectivity.Location = new Point(633, 51);
             iconConnectivity.Name = "iconConnectivity";
             iconConnectivity.Size = new Size(40, 40);
             iconConnectivity.TabIndex = 4;
@@ -292,7 +292,7 @@
             iconPictureBox1.IconColor = Color.FromArgb(243, 111, 56);
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox1.IconSize = 40;
-            iconPictureBox1.Location = new Point(595, 90);
+            iconPictureBox1.Location = new Point(595, 51);
             iconPictureBox1.Name = "iconPictureBox1";
             iconPictureBox1.Size = new Size(40, 40);
             iconPictureBox1.TabIndex = 3;
@@ -303,7 +303,7 @@
             lblUsername.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblUsername.FlatStyle = FlatStyle.Flat;
             lblUsername.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblUsername.Location = new Point(389, 90);
+            lblUsername.Location = new Point(389, 54);
             lblUsername.Name = "lblUsername";
             lblUsername.RightToLeft = RightToLeft.No;
             lblUsername.Size = new Size(200, 29);
@@ -348,9 +348,9 @@
             // 
             // panelChildFormWindow
             // 
-            panelChildFormWindow.Location = new Point(220, 130);
+            panelChildFormWindow.Location = new Point(220, 97);
             panelChildFormWindow.Name = "panelChildFormWindow";
-            panelChildFormWindow.Size = new Size(680, 468);
+            panelChildFormWindow.Size = new Size(680, 500);
             panelChildFormWindow.TabIndex = 2;
             // 
             // MainView

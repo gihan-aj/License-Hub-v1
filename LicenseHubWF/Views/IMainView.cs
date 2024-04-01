@@ -10,14 +10,17 @@ namespace LicenseHubWF.Views
     {
         string CurrentPageName { set; }
 
-        event EventHandler ShowLicenseView;
-        event EventHandler ShowRequestLicenseView;
-        event EventHandler ShowDownloadLicenseView;
-        event EventHandler ShowRequestKeyView;
-        event EventHandler ShowConfigurationView;
-        event EventHandler ShowLoginView;
-        event EventHandler LogoutEvent;
+        event EventHandler? ShowLicenseView;
+        event EventHandler? ShowRequestLicenseView;
+        event EventHandler? ShowDownloadLicenseView;
+        event EventHandler? ShowRequestKeyView;
+        event EventHandler? ShowConfigurationView;
+        event EventHandler? ShowLoginView;
+        event EventHandler? LogoutEvent;
 
+        void OnUserChanged(object? sender, EventArgs e);
+        void OnConnectivityChanged(object? sender, EventArgs e);
         void OpenChildForm(Form childForm);
+        void RemoveChildForm(object? sender, EventArgs e);
     }
 }

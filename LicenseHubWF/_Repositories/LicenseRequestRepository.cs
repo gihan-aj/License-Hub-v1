@@ -11,7 +11,7 @@ using System.Net.Http.Headers;
 
 namespace LicenseHubWF._Repositories
 {
-    public class LicenseRequestRepository : BaseRepository, ILicenseRequestRepository
+    public class LicenseRequestRepository : ILicenseRequestRepository
     {
         // Fields
         private IFileLogger _logger;
@@ -28,7 +28,7 @@ namespace LicenseHubWF._Repositories
         {
             using(var request = new HttpRequestMessage(HttpMethod.Get, "clients"))
             {
-                request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", sessionToken);
+                //request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", sessionToken);
 
                 using(HttpResponseMessage response = await ApiRepository.ApiClient.SendAsync(request)) 
                 {

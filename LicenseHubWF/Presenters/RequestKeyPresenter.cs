@@ -1,4 +1,5 @@
-﻿using LicenseHubWF.Models;
+﻿using LicenseHubWF._Repositories;
+using LicenseHubWF.Models;
 using LicenseHubWF.Views;
 using LoggerLib;
 using System;
@@ -29,7 +30,7 @@ namespace LicenseHubWF.Presenters
         {
             try
             {
-                _view.Key = _licenseRequestRepository.GetRequestKey();
+                _view.Key = BaseRepository.RequestKey;
 
             }
             catch (Exception ex)

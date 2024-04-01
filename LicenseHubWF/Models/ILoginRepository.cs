@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static LicenseHubWF.Models.AppServiceModel;
 
 namespace LicenseHubWF.Models
 {
@@ -10,7 +11,7 @@ namespace LicenseHubWF.Models
     {
         public event EventHandler LoginSuccessfull;
         public event EventHandler LoginFailed;
-        Task<LoginResponseModel> Login(LoginModel loginDetails);
+        Task<LoginResponse> Login(LoginRequest loginRequest);
         
     }
 }

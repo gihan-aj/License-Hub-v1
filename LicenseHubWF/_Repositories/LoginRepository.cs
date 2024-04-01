@@ -1,11 +1,8 @@
 ﻿using LicenseHubWF.Models;
 using LoggerLib;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using static LicenseHubWF.Models.AppServiceModel;
 
 namespace LicenseHubWF._Repositories
 {
@@ -13,59 +10,99 @@ namespace LicenseHubWF._Repositories
     {
         private IFileLogger _logger;
 
-        public event EventHandler LoginSuccessfull;
-        public event EventHandler LoginFailed;
+        public event EventHandler? LoginSuccessfull;
+        public event EventHandler? LoginFailed;
 
         public LoginRepository(IFileLogger logger)
         {
             _logger = logger;
         }
 
-        public async Task<LoginResponseModel> Login(LoginModel loginDetails)
+        public async Task<LoginResponse> Login(LoginRequest loginRequest)
         {
             try
             {
-                if (ApiRepository.Connectivity)
+                using (var request = new HttpRequestMessage(HttpMethod.Post, "login"))
                 {
-                    using (var request = new HttpRequestMessage(HttpMethod.Post, "remote-user/login"))
+                    request.Content = new StringContent(JsonConvert.SerializeObject(loginRequest), Encoding.UTF8, "application/json");
+
+                    using(var response = await BaseRepository.HttpClientService.SendAsync(request))
                     {
-                        request.Content = new StringContent(JsonConvert.SerializeObject(loginDetails), Encoding.UTF8, "application/json");
+                        _logger.LogInfo($"Login -> {response.RequestMessage}");
 
-                        using (var response = await ApiRepository.ApiClient.SendAsync(request))
+                        if(response != null)
                         {
-                            _logger.LogInfo($"Login -> {response.RequestMessage}");
-
-                            if (response.IsSuccessStatusCode)
+                            if(response.IsSuccessStatusCode)
                             {
-                                var responseContent = await response.Content.ReadAsStringAsync();
-                                try
-                                {
-                                    return JsonConvert.DeserializeObject<LoginResponseModel>(responseContent);
-                                }
-                                catch
-                                {
-                                    throw;
-                                }
+                                var content = await response.Content.ReadAsStringAsync();
+
+                                return JsonConvert.DeserializeObject<LoginResponse>(content)
+                                    ?? throw new JsonException();
                             }
                             else
                             {
-                                throw new Exception(response.ReasonPhrase);
+                                throw new Exception($"Login - {response.ReasonPhrase}");
                             }
+                        }
+                        else
+                        {
+                            throw new Exception("Login request failed.");
                         }
                     }
                 }
-                else
-                {
-                    throw new Exception("Not connected to server.");
-                }
-
             }
             catch (Exception)
             {
 
                 throw;
             }
-
         }
+
+        //public async Task<LoginResponseModel> Login(LoginModel loginDetails)
+        //{
+        //    try
+        //    {
+        //        if (ApiRepository.Connectivity)
+        //        {
+        //            using (var request = new HttpRequestMessage(HttpMethod.Post, "remote-user/login"))
+        //            {
+        //                request.Content = new StringContent(JsonConvert.SerializeObject(loginDetails), Encoding.UTF8, "application/json");
+
+        //                using (var response = await ApiRepository.ApiClient.SendAsync(request))
+        //                {
+        //                    _logger.LogInfo($"Login -> {response.RequestMessage}");
+
+        //                    if (response.IsSuccessStatusCode)
+        //                    {
+        //                        var responseContent = await response.Content.ReadAsStringAsync();
+        //                        try
+        //                        {
+        //                            return JsonConvert.DeserializeObject<LoginResponseModel>(responseContent);
+        //                        }
+        //                        catch
+        //                        {
+        //                            throw;
+        //                        }
+        //                    }
+        //                    else
+        //                    {
+        //                        throw new Exception(response.ReasonPhrase);
+        //                    }
+        //                }
+        //            }
+        //        }
+        //        else
+        //        {
+        //            throw new Exception("Not connected to server.");
+        //        }
+
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        throw;
+        //    }
+
+        //}
     }
 }

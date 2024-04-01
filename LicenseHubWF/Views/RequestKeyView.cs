@@ -18,7 +18,8 @@ namespace LicenseHubWF.Views
         public RequestKeyView()
         {
             InitializeComponent();
-            AssociateAndRaiseViewEvents();
+            AssociateAndRaiseEvents();
+            TopLevel = false;
         }
 
         public string Key
@@ -28,9 +29,8 @@ namespace LicenseHubWF.Views
 
         public event EventHandler ShowRequestKey;
 
-        private void AssociateAndRaiseViewEvents()
+        private void AssociateAndRaiseEvents()
         {
-            this.TopLevel = false;
             iconCopied.Visible = false;
 
             this.Load += delegate 
