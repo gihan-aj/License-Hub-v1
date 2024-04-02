@@ -60,10 +60,7 @@ namespace LicenseHubWF._Repositories
             set
             {
                 _user = value;
-                if (_user != null)
-                {
-                    UserChanged?.Invoke(null, EventArgs.Empty);
-                }
+                UserChanged?.Invoke(null, EventArgs.Empty);
             }
         }
         public static string? SessionToken { get => _sessionToken; set => _sessionToken = value; }

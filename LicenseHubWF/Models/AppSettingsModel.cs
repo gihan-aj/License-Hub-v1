@@ -34,7 +34,7 @@ namespace LicenseHubWF.Models
 
         private string _logoutConfirmationMessage = "Are you sure you want to logout?";
 
-        private string _requestKeyInfo = "Please contact 'keys.dspcontrols.lk' with this key";
+        private string _requestKeyInfo = "Please contact 'keys.****.lk' with this key";
 
         private string _connectionTestSuccessMessage = "Connection successful!";
 

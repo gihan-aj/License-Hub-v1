@@ -62,7 +62,7 @@ namespace LicenseHubWF.Views
                 btnLogin.Visible = false;
                 btnLogout.Visible = true;
             }
-            else
+            if(BaseRepository.User == null)
             {
                 lblUsername.Text = "Guest";
                 btnLogin.Visible = true;

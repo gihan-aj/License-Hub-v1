@@ -226,13 +226,13 @@
             btnHome.Padding = new Padding(0, 0, 0, 15);
             btnHome.Size = new Size(220, 130);
             btnHome.TabIndex = 0;
-            btnHome.Text = "DSP Keys";
+            btnHome.Text = "*** Keys";
             btnHome.TextAlign = ContentAlignment.BottomCenter;
             btnHome.UseVisualStyleBackColor = false;
             // 
             // panelTopBar
             // 
-            panelTopBar.BackColor = SystemColors.Window;
+            panelTopBar.BackColor = SystemColors.Control;
             panelTopBar.Controls.Add(lblPageName);
             panelTopBar.Controls.Add(iconNoConnectivity);
             panelTopBar.Controls.Add(iconConnectivity);
@@ -249,7 +249,7 @@
             // lblPageName
             // 
             lblPageName.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPageName.Location = new Point(31, 46);
+            lblPageName.Location = new Point(38, 48);
             lblPageName.Name = "lblPageName";
             lblPageName.Size = new Size(253, 37);
             lblPageName.TabIndex = 6;
@@ -258,7 +258,7 @@
             // 
             // iconNoConnectivity
             // 
-            iconNoConnectivity.BackColor = SystemColors.Window;
+            iconNoConnectivity.BackColor = SystemColors.Control;
             iconNoConnectivity.ForeColor = Color.FromArgb(243, 111, 56);
             iconNoConnectivity.IconChar = FontAwesome.Sharp.IconChar.ChainSlash;
             iconNoConnectivity.IconColor = Color.FromArgb(243, 111, 56);
@@ -272,7 +272,7 @@
             // 
             // iconConnectivity
             // 
-            iconConnectivity.BackColor = SystemColors.Window;
+            iconConnectivity.BackColor = SystemColors.Control;
             iconConnectivity.ForeColor = Color.FromArgb(243, 111, 56);
             iconConnectivity.IconChar = FontAwesome.Sharp.IconChar.NetworkWired;
             iconConnectivity.IconColor = Color.FromArgb(243, 111, 56);
@@ -286,7 +286,7 @@
             // 
             // iconPictureBox1
             // 
-            iconPictureBox1.BackColor = SystemColors.Window;
+            iconPictureBox1.BackColor = SystemColors.Control;
             iconPictureBox1.ForeColor = Color.FromArgb(243, 111, 56);
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.CircleUser;
             iconPictureBox1.IconColor = Color.FromArgb(243, 111, 56);

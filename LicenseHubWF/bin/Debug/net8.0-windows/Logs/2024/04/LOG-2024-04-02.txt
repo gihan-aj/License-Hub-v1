@@ -35,3 +35,266 @@
   Accept: application/json
 }
 2024-04-02 10:36:31 -> [INFO]  : EstablishConnection -> Server connection working.
+2024-04-02 12:37:07 -> [INFO]  : _________APP STARTED____________
+2024-04-02 12:37:07 -> [INFO]  : LoadAppSettings -> App settings loaded.
+2024-04-02 12:37:07 -> [INFO]  : GetRequestKey -> Request key: Rb64+6E+KqLNloEGiSreucZfV9IDPp3HYY0MgYTvmn4uikd6ME7/Mv2fAJcSznT0 
+2024-04-02 12:37:07 -> [INFO]  : EstablishConnection -> Method: GET, RequestUri: 'http://localhost:5000/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-04-02 12:37:07 -> [INFO]  : EstablishConnection -> Server connection working.
+2024-04-02 12:37:26 -> [INFO]  : Login -> Method: POST, RequestUri: 'http://localhost:5000/api/login', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
+{
+  Accept: application/json
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 50
+}
+2024-04-02 12:37:26 -> [INFO]  : LoginAndGetSessionToken -> Login successful
+2024-04-02 12:37:26 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-04-02 12:37:26 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-04-02 12:37:26 -> [INFO]  : LoginAndGetSessionToken -> User01 logged in with .
+2024-04-02 12:37:26 -> [INFO]  : LoginAndGetSessionToken -> Session Token hduikKhuGj56l4l36lsKK.
+2024-04-02 12:37:26 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'http://localhost:5000/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer hduikKhuGj56l4l36lsKK
+  Accept: application/json
+}
+2024-04-02 12:37:26 -> [INFO]  : LoadClients -> Client list loaded.
+2024-04-02 12:37:26 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'http://localhost:5000/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer hduikKhuGj56l4l36lsKK
+  Accept: application/json
+}
+2024-04-02 12:37:26 -> [INFO]  : LoadPackages -> Package list loaded.
+2024-04-02 12:37:39 -> [INFO]  : Logout -> Method: GET, RequestUri: 'http://localhost:5000/api/Logout', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
+{
+  Accept: application/json
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 23
+}
+2024-04-02 12:37:39 -> [INFO]  : LogoutAndRemoveSessionToken -> Logout successful
+2024-04-02 12:37:39 -> [INFO]  : LogoutAndRemoveSessionToken -> Session Token removed.
+2024-04-02 12:38:15 -> [INFO]  : Logout -> Method: GET, RequestUri: 'http://localhost:5000/api/Logout', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
+{
+  Accept: application/json
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 4
+}
+2024-04-02 12:38:15 -> [INFO]  : LogoutAndRemoveSessionToken -> Logout successful
+2024-04-02 12:38:15 -> [INFO]  : LogoutAndRemoveSessionToken -> Session Token removed.
+2024-04-02 12:55:30 -> [INFO]  : _________APP STARTED____________
+2024-04-02 12:55:30 -> [INFO]  : LoadAppSettings -> App settings loaded.
+2024-04-02 12:55:30 -> [INFO]  : GetRequestKey -> Request key: cIWYkTrqVaIP2X2ci5MDbcKvmo3Evk3+m9OwMErL8URnVpYVJqlPpo+jci8wEe/U 
+2024-04-02 12:55:30 -> [INFO]  : EstablishConnection -> Method: GET, RequestUri: 'http://localhost:5000/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-04-02 12:55:30 -> [INFO]  : EstablishConnection -> Server connection working.
+2024-04-02 12:55:44 -> [INFO]  : Login -> Method: POST, RequestUri: 'http://localhost:5000/api/login', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
+{
+  Accept: application/json
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 50
+}
+2024-04-02 12:55:44 -> [INFO]  : LoginAndGetSessionToken -> Login successful
+2024-04-02 12:55:44 -> [INFO]  : LoginAndGetSessionToken -> User01 logged in with .
+2024-04-02 12:55:44 -> [INFO]  : LoginAndGetSessionToken -> Session Token hduikKhuGj56l4l36lsKK.
+2024-04-02 12:55:46 -> [INFO]  : Logout -> Method: GET, RequestUri: 'http://localhost:5000/api/Logout', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
+{
+  Accept: application/json
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 23
+}
+2024-04-02 12:55:46 -> [INFO]  : LogoutAndRemoveSessionToken -> Logout successful
+2024-04-02 12:55:46 -> [INFO]  : LogoutAndRemoveSessionToken -> Session Token removed.
+2024-04-02 12:56:54 -> [INFO]  : _________APP STARTED____________
+2024-04-02 12:56:55 -> [INFO]  : LoadAppSettings -> App settings loaded.
+2024-04-02 12:56:55 -> [INFO]  : GetRequestKey -> Request key: PUlBXhaloPQX2PBSL5GUGFFGg30E8+R4sXwW2Brg5uVkoeBL/BKWdkPDJPCTC3+w 
+2024-04-02 12:56:55 -> [INFO]  : EstablishConnection -> Method: GET, RequestUri: 'http://localhost:5000/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-04-02 12:56:55 -> [INFO]  : EstablishConnection -> Server connection working.
+2024-04-02 12:57:08 -> [INFO]  : Login -> Method: POST, RequestUri: 'http://localhost:5000/api/login', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
+{
+  Accept: application/json
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 50
+}
+2024-04-02 12:57:08 -> [INFO]  : LoginAndGetSessionToken -> Login successful
+2024-04-02 12:57:08 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-04-02 12:57:08 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-04-02 12:57:08 -> [INFO]  : LoginAndGetSessionToken -> User02 logged in with .
+2024-04-02 12:57:08 -> [INFO]  : LoginAndGetSessionToken -> Session Token hduikKhuGj56l4l36lsKK.
+2024-04-02 12:57:08 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'http://localhost:5000/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer hduikKhuGj56l4l36lsKK
+  Accept: application/json
+}
+2024-04-02 12:57:08 -> [INFO]  : LoadClients -> Client list loaded.
+2024-04-02 12:57:08 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'http://localhost:5000/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer hduikKhuGj56l4l36lsKK
+  Accept: application/json
+}
+2024-04-02 12:57:08 -> [INFO]  : LoadPackages -> Package list loaded.
+2024-04-02 12:57:16 -> [INFO]  : RequestLicense -> License requested.
+2024-04-02 12:57:16 -> [ERROR] : RequestLicense -> License agreement must be accepted
+2024-04-02 12:57:16 -> [ERROR] : RequestLicense -> Exception : System.Exception: License agreement must be accepted
+   at LicenseHubWF.Presenters.LicenseRequestPresenter.RequestLicense(Object sender, EventArgs e) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\LicenseRequestPresenter.cs:line 170
+2024-04-02 12:57:49 -> [INFO]  : RequestLicense -> License requested.
+2024-04-02 12:57:49 -> [ERROR] : RequestLicense -> Select required packages.
+2024-04-02 12:57:49 -> [ERROR] : RequestLicense -> Exception : System.Exception: Select required packages.
+   at LicenseHubWF.Presenters.LicenseRequestPresenter.RequestLicense(Object sender, EventArgs e) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\LicenseRequestPresenter.cs:line 153
+2024-04-02 12:58:13 -> [INFO]  : Logout -> Method: GET, RequestUri: 'http://localhost:5000/api/Logout', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
+{
+  Accept: application/json
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 23
+}
+2024-04-02 12:58:13 -> [INFO]  : LogoutAndRemoveSessionToken -> Logout successful
+2024-04-02 12:58:13 -> [INFO]  : LogoutAndRemoveSessionToken -> Session Token removed.
+2024-04-02 12:58:34 -> [INFO]  : Login -> Method: POST, RequestUri: 'http://localhost:5000/api/login', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
+{
+  Accept: application/json
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 50
+}
+2024-04-02 12:58:34 -> [INFO]  : LoginAndGetSessionToken -> Login successful
+2024-04-02 12:58:34 -> [INFO]  : LoginAndGetSessionToken -> User01 logged in with .
+2024-04-02 12:58:34 -> [INFO]  : LoginAndGetSessionToken -> Session Token hduikKhuGj56l4l36lsKK.
+2024-04-02 12:59:41 -> [INFO]  : _________APP STARTED____________
+2024-04-02 12:59:41 -> [INFO]  : LoadAppSettings -> App settings loaded.
+2024-04-02 12:59:41 -> [INFO]  : GetRequestKey -> Request key: OizyonFsuK7a0/byHVfikFbmjMpLC1adTDawS4lfVaLfhJHi4K+pmSenC2wKpb/y 
+2024-04-02 12:59:42 -> [INFO]  : EstablishConnection -> Method: GET, RequestUri: 'http://localhost:5000/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-04-02 12:59:42 -> [INFO]  : EstablishConnection -> Server connection working.
+2024-04-02 13:01:23 -> [INFO]  : _________APP STARTED____________
+2024-04-02 13:01:23 -> [INFO]  : LoadAppSettings -> App settings loaded.
+2024-04-02 13:01:23 -> [INFO]  : GetRequestKey -> Request key: BpoTfPrO161Hiw5iKFOXFs5dSRCsAdsqjpEH9fXi6InFJT/bryyroHV84uzxBIV2 
+2024-04-02 13:01:23 -> [INFO]  : EstablishConnection -> Method: GET, RequestUri: 'http://localhost:5000/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-04-02 13:01:23 -> [INFO]  : EstablishConnection -> Server connection working.
+2024-04-02 13:02:08 -> [INFO]  : Login -> Method: POST, RequestUri: 'http://localhost:5000/api/login', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
+{
+  Accept: application/json
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 50
+}
+2024-04-02 13:02:08 -> [INFO]  : LoginAndGetSessionToken -> Login successful
+2024-04-02 13:02:08 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-04-02 13:02:08 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-04-02 13:02:08 -> [INFO]  : LoginAndGetSessionToken -> User01 logged in with .
+2024-04-02 13:02:08 -> [INFO]  : LoginAndGetSessionToken -> Session Token hduikKhuGj56l4l36lsKK.
+2024-04-02 13:02:08 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'http://localhost:5000/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer hduikKhuGj56l4l36lsKK
+  Accept: application/json
+}
+2024-04-02 13:02:08 -> [INFO]  : LoadClients -> Client list loaded.
+2024-04-02 13:02:08 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'http://localhost:5000/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer hduikKhuGj56l4l36lsKK
+  Accept: application/json
+}
+2024-04-02 13:02:08 -> [INFO]  : LoadPackages -> Package list loaded.
+2024-04-02 13:07:15 -> [INFO]  : _________APP STARTED____________
+2024-04-02 13:07:15 -> [INFO]  : LoadAppSettings -> App settings loaded.
+2024-04-02 13:07:15 -> [INFO]  : GetRequestKey -> Request key: LDOCZx7v0iH6X72X1MBBwR3yaYARGH4hbJAEbYpOTtcYw3X5oVljCUwTMebKRlWD 
+2024-04-02 13:07:16 -> [INFO]  : EstablishConnection -> Method: GET, RequestUri: 'http://localhost:5000/api/test', Version: 1.1, Content: <null>, Headers:
+{
+  Accept: application/json
+}
+2024-04-02 13:07:16 -> [INFO]  : EstablishConnection -> Server connection working.
+2024-04-02 13:07:42 -> [INFO]  : Login -> Method: POST, RequestUri: 'http://localhost:5000/api/login', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
+{
+  Accept: application/json
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 37
+}
+2024-04-02 13:07:42 -> [INFO]  : LoginAndGetSessionToken -> User not found
+2024-04-02 13:08:10 -> [INFO]  : Login -> Method: POST, RequestUri: 'http://localhost:5000/api/login', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
+{
+  Accept: application/json
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 50
+}
+2024-04-02 13:08:10 -> [INFO]  : LoginAndGetSessionToken -> Login successful
+2024-04-02 13:08:10 -> [INFO]  : LoginAndGetSessionToken -> User01 logged in with .
+2024-04-02 13:08:10 -> [INFO]  : LoginAndGetSessionToken -> Session Token hduikKhuGj56l4l36lsKK.
+2024-04-02 13:08:43 -> [INFO]  : VerifyToken -> Method: GET, RequestUri: 'http://localhost:5000/api/verify-token/hduikKhuGj56l4l36lsKK', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer hduikKhuGj56l4l36lsKK
+  Accept: application/json
+}
+2024-04-02 13:08:43 -> [INFO]  : VerifyToken -> Verfivation successful
+2024-04-02 13:08:45 -> [INFO]  : VerifyToken -> Method: GET, RequestUri: 'http://localhost:5000/api/verify-token/hduikKhuGj56l4l36lsKK', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer hduikKhuGj56l4l36lsKK
+  Accept: application/json
+}
+2024-04-02 13:08:45 -> [INFO]  : VerifyToken -> Verfivation successful
+2024-04-02 13:08:45 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-04-02 13:08:45 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-04-02 13:08:45 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'http://localhost:5000/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer hduikKhuGj56l4l36lsKK
+  Accept: application/json
+}
+2024-04-02 13:08:45 -> [INFO]  : LoadClients -> Client list loaded.
+2024-04-02 13:08:45 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'http://localhost:5000/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer hduikKhuGj56l4l36lsKK
+  Accept: application/json
+}
+2024-04-02 13:08:45 -> [INFO]  : LoadPackages -> Package list loaded.
+2024-04-02 13:08:59 -> [INFO]  : VerifyToken -> Method: GET, RequestUri: 'http://localhost:5000/api/verify-token/hduikKhuGj56l4l36lsKK', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer hduikKhuGj56l4l36lsKK
+  Accept: application/json
+}
+2024-04-02 13:08:59 -> [INFO]  : VerifyToken -> Verfivation successful
+2024-04-02 13:08:59 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-04-02 13:08:59 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-04-02 13:08:59 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'http://localhost:5000/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer hduikKhuGj56l4l36lsKK
+  Accept: application/json
+}
+2024-04-02 13:08:59 -> [INFO]  : LoadClients -> Client list loaded.
+2024-04-02 13:08:59 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'http://localhost:5000/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer hduikKhuGj56l4l36lsKK
+  Accept: application/json
+}
+2024-04-02 13:08:59 -> [INFO]  : LoadPackages -> Package list loaded.
+2024-04-02 13:09:06 -> [INFO]  : VerifyToken -> Method: GET, RequestUri: 'http://localhost:5000/api/verify-token/hduikKhuGj56l4l36lsKK', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer hduikKhuGj56l4l36lsKK
+  Accept: application/json
+}
+2024-04-02 13:09:06 -> [INFO]  : VerifyToken -> Verfivation successful
+2024-04-02 13:09:06 -> [INFO]  : LoadRequestKey -> Request key loaded.
+2024-04-02 13:09:06 -> [INFO]  : LoadPCName -> PC name loaded.
+2024-04-02 13:09:06 -> [INFO]  : GetClients -> Method: GET, RequestUri: 'http://localhost:5000/api/clients', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer hduikKhuGj56l4l36lsKK
+  Accept: application/json
+}
+2024-04-02 13:09:06 -> [INFO]  : LoadClients -> Client list loaded.
+2024-04-02 13:09:06 -> [INFO]  : GetPackages -> Method: GET, RequestUri: 'http://localhost:5000/api/packages', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer hduikKhuGj56l4l36lsKK
+  Accept: application/json
+}
+2024-04-02 13:09:06 -> [INFO]  : LoadPackages -> Package list loaded.
+2024-04-02 13:09:07 -> [INFO]  : VerifyToken -> Method: GET, RequestUri: 'http://localhost:5000/api/verify-token/hduikKhuGj56l4l36lsKK', Version: 1.1, Content: <null>, Headers:
+{
+  Authorization: Bearer hduikKhuGj56l4l36lsKK
+  Accept: application/json
+}
+2024-04-02 13:09:07 -> [INFO]  : VerifyToken -> Verfivation successful

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LicenseHubWF._Repositories;
 using LicenseHubWF.Models;
 using LicenseHubWF.Views;
 using LoggerLib;
@@ -14,8 +15,8 @@ namespace LicenseHubWF.Presenters
         // Fields
         private ILicenseRequestView view;
         private ILicenseRequestRepository repository;
-        private IEnumerable<ClientModel> clientList;
-        private IEnumerable<PackageModel> packageList;
+        private IEnumerable<ClientModel>? clientList;
+        private IEnumerable<PackageModel>? packageList;
         private IFileLogger _logger;
 
         public LicenseRequestPresenter(ILicenseRequestView view, ILicenseRequestRepository repository, IFileLogger logger)
@@ -54,12 +55,7 @@ namespace LicenseHubWF.Presenters
                 _logger.LogError($"ShowLicenseAgreement -> {ex.Message}");
                 _logger.LogError($"ShowLicenseAgreement -> Exception : {ex}");
 
-                IMessageBoxView confirmView = new MessageBoxView()
-                {
-                    Title = "Error",
-                    Message = ex.Message
-                };
-                confirmView.Show();
+                BaseRepository.ShowMessage("Error", ex.Message);
             }
         }
 
@@ -78,12 +74,7 @@ namespace LicenseHubWF.Presenters
                 _logger.LogError($"LoadClients -> {ex.Message}");
                 _logger.LogError($"LoadClients -> Exception : {ex}");
 
-                IMessageBoxView confirmView = new MessageBoxView()
-                {
-                    Title = "Error",
-                    Message = ex.Message
-                };
-                confirmView.Show();
+                BaseRepository.ShowMessage("Error", ex.Message);
             }
 
         }
@@ -102,12 +93,7 @@ namespace LicenseHubWF.Presenters
                 _logger.LogError($"LoadPackages -> {ex.Message}");
                 _logger.LogError($"LoadPackages -> Exception : {ex}");
 
-                IMessageBoxView confirmView = new MessageBoxView()
-                {
-                    Title = "Error",
-                    Message = ex.Message
-                };
-                confirmView.Show();
+                BaseRepository.ShowMessage("Error", ex.Message);
             }
 
         }
@@ -116,7 +102,7 @@ namespace LicenseHubWF.Presenters
         {
             try
             {
-                view.PCName = repository.GetPCName();
+                view.PCName = Environment.MachineName;
 
                 _logger.LogInfo($"LoadPCName -> PC name loaded.");
             }
@@ -125,12 +111,7 @@ namespace LicenseHubWF.Presenters
                 _logger.LogError($"LoadPCName -> {ex.Message}");
                 _logger.LogError($"LoadPCName -> Exception : {ex}");
 
-                IMessageBoxView confirmView = new MessageBoxView()
-                {
-                    Title = "Error",
-                    Message = ex.Message
-                };
-                confirmView.Show();
+                BaseRepository.ShowMessage("Error", ex.Message);
             }
         }
 
@@ -138,7 +119,7 @@ namespace LicenseHubWF.Presenters
         {
             try
             {
-                view.RequestKey = repository.GetRequestKey();
+                view.RequestKey = BaseRepository.RequestKey;
 
                 _logger.LogInfo($"LoadRequestKey -> Request key loaded.");
             }
@@ -147,12 +128,7 @@ namespace LicenseHubWF.Presenters
                 _logger.LogError($"LoadRequestKey -> {ex.Message}");
                 _logger.LogError($"LoadRequestKey -> Exception : {ex}");
 
-                IMessageBoxView confirmView = new MessageBoxView()
-                {
-                    Title = "Error",
-                    Message = ex.Message
-                };
-                confirmView.Show();
+                BaseRepository.ShowMessage("Error", ex.Message);
             }
 
         }
@@ -199,12 +175,7 @@ namespace LicenseHubWF.Presenters
                 _logger.LogError($"RequestLicense -> {ex.Message}");
                 _logger.LogError($"RequestLicense -> Exception : {ex}");
 
-                IMessageBoxView confirmView = new MessageBoxView()
-                {
-                    Title = "Error",
-                    Message = ex.Message
-                };
-                confirmView.Show();
+                BaseRepository.ShowMessage("Error", ex.Message);
 
             }
             
