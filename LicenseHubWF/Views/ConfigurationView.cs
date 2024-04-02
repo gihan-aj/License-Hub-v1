@@ -14,14 +14,13 @@ namespace LicenseHubWF.Views
 {
     public partial class ConfigurationView : Form, IConfigurationView
     {
-        private string _baseAddress;
+        private string? _baseAddress;
         private bool _isSaved;
         public ConfigurationView()
         {
             InitializeComponent();
-            AssociateAndRaiseViewEvents();
+            AssociateAndRaiseEvents();
 
-            this.TopLevel = false;
         }
 
         public string BaseAdsress 
@@ -50,15 +49,15 @@ namespace LicenseHubWF.Views
             }
         }
 
-        public event EventHandler TestEvent;
-        public event EventHandler SaveEvent;
+        public event EventHandler? TestEvent;
+        public event EventHandler? SaveEvent;
 
-        private void AssociateAndRaiseViewEvents()
+        private void AssociateAndRaiseEvents()
         {
 
             this.Load += delegate
             {
-                txtServer.Text = ApiRepository.GetSetting<string>("ApiBaseUrl");
+                txtServer.Text = BaseRepository.GetSetting<string>("ApiBaseUrl");
                 lblTestMessage.Text = string.Empty;
                 btnSave.Visible = false;
                 btnEdit.Visible = true;

@@ -90,7 +90,7 @@
             btnCopy.IconChar = FontAwesome.Sharp.IconChar.None;
             btnCopy.IconColor = Color.Black;
             btnCopy.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnCopy.Location = new Point(360, 400);
+            btnCopy.Location = new Point(360, 430);
             btnCopy.Name = "btnCopy";
             btnCopy.Size = new Size(280, 30);
             btnCopy.TabIndex = 11;
@@ -104,7 +104,7 @@
             iconCopied.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
             iconCopied.IconColor = Color.FromArgb(243, 111, 56);
             iconCopied.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconCopied.Location = new Point(322, 403);
+            iconCopied.Location = new Point(322, 434);
             iconCopied.Name = "iconCopied";
             iconCopied.Size = new Size(32, 32);
             iconCopied.TabIndex = 12;
@@ -114,7 +114,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(680, 470);
+            ClientSize = new Size(680, 500);
             Controls.Add(iconCopied);
             Controls.Add(btnCopy);
             Controls.Add(lblRequestKeyMessage);

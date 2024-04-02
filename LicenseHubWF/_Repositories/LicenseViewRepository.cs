@@ -3,6 +3,7 @@ using LicenseHubWF.Views;
 using LoggerLib;
 using Newtonsoft.Json;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -61,7 +62,8 @@ namespace LicenseHubWF._Repositories
             try
             {
                 string jsonContent = File.ReadAllText(filePath);
-                LicenseModel license = JsonConvert.DeserializeObject<LicenseModel>(jsonContent);
+                LicenseModel license = JsonConvert.DeserializeObject<LicenseModel>(jsonContent)
+                    ?? throw new JsonException("Could not read the license file.");
 
                 return license;
             }

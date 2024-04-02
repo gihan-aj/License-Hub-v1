@@ -74,7 +74,7 @@
             btnTest.IconChar = FontAwesome.Sharp.IconChar.None;
             btnTest.IconColor = Color.Black;
             btnTest.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnTest.Location = new Point(360, 400);
+            btnTest.Location = new Point(360, 430);
             btnTest.Name = "btnTest";
             btnTest.Size = new Size(280, 30);
             btnTest.TabIndex = 12;
@@ -91,7 +91,7 @@
             btnEdit.IconChar = FontAwesome.Sharp.IconChar.None;
             btnEdit.IconColor = Color.Black;
             btnEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEdit.Location = new Point(40, 400);
+            btnEdit.Location = new Point(40, 430);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(280, 30);
             btnEdit.TabIndex = 13;
@@ -108,7 +108,7 @@
             btnSave.IconChar = FontAwesome.Sharp.IconChar.None;
             btnSave.IconColor = Color.Black;
             btnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnSave.Location = new Point(40, 400);
+            btnSave.Location = new Point(40, 430);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(280, 30);
             btnSave.TabIndex = 14;
@@ -119,7 +119,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(680, 470);
+            ClientSize = new Size(680, 500);
             Controls.Add(btnSave);
             Controls.Add(btnEdit);
             Controls.Add(btnTest);

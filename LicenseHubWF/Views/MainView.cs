@@ -89,9 +89,10 @@ namespace LicenseHubWF.Views
             RemoveChildForm(null, EventArgs.Empty);
 
             _activeChildFrom = childForm;
+            childForm.TopLevel = false;
+
             this.panelChildFormWindow.Controls.Add(childForm);
             this.panelChildFormWindow.Tag = childForm;
-            childForm.TopLevel = false;
             childForm.Show();
         }
 

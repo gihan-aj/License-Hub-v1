@@ -66,16 +66,10 @@ namespace LicenseHubWF.Presenters
         {
             try
             {
-                if (_activeForm != null)
-                {
-                    _activeForm.Dispose();
-                }
-
                 ILicenseView licenseView = new LicenseView();
                 ILicenseViewRepository licenseViewRepository = new LicenseViewRepository(_logger);
                 new LicenseViewPresenter(licenseView, licenseViewRepository, _logger);
 
-                _activeForm = (Form)licenseView;
                 _mainView.OpenChildForm((Form)licenseView);
                 _mainView.CurrentPageName = "License";
             }
@@ -90,118 +84,93 @@ namespace LicenseHubWF.Presenters
 
         }
 
-        //private async void VerifyAndShowRequestLicenseView(object? sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        TokenVerificationModel tokenVerification = await ApiRepository.VerifyToken(_logger);
-        //        if (tokenVerification.Success == false)
-        //        {
-        //            ILoginView loginView = new LoginView();
-        //            ILoginRepository loginRepository = new LoginRepository(_logger);
-        //            new LoginPresenter(loginView, loginRepository, _logger);
-
-        //            ApiRepository.SessionTokenChanged += delegate
-        //            {
-        //                ShowRequestLicenseView();
-        //            };
-        //        }
-        //        else
-        //        {
-        //            ShowRequestLicenseView();
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        _logger.LogError($"ShowRequestLicenseView -> {ex.Message}");
-        //        _logger.LogError($"ShowRequestLicenseView -> Exception: {ex}");
-
-        //        IMessageBoxView messageBox = new MessageBoxView()
-        //        {
-        //            Title = "Error",
-        //            Message = ex.Message
-        //        };
-        //        messageBox.Show();
-        //    }
-
-        //}
-
-        private void ShowRequestLicenseView(object? sender, EventArgs e)
+        private async void ShowRequestLicenseView(object? sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(ApiRepository.SessionToken))
+            try
             {
-                if (_activeForm != null)
+                var userVerified = await BaseRepository.VerifyToken(_logger);
+                if (userVerified)
                 {
-                    _activeForm.Dispose();
+                    CreateRequestLicenseView();
                 }
+                else
+                {
+                    ILoginRepository loginRepository = new LoginRepository(_logger);
+                    LoginPresenter loginPresenter = new LoginPresenter(loginRepository, _logger);
 
-                ILicenseRequestView licenseRequestView = new LicenseRequestView();
-                ILicenseRequestRepository licenseRequestRepository = new LicenseRequestRepository(_logger);
-                new LicenseRequestPresenter(licenseRequestView, licenseRequestRepository, _logger);
+                    loginPresenter.LoginSucceed += delegate
+                    {
+                        CreateRequestLicenseView();
+                    };
 
-                _activeForm = (Form)licenseRequestView;
-                _mainView.OpenChildForm((Form)licenseRequestView);
-                _mainView.CurrentPageName = "License Request";
+                    loginPresenter.LoginFailed += delegate
+                    {
+                        _mainView.RemoveChildForm(null, EventArgs.Empty);
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"ShowRequestLicenseView -> {ex.Message}");
+                _logger.LogError($"ShowRequestLicenseView -> Exception: {ex}");
+
+                BaseRepository.ShowMessage("Error", ex.Message);
             }
         }
 
-        //private async void VerifyAndShowDownloadLicenseView(object? sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        TokenVerificationModel tokenVerification = await ApiRepository.VerifyToken(_logger);
-        //        if (tokenVerification.Success == false)
-        //        {
-        //            ILoginView loginView = new LoginView();
-        //            ILoginRepository loginRepository = new LoginRepository(_logger);
-        //            new LoginPresenter(loginView, loginRepository, _logger);
-
-        //            ApiRepository.SessionTokenChanged += delegate
-        //            {
-        //                ShowDownloadLicenseView();
-        //            };
-        //        }
-        //        else
-        //        {
-        //            ShowDownloadLicenseView();
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        _logger.LogError($"ShowRequestLicenseView -> {ex.Message}");
-        //        _logger.LogError($"ShowRequestLicenseView -> Exception: {ex}");
-
-        //        IMessageBoxView messageBox = new MessageBoxView()
-        //        {
-        //            Title = "Error",
-        //            Message = ex.Message
-        //        };
-        //        messageBox.Show();
-        //    }
-
-        //}
-
-        private void ShowDownloadLicenseView(object? sender, EventArgs e)
+        private void CreateRequestLicenseView()
         {
-            if (!string.IsNullOrEmpty(ApiRepository.SessionToken))
+            ILicenseRequestView licenseRequestView = new LicenseRequestView();
+            ILicenseRequestRepository licenseRequestRepository = new LicenseRequestRepository(_logger);
+            new LicenseRequestPresenter(licenseRequestView, licenseRequestRepository, _logger);
+
+            _mainView.OpenChildForm((Form)licenseRequestView);
+            _mainView.CurrentPageName = "License Request";
+        }
+
+        private async void ShowDownloadLicenseView(object? sender, EventArgs e)
+        {
+            try
             {
-                if (_activeForm != null)
+                var userVerified = await BaseRepository.VerifyToken(_logger);
+                if (userVerified)
                 {
-                    _activeForm.Dispose();
+                    CreateDownloadLicenseView();
                 }
+                else
+                {
+                    ILoginRepository loginRepository = new LoginRepository(_logger);
+                    LoginPresenter loginPresenter = new LoginPresenter(loginRepository, _logger);
 
-                ILicenseDownloadView view = new LicenseDownloadView();
-                ILicenseDownloadRepository repository = new LicenseDownloadRepository(_logger);
-                new LicenseDownloadPresenter(view, repository, _logger);
+                    loginPresenter.LoginSucceed += delegate
+                    {
+                        CreateDownloadLicenseView();
+                    };
 
-                _activeForm = (Form)view;
-                _mainView.OpenChildForm((Form)view);
-                _mainView.CurrentPageName = "License Download";
+                    loginPresenter.LoginFailed += delegate
+                    {
+                        _mainView.RemoveChildForm(null, EventArgs.Empty);
+                    };
+                }
             }
+            catch (Exception ex)
+            {
+                _logger.LogError($"ShowRequestLicenseView -> {ex.Message}");
+                _logger.LogError($"ShowRequestLicenseView -> Exception: {ex}");
+
+                BaseRepository.ShowMessage("Error", ex.Message);
+            }
+        }
+
+        private void CreateDownloadLicenseView()
+        {
+            ILicenseDownloadView view = new LicenseDownloadView();
+            ILicenseDownloadRepository repository = new LicenseDownloadRepository(_logger);
+            new LicenseDownloadPresenter(view, repository, _logger);
+
+            _activeForm = (Form)view;
+            _mainView.OpenChildForm((Form)view);
+            _mainView.CurrentPageName = "License Download";
         }
 
         private void ShowRequestKey(object? sender, EventArgs e)

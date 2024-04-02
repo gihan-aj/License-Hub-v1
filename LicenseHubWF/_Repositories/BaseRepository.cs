@@ -13,6 +13,7 @@ using System.Net.Http.Headers;
 using Microsoft.Win32;
 using System.Security.Cryptography;
 using System.Security.Cryptography.Xml;
+using static LicenseHubWF.Models.AppServiceModel;
 
 namespace LicenseHubWF._Repositories
 {
@@ -26,11 +27,13 @@ namespace LicenseHubWF._Repositories
         private static AppSettingsModel _appSettings = new AppSettingsModel();
         private static string _appSettingFilePath = string.Empty;
         private static string _requestKey = string.Empty;
+        private static bool _authorizedUser = false;
 
         // Events
         public static event EventHandler? ConnectivityChanged;
         public static event EventHandler? UserChanged;
         public static event EventHandler? LoggedOut;
+        public static event EventHandler? AuthorizationFailed;
 
         // Properties 
         public static HttpClient? HttpClientService
@@ -57,7 +60,10 @@ namespace LicenseHubWF._Repositories
             set
             {
                 _user = value;
-                UserChanged?.Invoke(null, EventArgs.Empty);
+                if (_user != null)
+                {
+                    UserChanged?.Invoke(null, EventArgs.Empty);
+                }
             }
         }
         public static string? SessionToken { get => _sessionToken; set => _sessionToken = value; }
@@ -72,6 +78,17 @@ namespace LicenseHubWF._Repositories
         }
         public static AppSettingsModel AppSettings { get => _appSettings; set => _appSettings = value; }
         public static string RequestKey { get => _requestKey; private set => _requestKey = value; }
+        public static bool AuthorizedUser 
+        {
+            set 
+            {
+                _authorizedUser = value;
+                if(!_authorizedUser)
+                {
+                    AuthorizationFailed?.Invoke(null, EventArgs.Empty);
+                }
+            } 
+        }
 
         // Methods
         // App setiings
@@ -336,6 +353,57 @@ namespace LicenseHubWF._Repositories
                 Array.Copy(byteArray, 0, byteArray, 0, 32);
             }
             return byteArray;
+        }
+
+        public static async Task<bool> VerifyToken(IFileLogger logger)
+        {
+            if (string.IsNullOrEmpty(_sessionToken))
+            {
+                return false;
+            }
+            try
+            {
+                using(var request = new HttpRequestMessage(HttpMethod.Get, $"verify-token/{_sessionToken}"))
+                {
+                    request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _sessionToken);
+
+                    using(HttpResponseMessage response = await HttpClientService.SendAsync(request))
+                    {
+                        logger.LogInfo($"VerifyToken -> {response.RequestMessage}");
+
+                        if(response.IsSuccessStatusCode)
+                        {
+                            VerificationResponse verification = await response.Content.ReadAsAsync<VerificationResponse>();
+                            if(verification != null )
+                            {
+                                logger.LogInfo($"VerifyToken -> {verification.message}");
+                                if (verification.flag)
+                                {
+                                    return true;
+                                }
+                                else
+                                {
+                                    return false;
+                                }
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        }
+                        else
+                        {
+                            throw new Exception(response.ReasonPhrase);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+
         }
 
     }

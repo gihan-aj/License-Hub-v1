@@ -19,7 +19,6 @@ namespace LicenseHubWF.Views
         {
             InitializeComponent();
             AssociateAndRaiseEvents();
-            TopLevel = false;
         }
 
         public string Key

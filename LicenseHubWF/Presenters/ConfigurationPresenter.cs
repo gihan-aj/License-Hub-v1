@@ -28,8 +28,8 @@ namespace LicenseHubWF.Presenters
         {
             try
             {
-                await ApiRepository.IsConnected(_logger);
-                if (ApiRepository.Connectivity)
+                await BaseRepository.EstablishConnection(_logger);
+                if (BaseRepository.Connectivity)
                 {
                     _view.TestMessage = ApiRepository.GetSetting<string>("ConnectionTestSuccessMessage");
                 }
@@ -43,12 +43,7 @@ namespace LicenseHubWF.Presenters
                 _logger.LogError($"TestServerConnection -> {ex.Message}");
                 _logger.LogError($"TestServerConnection -> Exception: {ex}");
 
-                IMessageBoxView messageBox = new MessageBoxView()
-                {
-                    Title = "Error",
-                    Message = ex.Message
-                };
-                messageBox.Show();
+                BaseRepository.ShowMessage("Error", ex.Message);
             }
         }
 
@@ -56,7 +51,7 @@ namespace LicenseHubWF.Presenters
         {
             try
             {
-                ApiRepository.UpdateAppSettings("ApiBaseUrl", _view.BaseAdsress, _logger);
+                BaseRepository.UpdateAppSettings("ApiBaseUrl", _view.BaseAdsress, _logger);
                 _view.IsSaved = true;
             }
             catch (Exception ex)
@@ -65,12 +60,7 @@ namespace LicenseHubWF.Presenters
                 _logger.LogError($"SaveBaseUrl -> {ex.Message}");
                 _logger.LogError($"SaveBaseUrl -> Exception: {ex}");
 
-                IMessageBoxView messageBox = new MessageBoxView()
-                {
-                    Title = "Error",
-                    Message = ex.Message
-                };
-                messageBox.Show();
+                BaseRepository.ShowMessage("Error", ex.Message);
             }
         }
     }

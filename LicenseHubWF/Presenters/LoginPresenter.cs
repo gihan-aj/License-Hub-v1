@@ -25,10 +25,14 @@ namespace LicenseHubWF.Presenters
 
             // Events
             _view.LoginEvent += LoginAndGetSessionToken;
+            BaseRepository.AuthorizationFailed += LoginAndGetSessionToken;
 
             // Showing login view
             _view.Show();
         }
+
+        public event EventHandler? LoginFailed;
+        public event EventHandler? LoginSucceed;
 
         private async void LoginAndGetSessionToken(object? sender, EventArgs e)
         {
@@ -46,6 +50,8 @@ namespace LicenseHubWF.Presenters
                         BaseRepository.SessionToken = loginResponse.token;
                         BaseRepository.User = loginResponse.user;
 
+                        LoginSucceed?.Invoke(null, EventArgs.Empty);
+
                         _logger.LogInfo($"LoginAndGetSessionToken -> {loginResponse.user.Name} logged in with {loginResponse.user.Email}.");
                         _logger.LogInfo($"LoginAndGetSessionToken -> Session Token {loginResponse.token}.");
 
@@ -53,12 +59,15 @@ namespace LicenseHubWF.Presenters
                     }
                     else
                     {
+                        LoginFailed?.Invoke(null, EventArgs.Empty);
                         BaseRepository.ShowMessage("Info", loginResponse.message);
                     }
                 }
             }
             catch (Exception ex)
             {
+                LoginFailed?.Invoke(null, EventArgs.Empty);
+
                 _logger.LogError($"LoginAndGetSessionToken -> {ex.Message}");
                 _logger.LogError($"LoginAndGetSessionToken -> Exception: {ex}");
 

@@ -176,7 +176,7 @@
             btnBrowse.IconChar = FontAwesome.Sharp.IconChar.None;
             btnBrowse.IconColor = Color.Black;
             btnBrowse.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnBrowse.Location = new Point(38, 400);
+            btnBrowse.Location = new Point(38, 430);
             btnBrowse.Name = "btnBrowse";
             btnBrowse.Size = new Size(280, 30);
             btnBrowse.TabIndex = 13;
@@ -193,7 +193,7 @@
             btnValidate.IconChar = FontAwesome.Sharp.IconChar.None;
             btnValidate.IconColor = Color.Black;
             btnValidate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnValidate.Location = new Point(358, 400);
+            btnValidate.Location = new Point(358, 430);
             btnValidate.Name = "btnValidate";
             btnValidate.Size = new Size(280, 30);
             btnValidate.TabIndex = 14;
@@ -202,7 +202,7 @@
             // 
             // lblFilePath
             // 
-            lblFilePath.Location = new Point(38, 370);
+            lblFilePath.Location = new Point(37, 379);
             lblFilePath.Name = "lblFilePath";
             lblFilePath.Size = new Size(601, 20);
             lblFilePath.TabIndex = 15;
@@ -212,7 +212,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(680, 470);
+            ClientSize = new Size(680, 500);
             Controls.Add(lblFilePath);
             Controls.Add(btnValidate);
             Controls.Add(btnBrowse);

@@ -173,7 +173,7 @@
             btnRequest.IconChar = FontAwesome.Sharp.IconChar.None;
             btnRequest.IconColor = Color.Black;
             btnRequest.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnRequest.Location = new Point(40, 400);
+            btnRequest.Location = new Point(40, 430);
             btnRequest.Name = "btnRequest";
             btnRequest.Size = new Size(280, 30);
             btnRequest.TabIndex = 9;
@@ -188,7 +188,7 @@
             btnReset.IconChar = FontAwesome.Sharp.IconChar.None;
             btnReset.IconColor = Color.Black;
             btnReset.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnReset.Location = new Point(360, 400);
+            btnReset.Location = new Point(360, 430);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(280, 30);
             btnReset.TabIndex = 10;
@@ -198,7 +198,7 @@
             // linkAgreement
             // 
             linkAgreement.AutoSize = true;
-            linkAgreement.Location = new Point(40, 338);
+            linkAgreement.Location = new Point(40, 359);
             linkAgreement.Name = "linkAgreement";
             linkAgreement.Size = new Size(158, 19);
             linkAgreement.TabIndex = 11;
@@ -209,7 +209,7 @@
             // 
             checkBoxAgreement.AutoSize = true;
             checkBoxAgreement.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            checkBoxAgreement.Location = new Point(40, 360);
+            checkBoxAgreement.Location = new Point(40, 385);
             checkBoxAgreement.Name = "checkBoxAgreement";
             checkBoxAgreement.Size = new Size(91, 21);
             checkBoxAgreement.TabIndex = 12;
@@ -221,7 +221,7 @@
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(680, 470);
+            ClientSize = new Size(680, 500);
             Controls.Add(checkBoxAgreement);
             Controls.Add(linkAgreement);
             Controls.Add(btnReset);

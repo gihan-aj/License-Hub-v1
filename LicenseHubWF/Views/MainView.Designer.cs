@@ -249,12 +249,12 @@
             // lblPageName
             // 
             lblPageName.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPageName.Location = new Point(81, 17);
+            lblPageName.Location = new Point(31, 46);
             lblPageName.Name = "lblPageName";
-            lblPageName.Size = new Size(492, 37);
+            lblPageName.Size = new Size(253, 37);
             lblPageName.TabIndex = 6;
             lblPageName.Text = "label1";
-            lblPageName.TextAlign = ContentAlignment.MiddleCenter;
+            lblPageName.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // iconNoConnectivity
             // 
@@ -348,7 +348,7 @@
             // 
             // panelChildFormWindow
             // 
-            panelChildFormWindow.Location = new Point(220, 97);
+            panelChildFormWindow.Location = new Point(220, 100);
             panelChildFormWindow.Name = "panelChildFormWindow";
             panelChildFormWindow.Size = new Size(680, 500);
             panelChildFormWindow.TabIndex = 2;

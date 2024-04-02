@@ -23,7 +23,7 @@ namespace LicenseHubWF._Repositories
         {
             using (var request = new HttpRequestMessage(HttpMethod.Get, "Logout"))
             {
-                //request.Content = new StringContent(JsonConvert.SerializeObject(BaseRepository.SessionToken), Encoding.UTF8, "application/json");
+                request.Content = new StringContent(JsonConvert.SerializeObject(BaseRepository.SessionToken), Encoding.UTF8, "application/json");
 
                 using (var response = await BaseRepository.HttpClientService.SendAsync(request))
                 {

@@ -31,7 +31,7 @@ namespace LicenseHubWF.Presenters
         {
             try
             {
-                var filePath = ApiRepository.GetSetting<string>("LicenseFilePath");
+                var filePath = BaseRepository.GetSetting<string>("LicenseFilePath");
                 if (File.Exists(filePath))
                 {
                     _view.License = _repository.ReadLicenseFile(filePath);
@@ -45,6 +45,8 @@ namespace LicenseHubWF.Presenters
             catch (Exception ex)
             {
                 _logger.LogError($"LoadLicenseFile -> {ex.Message}");
+                _logger.LogError($"LoadLicenseFile -> Exception : {ex}");
+                BaseRepository.ShowMessage("Error", ex.Message);
             }
         }
 
@@ -61,7 +63,7 @@ namespace LicenseHubWF.Presenters
                     {
                         _view.License = license;
 
-                        ApiRepository.UpdateAppSettings("LicenseFilePath",filepath,_logger);
+                        BaseRepository.UpdateAppSettings("LicenseFilePath",filepath,_logger);
 
                         _logger.LogInfo($"BrowseLicenseFile -> License loaded.");
                     }
@@ -69,11 +71,9 @@ namespace LicenseHubWF.Presenters
             }
             catch (Exception ex)
             {
-                IMessageBoxView confirmView = new MessageBoxView();
-                confirmView.Title = "Error";
-                confirmView.Message = ex.Message;
-                confirmView.Show();
                 _logger.LogError($"BrowseLicenseFile -> {ex.Message}");
+                _logger.LogError($"BrowseLicenseFile -> Exception : {ex}");
+                BaseRepository.ShowMessage("Error", ex.Message);
             }
 
         }
