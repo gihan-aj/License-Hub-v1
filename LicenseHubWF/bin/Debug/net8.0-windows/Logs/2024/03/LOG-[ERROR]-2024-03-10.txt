@@ -1,7 +1,0 @@
-2024-03-10 12:40:10 -> [ERROR] : LoadLicenseFile -> No file selected
-2024-03-10 12:41:35 -> [ERROR] : LoadLicenseFile -> No file selected
-2024-03-10 12:41:38 -> [ERROR] : LoadLicenseFile -> No file selected
-2024-03-10 12:41:39 -> [ERROR] : LoadLicenseFile -> No file selected
-2024-03-10 23:03:09 -> [ERROR] : UpdateAppSettings -> Property (LicenceFilePath) not found or is read-only
-2024-03-10 23:11:49 -> [ERROR] : UpdateAppSettings -> Property (LicenceFilePath) not found or is read-only
-2024-03-10 23:45:55 -> [ERROR] : LoadLicenseFile -> Unable to find the specified file.

@@ -1,6 +1,0 @@
-2024-04-02 12:57:16 -> [ERROR] : RequestLicense -> License agreement must be accepted
-2024-04-02 12:57:16 -> [ERROR] : RequestLicense -> Exception : System.Exception: License agreement must be accepted
-   at LicenseHubWF.Presenters.LicenseRequestPresenter.RequestLicense(Object sender, EventArgs e) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\LicenseRequestPresenter.cs:line 170
-2024-04-02 12:57:49 -> [ERROR] : RequestLicense -> Select required packages.
-2024-04-02 12:57:49 -> [ERROR] : RequestLicense -> Exception : System.Exception: Select required packages.
-   at LicenseHubWF.Presenters.LicenseRequestPresenter.RequestLicense(Object sender, EventArgs e) in C:\Users\Gihan\source\repos\LicenseHubWF\LicenseHubWF\Presenters\LicenseRequestPresenter.cs:line 153
